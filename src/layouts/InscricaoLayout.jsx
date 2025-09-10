@@ -4,10 +4,6 @@ import Footer from "../components/Footer"
 
 export default function InscricaoLayout () {
     <>
-        <NavBar/>
-        <main>
-            <Outlet/>
-        </main>
-        <Footer/>
+        <Outlet/>
     </>
 }
