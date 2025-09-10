@@ -67,10 +67,10 @@ export default function NavBar() {
             {isOpen && (
                 <div className="flex flex-col items-center mt-4 gap-4 lg:hidden">
                     <Link to="/" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Passa a bola</Link>
-                    <Link to="/Copa" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Copa PB</Link>
-                    <Link to="/Inscricao" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Inscreva-se</Link>
-                    <Link to="/Apoiadores" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Apoiadores</Link>
-                    <Link to="/Login" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Login</Link>
+                    <Link to="/copa" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Copa PB</Link>
+                    <Link to="/inscricao" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Inscreva-se</Link>
+                    <Link to="/apoiadores" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Apoiadores</Link>
+                    <Link to="/login" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Login</Link>
                 </div>
             )}
         </nav>
