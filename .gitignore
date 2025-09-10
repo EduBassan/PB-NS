@@ -1,0 +1,28 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Vite / build
+dist/
+.vite/
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Editor / OS
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+Thumbs.db
+.DS_Store
+
+# Logs
+logs/
+*.log
