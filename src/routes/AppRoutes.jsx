@@ -17,6 +17,7 @@ import LoginAtleta from "../pages/LoginAtleta";
 import LoginTime from "../pages/LoginTime";
 import ApoiadoresLayout from "../layouts/ApoiadoresLayout";
 import Apoiadores from "../pages/Apoiadores";
+import LandingLayout from "../layouts/LandingLayout";
 
 export const router = createBrowserRouter([
     {
@@ -24,6 +25,10 @@ export const router = createBrowserRouter([
         element: <MainLayout/>,
         errorElement: <PageNotFound/>,
         children: [
+            {
+                index: true,
+                element: <LandingLayout/>,
+            },
             {
                 path: 'copa',
                 element: <CopaLayout/>,

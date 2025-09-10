@@ -1,8 +1,0 @@
-export default function SubNav () {
-    return(
-        <div className="flex justify-center items-center bg-[#3C1A6E] p-1 ">
-            <h1 className="flex flex-row gap-2 text-white"><strong>CHUTA</strong> ou <strong>PASSA A BOLA</strong></h1>
-        </div>
-    )
-
-}

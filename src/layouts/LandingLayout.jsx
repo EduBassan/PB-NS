@@ -1,8 +1,6 @@
-import { Outlet } from "react-router-dom"
-import NavBar from "../components/NavBar"
-import Footer from "../components/Footer"
+import { Outlet } from "react-router-dom";
 
-export default function InscricaoLayout () {
+export default function LandingLayout () {
     return(
         <>
             <div className="flex justify-center items-center bg-[#3C1A6E] p-1 ">
