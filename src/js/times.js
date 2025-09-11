@@ -2,6 +2,7 @@ export let times = [
     {
         id: 1,
         nome: "Estrelas FC",
+        senha: "123456789",
         cidade: "São Paulo",
         responsavel: "Maria Souza",
         email: "maria@estrelasfc.com",

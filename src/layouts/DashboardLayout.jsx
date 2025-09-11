@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 
-export default function CadastrarLayout () {
+export default function DashboardLayout () {
     return (
         <>
             <div className="flex justify-center items-center bg-[#3C1A6E] p-1 ">
