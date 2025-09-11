@@ -15,7 +15,6 @@ export default function LoginEscolha (){
                 <button><Link to="/" className="border-2 border-black p-1 pr-20 pl-20
                 hover:bg-black hover:text-white hover hover:border-black hover:transition-all hover:duration-150">Prefiro voltar</Link></button>
             </div>
-            
         </div>
     )
 }

@@ -22,6 +22,8 @@ import CadastrarLayout from "../layouts/CadastrarLayout";
 import CadastrarEscolha from "../pages/CadastrarEscolha";
 import CadastrarAtleta from "../pages/CadastrarAtleta";
 import CadastrarTime from "../pages/CadastrarTime";
+import DashboardAtleta from "../pages/DashboardAtleta";
+import DashboardTimes from "../pages/DashboardTimes";
 
 export const router = createBrowserRouter([
     {
@@ -87,10 +89,24 @@ export const router = createBrowserRouter([
                     {
                         path: 'atleta',
                         element: <LoginAtleta/>,
+                        errorElement: <PageNotFound/>,
+                        children: [
+                            {
+                                path: 'Dashboard',
+                                element: <DashboardAtleta/>,
+                            },
+                        ],
                     },
                     {
                         path: 'time',
-                        element: <LoginTime/>
+                        element: <LoginTime/>,
+                        errorElement: <PageNotFound/>,
+                        children: [
+                            {
+                                path: 'Dashboard',
+                                element: <DashboardTimes/>,
+                            },
+                        ],
                     },
                 ],
             },
