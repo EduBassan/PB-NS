@@ -11,5 +11,6 @@ export let times = [
         foto: "/images/estrelas.png",
         jogadoras: [],
         candidatas: [],
+        tipo: "time"
     }
 ]

@@ -60,25 +60,6 @@ export const router = createBrowserRouter([
                 ],
             },
             {
-                path: 'inscricao',
-                element: <InscricaoLayout/>,
-                errorElement: <PageNotFound/>,
-                children: [
-                    {
-                        index: true,
-                        element: <InscricaoEscolha/>,
-                    },
-                    {
-                        path: 'atleta',
-                        element: <InscricaoAtleta/>,
-                    },
-                    {
-                        path: 'time',
-                        element: <InscricaoTime/>,
-                    },
-                ],
-            },
-            {
                 path: 'login',
                 element: <LoginLayout/>,
                 errorElement: <PageNotFound/>,
