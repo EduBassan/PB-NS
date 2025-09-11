@@ -19,7 +19,7 @@ export default function Footer () {
                     <div className="flex flex-col gap-3">
                         <h1 className="text-gray-400 font-bold">Fique por dentro</h1>
                         <div>
-                            <input type="text" className="bg-white p-3 text-black w-178" placeholder="Digite aqui seu email" />
+                            <input type="email" className="bg-white p-3 text-black w-178" placeholder="Digite aqui seu email" />
                             <div className="flex justify-start items-center">
                                 <h6 className="text-[14px]">Newsletter semanal — calendário, vagas de árbitro e destaques. Sem spam. Você pode sair quando quiser.</h6>
                             </div>
