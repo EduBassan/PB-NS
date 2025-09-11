@@ -1,34 +1,68 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import Logo from "../assets/logo-passa-a-bola.png";
 
 export default function NavBar() {
     const [isOpen, setIsOpen] = useState(false);
 
+    const navigate = useNavigate();
+    const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+
+    const sair = () => {
+        localStorage.removeItem("usuarioLogado");
+        navigate("/login");
+    };
+    
+
     return (
         <nav className="p-5 ml-10 mr-10">
             <div className="flex justify-between items-center">
-                <div className="flex flex-row items-center gap-18">
+                <div className="flex flex-row items-center gap-13">
                     <div className="hidden lg:flex items-center gap-10">
                         <img src={Logo} alt="Logo-passa-a-bola" className="w-16" />
                     </div>
-                    <div className="hidden lg:flex items-center gap-20">
+                    <div className="hidden lg:flex items-center gap-10">
                         <Link to="/"className="hover:text-xl hover:text-[#EE4D9A] hover:font-bold transition-all ease-in-out duration-700">Passa a bola</Link>
                         <Link to="/Copa" className="hover:text-xl hover:text-[#EE4D9A] hover:font-bold transition-all ease-in-out duration-700">Copa PB</Link>
-                        <Link to="/Inscricao" className="hover:text-xl hover:text-[#EE4D9A] hover:font-bold transition-all ease-in-out duration-700">Inscreva-se</Link>
                         <Link to="/Apoiadores" className="hover:text-xl hover:text-[#EE4D9A] hover:font-bold transition-all ease-in-out duration-700">Apoiadores</Link>
                     </div>
                 </div>
                 
-                <div className="flex flex-row items-center gap-5">
-                    <div className="hidden lg:flex ">
-                        <Link to="/cadastrar" className="hover:text-xl hover:text-[#EE4D9A] hover:font-bold transition-all ease-in-out duration-700">Cadastre-se</Link>
-                    </div>
-                    
-                    <button className="hidden lg:flex border-[2.5px] border-[#3C1A6E] p-2 pl-10 pr-10 hover:border-[#EE4D9A] hover:bg-[#EE4D9A] hover:text-white transition-all duration-400">
-                        <Link to="/login">Entrar</Link>
-                    </button>
+                <div className="hidden lg:flex flex-row items-center gap-5">
+                    {! usuarioLogado && (
+                        <div className="flex flex-row gap-5 items-center">
+                            <Link to="/cadastrar" 
+                            className="hover:text-xl 
+                            hover:text-[#EE4D9A] hover:font-bold transition-all ease-in-out duration-700">Cadastre-se</Link>
+                            <Link to="/login"
+                            className="border-2 border-[#3C1A6E] p-2 pr-10 pl-10
+                            hover:border-[#EE4D9A] hover:bg-[#EE4D9A] hover:text-white transition-all duration-400">Entrar</Link>
+                        </div>
+                    )}
+                    {usuarioLogado?.tipo === "jogadora" && (
+                        <div className="flex flex-row items-center gap-2">
+                            <span>Olá, <strong>{usuarioLogado.nome}</strong></span>
+                            <button onClick={sair}
+                            className="border-2 border-red-500 p-1 pr-7 pl-7
+                            hover:bg-red-500 hover:text-white transition-all duration-400 cursor-pointer">sair</button>
+                            <Link to="/dashboard/jogadora" 
+                            className="border-2 border-[#3C1A6E] p-1 pr-8 pl-8
+                            hover:border-[#EE4D9A] hover:bg-[#EE4D9A] hover:text-white transition-all duration-400">Minha página</Link>
+                        </div>
+                    )}
+                    {usuarioLogado?.tipo === "time" && (
+                        <div className="flex flex-row items-center gap-2">
+                            <span>Opaa, <strong>{usuarioLogado.nome}</strong></span>
+                            <button onClick={sair}
+                            className="border-2 border-red-500 p-1 pr-7 pl-7
+                            hover:bg-red-500 hover:text-white transition-all duration-400 cursor-pointer">sair</button>
+                            <Link to="/dashboard/clube"
+                            className="border-2 border-[#3C1A6E] p-1 pr-8 pl-8
+                            hover:border-[#EE4D9A] hover:bg-[#EE4D9A] hover:text-white transition-all duration-400">Minha página</Link>
+                        </div>
+                    )}
                 </div>
 
                 <div className="lg:hidden hidden md:flex w-screen justify-between content-center items-center gap-30">
@@ -36,9 +70,20 @@ export default function NavBar() {
                         <img src={Logo} alt="Logo-Passa-a-bola" className="w-13" />
                     </div>
                     <div>
-                        <button className="lg:hidden border-[2.5px] border-[#3C1A6E] p-2 pl-15 pr-15 hover:border-[#EE4D9A] hover:bg-[#EE4D9A] hover:text-white transition-all duration-400">
-                            <Link to="/login">Entrar</Link>
-                        </button>
+                        {!usuarioLogado && (
+                            <button className=" border-[2.5px] border-[#3C1A6E] p-2 pl-15 pr-15 hover:bg-[#3C1A6E] hover:transition-all hover:duration-500 hover:text-white ">
+                                <Link to="/login">Entrar</Link>
+                            </button>
+                        )}
+                        {usuarioLogado?.tipo === "jogadora" && (
+                            <Link className=" border-[2.5px] border-red-500 p-2 pl-15 pr-15
+                            hover:bg-red-500 hover:transition-all hover:duration-500 hover:text-white " onClick={sair}>Sair</Link>
+                        )}
+                        {usuarioLogado?.tipo === "time" && (
+                            <Link className=" border-[2.5px] border-red-500 p-2 pl-15 pr-15
+                            hover:bg-red-500 hover:transition-all hover:duration-500 hover:text-white " onClick={sair}>Sair</Link>
+                        )}
+                        
                     </div>
                     <div>
                         <button onClick={() => setIsOpen(!isOpen)}>
@@ -47,14 +92,27 @@ export default function NavBar() {
                     </div>
                 </div>
 
-                <div className="md:hidden flex w-screen justify-center content-center items-center gap-10">
+                <div className="md:hidden flex w-screen justify-center content-center items-center gap-5">
                     <div>
                         <img src={Logo} alt="Logo-Passa-a-bola" className="w-13" />
                     </div>
                     <div>
-                        <button className="md:hidden border-[2.5px] border-[#3C1A6E] p-2 pl-3.2 pr-3.2 hover:border-[#EE4D9A] hover:bg-[#EE4D9A] hover:text-white transition-all duration-400">
-                            <Link to="/login">Entrar</Link>
-                        </button>
+                        {!usuarioLogado && (
+                            <button className="md:hidden border-[2.5px] border-[#3C1A6E] p-2 pl-12 pr-12 ">
+                                <Link to="/login">Entrar</Link>
+                            </button>
+                        )}
+                        {usuarioLogado?.tipo === "jogadora" && (
+                            <button className="md:hidden border-[2.5px] border-red-500 p-2 pl-12 pr-12 ">
+                                <Link onClick={sair}>Sair</Link>
+                            </button>
+                        )}
+                        {usuarioLogado?.tipo === "time" && (
+                            <button className="md:hidden border-[2.5px] border-red-500 p-2 pl-12 pr-12 ">
+                                <Link onClick={sair}>Sair</Link>
+                            </button>
+                        )}
+                        
                     </div>
                     <div>
                         <button onClick={() => setIsOpen(!isOpen)}>
@@ -65,13 +123,34 @@ export default function NavBar() {
             </div>
 
             {isOpen && (
-                <div className="flex flex-col items-center mt-4 gap-4 lg:hidden">
-                    <Link to="/" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Passa a bola</Link>
-                    <Link to="/copa" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Copa PB</Link>
-                    <Link to="/inscricao" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Inscreva-se</Link>
-                    <Link to="/apoiadores" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Apoiadores</Link>
-                    <Link to="/cadastrar" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Cadastre-se</Link>
+                <div>
+                    {!usuarioLogado && (
+                    <div className="flex flex-col items-center mt-4 gap-4 lg:hidden">
+                        <Link to="/" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Passa a bola</Link>
+                        <Link to="/copa" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Copa PB</Link>
+                        <Link to="/apoiadores" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Apoiadores</Link>
+                        <Link to="/cadastrar" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Cadastre-se</Link>
+                    </div>
+                )}
+                {usuarioLogado?.tipo === "jogadora" && (
+                    <div className="flex flex-col items-center mt-4 gap-4 lg:hidden">
+                        <Link to="/" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Passa a bola</Link>
+                        <Link to="/copa" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Copa PB</Link>
+                        <Link to="/apoiadores" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Apoiadores</Link>
+                        <Link to="/dashboard/jogadora" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Minha página</Link>
+                    </div>
+                )}
+                {usuarioLogado?.tipo === "time" && (
+                    <div className="flex flex-col items-center mt-4 gap-4 lg:hidden">
+                        <Link to="/" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Passa a bola</Link>
+                        <Link to="/copa" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Copa PB</Link>
+                        <Link to="/apoiadores" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Apoiadores</Link>
+                        <Link to="/dashboard/clube" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Minha página</Link>
+                    </div>
+                )}
                 </div>
+                
+                
             )}
         </nav>
   );

@@ -3,7 +3,7 @@ import pb from '../assets/Pb-escrita.png'
 
 export default function Footer () {
     return(
-        <div className="bg-black text-white pr-50 pl-50 pt-30 pb-5">
+        <footer className="bg-black text-white pr-50 pl-50 pt-30 pb-5 hidden lg:flex">
             <div className="flex flex-row justify-between">
                 <div className="flex flex-col">
                     <h1 className="text-gray-400 font-bold">Links</h1>
@@ -58,6 +58,6 @@ export default function Footer () {
                 <h2>© 2025 Passa a Bola. Todos os direitos reservados.</h2>
                 <img src={pb} alt="Pb-escrita" className="w-30" />
             </div>
-        </div>
+        </footer>
     )
 }

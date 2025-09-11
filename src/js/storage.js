@@ -12,7 +12,6 @@ export function carregarTimes() {
   return stored ? JSON.parse(stored) : times;
 }
 
-// Salvar
 export function salvarJogadoras(jogadoras) {
   localStorage.setItem("jogadoras", JSON.stringify(jogadoras));
 }
