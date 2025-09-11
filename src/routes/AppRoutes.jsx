@@ -18,6 +18,10 @@ import LoginTime from "../pages/LoginTime";
 import ApoiadoresLayout from "../layouts/ApoiadoresLayout";
 import Apoiadores from "../pages/Apoiadores";
 import LandingLayout from "../layouts/LandingLayout";
+import CadastrarLayout from "../layouts/CadastrarLayout";
+import CadastrarEscolha from "../pages/CadastrarEscolha";
+import CadastrarAtleta from "../pages/CadastrarAtleta";
+import CadastrarTime from "../pages/CadastrarTime";
 
 export const router = createBrowserRouter([
     {
@@ -89,6 +93,25 @@ export const router = createBrowserRouter([
                         element: <LoginTime/>
                     },
                 ],
+            },
+            {
+                path: 'cadastrar',
+                element: <CadastrarLayout/>,
+                errorElement: <PageNotFound/>,
+                children: [
+                    {
+                        index: true,
+                        element: <CadastrarEscolha/>,
+                    },
+                    {
+                        path: 'atleta',
+                        element: <CadastrarAtleta/>,
+                    },
+                    {
+                        path: 'time',
+                        element: <CadastrarTime/>
+                    }
+                ]
             },
             {
                 path: 'apoiadores',

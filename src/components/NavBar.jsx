@@ -23,11 +23,11 @@ export default function NavBar() {
                 
                 <div className="flex flex-row items-center gap-5">
                     <div className="hidden lg:flex ">
-                        <Link to="/Login" className="hover:text-xl hover:text-[#EE4D9A] hover:font-bold transition-all ease-in-out duration-700">Login</Link>
+                        <Link to="/cadastrar" className="hover:text-xl hover:text-[#EE4D9A] hover:font-bold transition-all ease-in-out duration-700">Cadastre-se</Link>
                     </div>
                     
                     <button className="hidden lg:flex border-[2.5px] border-[#3C1A6E] p-2 pl-10 pr-10 hover:border-[#EE4D9A] hover:bg-[#EE4D9A] hover:text-white transition-all duration-400">
-                        <Link to="/Inscricao">Quero Jogar</Link>
+                        <Link to="/login">Entrar</Link>
                     </button>
                 </div>
 
@@ -37,7 +37,7 @@ export default function NavBar() {
                     </div>
                     <div>
                         <button className="lg:hidden border-[2.5px] border-[#3C1A6E] p-2 pl-15 pr-15 hover:border-[#EE4D9A] hover:bg-[#EE4D9A] hover:text-white transition-all duration-400">
-                            <Link to="/Inscricao">Quero Jogar</Link>
+                            <Link to="/login">Entrar</Link>
                         </button>
                     </div>
                     <div>
@@ -53,7 +53,7 @@ export default function NavBar() {
                     </div>
                     <div>
                         <button className="md:hidden border-[2.5px] border-[#3C1A6E] p-2 pl-3.2 pr-3.2 hover:border-[#EE4D9A] hover:bg-[#EE4D9A] hover:text-white transition-all duration-400">
-                            <Link to="/Inscricao">Quero Jogar</Link>
+                            <Link to="/login">Entrar</Link>
                         </button>
                     </div>
                     <div>
@@ -70,7 +70,7 @@ export default function NavBar() {
                     <Link to="/copa" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Copa PB</Link>
                     <Link to="/inscricao" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Inscreva-se</Link>
                     <Link to="/apoiadores" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Apoiadores</Link>
-                    <Link to="/login" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Login</Link>
+                    <Link to="/cadastrar" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Cadastre-se</Link>
                 </div>
             )}
         </nav>
