@@ -4,11 +4,15 @@ import Corinthians from "../assets/logo-corinthians-4096.png"
 import Logo from "../assets/logo-passa-a-bola.png";
 import Adidas from "../assets/adidas.png";
 import { Link } from "react-router-dom"
+import { times } from "../js/times.js";
 
 export default function Tabela () {
+    const timeGanhador = times.find((t) => t.id === 1); 
+    const timeSegundo = times.find((t) => t.id === 2);
+    const timeTerceiro = times.find((t) => t.id === 3);
     return (
         <div>
-            <div className="flex flex-row justify-center p-20">
+            <div className="flex flex-row justify-center p-20 md:flex-row">
                 <div>
                 <span className="font-semibold text-4xl">TABELA</span>
             <div className="bg-[#EE4D9A] text-white shadow-lg p-10 w-200">
@@ -25,186 +29,17 @@ export default function Tabela () {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr className="border-t border-white/30">
-                        <td className="px-4 py-2">1</td>
-                        <td className="px-4 py-2">Brasil</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">21</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">0</td>
-                        <td className="px-4 py-2">0</td>
-                      </tr>
-                      <tr className="border-t border-white/30">
-                        <td className="px-4 py-2">2</td>
-                        <td className="px-4 py-2">Portugal</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">21</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">0</td>
-                        <td className="px-4 py-2">0</td>
-                      </tr>
-                      <tr className="border-t border-white/30">
-                        <td className="px-4 py-2">3</td>
-                        <td className="px-4 py-2">China</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">21</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">0</td>
-                        <td className="px-4 py-2">0</td>
-                      </tr>
-                      <tr className="border-t border-white/30">
-                        <td className="px-4 py-2">3</td>
-                        <td className="px-4 py-2">China</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">21</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">0</td>
-                        <td className="px-4 py-2">0</td>
-                      </tr>
-                      <tr className="border-t border-white/30">
-                        <td className="px-4 py-2">4</td>
-                        <td className="px-4 py-2">China</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">21</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">0</td>
-                        <td className="px-4 py-2">0</td>
-                      </tr>
-                      <tr className="border-t border-white/30">
-                        <td className="px-4 py-2">5</td>
-                        <td className="px-4 py-2">China</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">21</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">0</td>
-                        <td className="px-4 py-2">0</td>
-                      </tr>
-                      <tr className="border-t border-white/30">
-                        <td className="px-4 py-2">6</td>
-                        <td className="px-4 py-2">China</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">21</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">0</td>
-                        <td className="px-4 py-2">0</td>
-                      </tr>
-                      <tr className="border-t border-white/30">
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">China</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">21</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">0</td>
-                        <td className="px-4 py-2">0</td>
-                      </tr>
-                      <tr className="border-t border-white/30">
-                        <td className="px-4 py-2">8</td>
-                        <td className="px-4 py-2">China</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">21</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">0</td>
-                        <td className="px-4 py-2">0</td>
-                      </tr>
-                      <tr className="border-t border-white/30">
-                        <td className="px-4 py-2">9</td>
-                        <td className="px-4 py-2">China</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">21</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">0</td>
-                        <td className="px-4 py-2">0</td>
-                      </tr>
-                      <tr className="border-t border-white/30">
-                        <td className="px-4 py-2">11</td>
-                        <td className="px-4 py-2">China</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">21</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">0</td>
-                        <td className="px-4 py-2">0</td>
-                      </tr>
-                      <tr className="border-t border-white/30">
-                        <td className="px-4 py-2">12</td>
-                        <td className="px-4 py-2">China</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">21</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">0</td>
-                        <td className="px-4 py-2">0</td>
-                      </tr>
-                      <tr className="border-t border-white/30">
-                        <td className="px-4 py-2">13</td>
-                        <td className="px-4 py-2">China</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">21</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">0</td>
-                        <td className="px-4 py-2">0</td>
-                      </tr>
-                      <tr className="border-t border-white/30">
-                        <td className="px-4 py-2">14</td>
-                        <td className="px-4 py-2">China</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">21</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">0</td>
-                        <td className="px-4 py-2">0</td>
-                      </tr>
-                      <tr className="border-t border-white/30">
-                        <td className="px-4 py-2">15</td>
-                        <td className="px-4 py-2">China</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">21</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">0</td>
-                        <td className="px-4 py-2">0</td>
-                      </tr>
-                      <tr className="border-t border-white/30">
-                        <td className="px-4 py-2">16</td>
-                        <td className="px-4 py-2">China</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">21</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">0</td>
-                        <td className="px-4 py-2">0</td>
-                      </tr>
-                      <tr className="border-t border-white/30">
-                        <td className="px-4 py-2">17</td>
-                        <td className="px-4 py-2">China</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">21</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">0</td>
-                        <td className="px-4 py-2">0</td>
-                      </tr>
-                      <tr className="border-t border-white/30">
-                        <td className="px-4 py-2">18</td>
-                        <td className="px-4 py-2">China</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">21</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">0</td>
-                        <td className="px-4 py-2">0</td>
-                      </tr>
-                      <tr className="border-t border-white/30">
-                        <td className="px-4 py-2">19</td>
-                        <td className="px-4 py-2">China</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">21</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">0</td>
-                        <td className="px-4 py-2">0</td>
-                      </tr>
-                      <tr className="border-t border-white/30">
-                        <td className="px-4 py-2">20</td>
-                        <td className="px-4 py-2">China</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">21</td>
-                        <td className="px-4 py-2">7</td>
-                        <td className="px-4 py-2">0</td>
-                        <td className="px-4 py-2">0</td>
-                      </tr>
+                          {times.map((time, index) => (
+                            <tr key={time.id} className="border-t border-white/30">
+                              <td className="px-4 py-2">{time.id}</td>
+                              <td className="px-4 py-2">{time.nome}</td>
+                              <td className="px-4 py-2">7</td>
+                              <td className="px-4 py-2">21</td>
+                              <td className="px-4 py-2">7</td>
+                              <td className="px-4 py-2">0</td>
+                              <td className="px-4 py-2">0</td>
+                            </tr>
+                          ))}
                     </tbody>
                 </table>
             </div>
@@ -223,11 +58,12 @@ export default function Tabela () {
                   <div className="text-3xl font-semibold italic p-10 pt-0">
                     <h1>times</h1>
                   </div>
-                  
+
+
                   <div className="bg-[#3C1A6E] text-white shadow-lg p-6 w-150 h-50 mx-auto ml-10 flex items-end justify-center mb-15">
                     <div className="text-9xl font-bold italic">21</div>
                     <div className="text-xl italic">Pts</div>
-                    <img src={SaoPaulo} alt="TimeCampeao" className="w-60 ml-25" />
+                    <img src={timeGanhador.foto} alt="TimeCampeao" className="w-60 ml-25" />
                   </div>
                   
                   <div className="bg-[#3C1A6E] text-white shadow-lg p-6 w-150 h-50 mx-auto ml-10 flex items-end justify-start mb-15">
@@ -257,4 +93,5 @@ export default function Tabela () {
             </div>
         </div>
     )
+    
 }
