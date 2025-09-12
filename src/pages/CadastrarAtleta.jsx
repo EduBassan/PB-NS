@@ -79,7 +79,7 @@ export default function CadastrarAtleta () {
                 <input type="checkbox" name="condicaoMedica" checked={form.condicaoMedica} onChange={handleChange} className="cursor-pointer" />
                 Possui condição médica?
             </label>
-            <button type="submit" className="bg-[#] text-white p-2 rounded cursor-pointer
+            <button type="submit" className="bg-[#EE4D9A] text-white p-2 rounded cursor-pointer
             hover:bg-[#3C1A6E] hover:transition-all hover:duration-500">Criar conta</button>
         </form>
     )
