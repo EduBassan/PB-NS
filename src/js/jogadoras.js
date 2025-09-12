@@ -1,11 +1,10 @@
 export let jogadoras = [
     {
+        id: 1,
         nome: "Maria",
         sobrenome: "Silva",
         senha: "123456",
-        ano: "2000",
-        mes: "01",
-        dia: "01",
+        data: "2000-01-01",
         posicao: "Atacante",
         foto: null,
         email: "maria@email.com",
