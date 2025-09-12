@@ -35,7 +35,7 @@ export default function NavBar() {
                         <div className="flex flex-row gap-5 items-center">
                             <Link to="/cadastrar" 
                             className="hover:text-xl 
-                            hover:text-[#EE4D9A] hover:font-bold transition-all ease-in-out duration-700">Cadastre-se</Link>
+                            hover:text-[#EE4D9A] hover:font-bold transition-all ease-in-out duration-700">Inscreva-se</Link>
                             <Link to="/login"
                             className="border-2 border-[#3C1A6E] p-2 pr-10 pl-10
                             hover:border-[#EE4D9A] hover:bg-[#EE4D9A] hover:text-white transition-all duration-400">Entrar</Link>
