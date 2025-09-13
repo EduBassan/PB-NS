@@ -4,18 +4,17 @@ import Corinthians from "../assets/logo-corinthians-4096.png";
 import Logo from "../assets/logo-passa-a-bola.png";
 import Adidas from "../assets/adidas.png";
 import { Link } from "react-router-dom";
+import { carregarTimes } from "../js/storage.js";
 import { times } from "../js/times.js";
-
+ 
 export default function Tabela() {
   const timeGanhador = times.find((t) => t.id === 1);
-  const timeSegundo = times.find((t) => t.id === 2);
-  const timeTerceiro = times.find((t) => t.id === 3);
-
+ 
+  const time = carregarTimes()
+ 
   return (
     <div className="px-4 sm:px-6 md:px-20 m-10">
-      {/* Tabela e melhores times */}
       <div className="flex flex-col lg:flex-row justify-center gap-10">
-        {/* Tabela */}
         <div className="flex-1">
           <span className="text-4xl sm:text-5xl font-semibold italic text-center lg:text-left">TABELA</span>
           <div className="bg-[#EE4D9A] text-white shadow-lg p-6 sm:p-10 mt-4 w-full overflow-x-auto">
@@ -32,10 +31,10 @@ export default function Tabela() {
                 </tr>
               </thead>
               <tbody>
-                {times.map((time) => (
-                  <tr key={time.id} className="border-t border-white/30">
-                    <td className="px-2 sm:px-4 py-2">{time.id}</td>
-                    <td className="px-2 sm:px-4 py-2">{time.nome}</td>
+                {time.map((times) => (
+                  <tr key={times.id} className="border-t border-white/30">
+                    <td className="px-2 sm:px-4 py-2">{times.id}</td>
+                    <td className="px-2 sm:px-4 py-2">{times.nome}</td>
                     <td className="px-2 sm:px-4 py-2">7</td>
                     <td className="px-2 sm:px-4 py-2">21</td>
                     <td className="px-2 sm:px-4 py-2">7</td>
@@ -46,7 +45,7 @@ export default function Tabela() {
               </tbody>
             </table>
           </div>
-
+ 
           <div className="bg-[#FFC3E0] h-auto flex flex-wrap items-center justify-around p-4 sm:p-6 mt-4 gap-2">
             <span className="text-sm sm:text-base">Patrocinadores do campeonato:</span>
             <div className="flex items-center gap-2">
@@ -59,8 +58,7 @@ export default function Tabela() {
             </div>
           </div>
         </div>
-
-        {/* Melhores times */}
+ 
         <div className="flex-1 flex flex-col items-center lg:items-start gap-6">
           <div className="text-4xl sm:text-5xl font-semibold italic text-center lg:text-left">
             MELHORES
@@ -68,21 +66,20 @@ export default function Tabela() {
           <div className="text-2xl sm:text-3xl font-semibold italic text-center lg:text-left">
             times
           </div>
-
-          {/* Cards dos times */}
+ 
           <div className="flex flex-col gap-4 w-full">
             <div className="bg-[#3C1A6E] text-white shadow-lg p-4 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 sm:max-w-150">
               <div className="text-5xl sm:text-9xl font-bold italic">{timeGanhador.pontos || 21}</div>
               <div className="text-xl italic">Pts</div>
               <img src={timeGanhador.foto} alt={timeGanhador.nome} className="w-32 sm:w-60" />
             </div>
-
+ 
             <div className="bg-[#3C1A6E] text-white shadow-lg p-4 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 sm:max-w-150">
               <img src={BotaFogo} alt="BotaFogo" className="w-32 sm:w-60" />
               <div className="text-5xl sm:text-9xl font-bold italic">18</div>
               <div className="text-xl italic">Pts</div>
             </div>
-
+ 
             <div className="bg-[#3C1A6E] text-white shadow-lg p-4 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 sm:max-w-150">
               <div className="text-5xl sm:text-9xl font-bold italic">21</div>
               <div className="text-xl italic">Pts</div>
@@ -91,8 +88,7 @@ export default function Tabela() {
           </div>
         </div>
       </div>
-
-      {/* Botões */}
+ 
       <div className="flex flex-col sm:flex-row justify-center items-center gap-4 m-10">
         <Link
           to="/copa/chaveamento"
@@ -110,3 +106,4 @@ export default function Tabela() {
     </div>
   );
 }
+ 

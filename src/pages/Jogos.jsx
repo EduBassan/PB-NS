@@ -14,7 +14,16 @@ export default function Jogos() {
       <EstatisticasVideo />
       <CardJogos />
         
-        <div className="flex flex-row justify-center gap-10 mb-20">
+        <div className="flex lg:hidden flex-col justify-center items-center gap-5 mb-20">
+            <Link to="/copa/chaveamento" className="border-2 border-[#EE4D9A] bg-[#EE4D9A] text-xl p-3 px-10 text-white hover:border-[#3C1A6E] w-50 hover:bg-white hover:text-[#3C1A6E] hover:transition-all hover:duration-300">
+            Chaveamento
+            </Link>
+            <Link to="/copa/tabela" className="flex justify-center border-2 border-[#EE4D9A] bg-[#EE4D9A] text-xl p-3 px-10 text-white hover:border-[#3C1A6E] w-50 hover:bg-white hover:text-[#3C1A6E] hover:transition-all hover:duration-300">
+            Tabela
+            </Link>
+        </div>
+
+        <div className="hidden lg:flex flex-row justify-center gap-10 mb-20">
             <Link to="/copa/chaveamento" className="border-2 border-[#EE4D9A] bg-[#EE4D9A] text-xl p-3 px-10 text-white hover:border-[#3C1A6E] w-50 hover:bg-white hover:text-[#3C1A6E] hover:transition-all hover:duration-300">
             Chaveamento
             </Link>
