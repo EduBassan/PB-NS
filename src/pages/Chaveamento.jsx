@@ -60,16 +60,23 @@ export default function Chaveamento() {
           </div>
         </div>
 
-        <div>
-                 <div className="flex flex-col justify-center items-center gap-5 mb-20">
-                    <Link to="/copa/tabela" className="border-2 border-[#EE4D9A] bg-[#EE4D9A] text-xl p-3 px-10 text-white hover:border-[#3C1A6E] w-50 hover:bg-white hover:text-[#3C1A6E] hover:transition-all hover:duration-300">
-                    Chaveamento
-                    </Link>
-                    <Link to="/copa" className="flex justify-center border-2 border-[#EE4D9A] bg-white text-xl p-3 px-10 text-black hover:border-[#3C1A6E] w-50 hover:bg-[#EE4D9A] hover:text-[#3C1A6E] hover:transition-all hover:duration-300">
-                    Voltar
-                    </Link>
-                </div>
-            </div>
+         <div className="flex lg:hidden flex-col justify-center items-center gap-5 mb-20">
+            <Link to="/copa/tabela" className="border-2 border-[#EE4D9A] bg-[#EE4D9A] text-xl p-3 px-10 text-white hover:border-[#3C1A6E] w-50 hover:bg-white hover:text-[#3C1A6E] hover:transition-all hover:duration-300">
+            Chaveamento
+            </Link>
+            <Link to="/copa" className="flex justify-center border-2 border-[#EE4D9A] bg-white text-xl p-3 px-10 text-black hover:border-[#3C1A6E] w-50 hover:bg-[#EE4D9A] hover:text-[#3C1A6E] hover:transition-all hover:duration-300">
+            Voltar
+            </Link>
+        </div>  
+
+         <div className="hidden lg:flex flex-row justify-center items-center gap-5 mb-20">
+            <Link to="/copa/tabela" className="border-2 border-[#EE4D9A] bg-[#EE4D9A] text-xl p-3 px-10 text-white hover:border-[#3C1A6E] w-50 hover:bg-white hover:text-[#3C1A6E] hover:transition-all hover:duration-300">
+            Chaveamento
+            </Link>
+            <Link to="/copa" className="flex justify-center border-2 border-[#EE4D9A] bg-white text-xl p-3 px-10 text-black hover:border-[#3C1A6E] w-50 hover:bg-[#EE4D9A] hover:text-[#3C1A6E] hover:transition-all hover:duration-300">
+            Voltar
+            </Link>
+        </div>
 
     </div>
   );
