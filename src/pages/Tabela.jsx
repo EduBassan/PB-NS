@@ -8,10 +8,12 @@ import { carregarTimes } from "../js/storage.js";
 import { times } from "../js/times.js";
  
 export default function Tabela() {
-  const timeGanhador = times.find((t) => t.id === 1);
- 
-  const time = carregarTimes()
- 
+const time = carregarTimes()
+const pegar3Melhores = time.slice(0,3)
+const PrimeiroLugar = pegar3Melhores[0]
+const SegundoLugar = pegar3Melhores[1]
+const TerceiroLugar = pegar3Melhores[2]
+
   return (
     <div className="px-4 sm:px-6 md:px-20 m-10">
       <div className="flex flex-col lg:flex-row justify-center gap-10">
@@ -69,21 +71,21 @@ export default function Tabela() {
  
           <div className="flex flex-col gap-4 w-full">
             <div className="bg-[#3C1A6E] text-white shadow-lg p-4 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 sm:max-w-150">
-              <div className="text-5xl sm:text-9xl font-bold italic">{timeGanhador.pontos || 21}</div>
+              <div className="text-5xl sm:text-9xl font-bold italic">{PrimeiroLugar?.pontos || 21}</div>
               <div className="text-xl italic">Pts</div>
-              <img src={timeGanhador.foto} alt={timeGanhador.nome} className="w-32 sm:w-60" />
+              <img src={PrimeiroLugar?.foto || "Time não disponível"} alt={PrimeiroLugar?.nome  || "Time não disponível"} className="w-32 sm:w-60" />
             </div>
  
             <div className="bg-[#3C1A6E] text-white shadow-lg p-4 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 sm:max-w-150">
-              <img src={BotaFogo} alt="BotaFogo" className="w-32 sm:w-60" />
-              <div className="text-5xl sm:text-9xl font-bold italic">18</div>
+              <img src={SegundoLugar?.foto} alt={SegundoLugar?.nome  || "Time não disponível"} className="w-32 sm:w-60" />
+              <div className="text-5xl sm:text-9xl font-bold italic">{SegundoLugar?.pontos || 21}</div>
               <div className="text-xl italic">Pts</div>
             </div>
  
             <div className="bg-[#3C1A6E] text-white shadow-lg p-4 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 sm:max-w-150">
-              <div className="text-5xl sm:text-9xl font-bold italic">21</div>
+              <div className="text-5xl sm:text-9xl font-bold italic">{SegundoLugar?.pontos || 21}</div>
               <div className="text-xl italic">Pts</div>
-              <img src={Corinthians} alt="Corinthians" className="w-32 sm:w-60" />
+              <img src={TerceiroLugar?.foto  || "Time não disponível"} alt={TerceiroLugar?.nome  || "Time não disponível"} className="w-32 sm:w-60" />
             </div>
           </div>
         </div>
