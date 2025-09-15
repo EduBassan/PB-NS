@@ -55,7 +55,7 @@ export default function Hero() {
             </div>
             <div className="flex justify-center items-center flex-wrap h-120">
 
-                <div className="flex item-left flex-col flex pl-10 md:pl-40">
+                <div className="flex item-left flex-col pl-10 md:pl-40">
                     <div className="block mb-2">
                         <img src={Logo} alt="logo-passa-a-bola" className="w-20" />
                     </div>
@@ -66,10 +66,9 @@ export default function Hero() {
 
                     <h3 className="font-bold mb-3">Passa a Bola conecta meninas, times e comunidades para criar campeonatos acessíveis, divertidos e profissionais.</h3>
                     <Link to="/cadastrar" className="font-bold text-center bg-[#EE4D9A] border-2 p-3  w-50
-                           hover:translate-x-7 text-white transition-all duration-400">Inscreva seu time</Link>
+                    hover:translate-x-7 text-white transition-all duration-400">Inscreva seu time</Link>
                     <Link to="/copa" className="text-[12px] font-bold text-center bg-[#3C1A6E] border-2 p-3  w-50
-                            text-white transition-all hover:translate-x-7 duration-400">Ver programação da COPA PB </Link>
-
+                     text-white transition-all hover:translate-x-7 duration-400">Ver programação da COPA PB </Link>
                 </div>
             </div>
             <div className="md:flex justify-center pt-5 h-120 hidden ">
@@ -77,9 +76,6 @@ export default function Hero() {
                     <img src={atletasDisputa} alt="jogadoras disputando a bola" className="w-100 pt-8" />
                 </div>
             </div>
-
-
-
             <div className="flex justify-center items-center flex-wrap h-100 bg-[#3C1A6E] col-span-1 md:col-span-2">
                 <div>
                     <h2 className="inline-block text-white font-bold text-[40px] leading-none mb-3 w-full text-center">Por que o Passa a Bola?</h2>
