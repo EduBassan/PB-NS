@@ -1,6 +1,4 @@
-import SaoPaulo from "../assets/logo-sao-paulo-4096.png";
-import BotaFogo from "../assets/logo-botafogo-4096.png";
-import Corinthians from "../assets/logo-corinthians-4096.png";
+import Corinthians from "../assets/corinthiansLogo.png"
 import Logo from "../assets/logo-passa-a-bola.png";
 import Adidas from "../assets/adidas.png";
 import { Link } from "react-router-dom";
