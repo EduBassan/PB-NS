@@ -50,7 +50,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 md:grid-cols-2 h-520">
             <div className="md:hidden justify-center h-90 flex ">
                 <div >
-                    <img src={atletasDisputa} alt="jogadoras disputando a bola" className="w-100" />
+                    <img src={atletasDisputa} alt="jogadoras disputando a bola" className="w-full" />
                 </div>
             </div>
             <div className="flex justify-center items-center flex-wrap h-120">
@@ -73,7 +73,7 @@ export default function Hero() {
             </div>
             <div className="md:flex justify-center pt-5 h-120 hidden ">
                 <div >
-                    <img src={atletasDisputa} alt="jogadoras disputando a bola" className="w-100 pt-8" />
+                    <img src={atletasDisputa} alt="jogadoras disputando a bola" className="w-130" />
                 </div>
             </div>
             <div className="flex justify-center items-center flex-wrap h-100 bg-[#3C1A6E] col-span-1 md:col-span-2">
