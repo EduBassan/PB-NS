@@ -15,7 +15,7 @@ export let jogadoras = [
         tipo: "jogadora",
     },
     {
-       id: 1,
+       id: 2,
         nome: "Luana",
         sobrenome: "Maluf",
         senha: "palmeiras",
