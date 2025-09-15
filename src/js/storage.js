@@ -1,6 +1,13 @@
 import { jogadoras } from "./jogadoras";
 import { times } from "./times";
 
+if (!localStorage.getItem("jogadoras")) {
+  localStorage.setItem("jogadoras", JSON.stringify(jogadoras))
+}
+
+if (!localStorage.getItem("times")) {
+  localStorage.setItem("times", JSON.stringify(times))
+}
 
 export function carregarJogadoras() {
   const stored = localStorage.getItem("jogadoras");

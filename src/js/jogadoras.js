@@ -11,6 +11,22 @@ export let jogadoras = [
         telefone: "11999999999",
         condicaoMedica: false,
         possuiTime: false,
+        nomeTime: "",
         tipo: "jogadora",
-    }
+    },
+    {
+       id: 1,
+        nome: "Luana",
+        sobrenome: "Maluf",
+        senha: "palmeiras",
+        data: "1994-08-09",
+        posicao: "Atacante",
+        foto: "https://vejasp.abril.com.br/wp-content/uploads/2022/07/Lupi-Bar-037-1.jpg-1.jpg?quality=70&strip=info&w=918&w=636",
+        email: "luana@email.com",
+        telefone: "11999999999",
+        condicaoMedica: false,
+        possuiTime: true,
+        nomeTime: "Palmeiras",
+        tipo: "jogadora", 
+    },
 ]
