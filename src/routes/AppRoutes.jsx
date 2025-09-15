@@ -61,25 +61,6 @@ export const router = createBrowserRouter([
                 ],
             },
             {
-                path: 'login',
-                element: <LoginLayout/>,
-                errorElement: <PageNotFound/>,
-                children: [
-                    {
-                        index: true,
-                        element: <LoginEscolha/>,
-                    },
-                    {
-                        path: 'atleta',
-                        element: <LoginAtleta/>,
-                    },
-                    {
-                        path: 'time',
-                        element: <LoginTime/>,
-                    },
-                ],
-            },
-            {
                 path: 'dashboard',
                 element: <DashboardLayout/>,
                 errorElement: <PageNotFound/>,
@@ -119,25 +100,6 @@ export const router = createBrowserRouter([
                 ],
             },
             {
-                path: 'cadastrar',
-                element: <CadastrarLayout/>,
-                errorElement: <PageNotFound/>,
-                children: [
-                    {
-                        index: true,
-                        element: <CadastrarEscolha/>,
-                    },
-                    {
-                        path: 'atleta',
-                        element: <CadastrarAtleta/>,
-                    },
-                    {
-                        path: 'time',
-                        element: <CadastrarTime/>
-                    }
-                ]
-            },
-            {
                 path: 'apoiadores',
                 element: <ApoiadoresLayout/>,
                 errorElement: <PageNotFound/>,
@@ -149,5 +111,43 @@ export const router = createBrowserRouter([
                 ],
             },
         ],
+    },
+    {
+        path: 'login',
+        element: <LoginLayout/>,
+        errorElement: <PageNotFound/>,
+        children: [
+            {
+                index: true,
+                element: <LoginEscolha/>,
+            },
+            {
+                path: 'atleta',
+                element: <LoginAtleta/>,
+            },
+            {
+                path: 'time',
+                element: <LoginTime/>,
+            },
+        ],
+    },
+    {
+        path: 'cadastrar',
+        element: <CadastrarLayout/>,
+        errorElement: <PageNotFound/>,
+        children: [
+            {
+                index: true,
+                element: <CadastrarEscolha/>,
+            },
+            {
+                path: 'atleta',
+                element: <CadastrarAtleta/>,
+            },
+            {
+                path: 'time',
+                element: <CadastrarTime/>
+            }
+        ]
     },
 ])
