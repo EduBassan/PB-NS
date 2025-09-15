@@ -14,6 +14,8 @@ import destaque3 from "../assets/destaque3.png";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import 'swiper/css/effect-coverflow';
+import {EffectCoverflow } from 'swiper/modules';
 
 const atletas = [
     {
@@ -125,51 +127,57 @@ export default function Hero() {
                 <div className="w-full flex justify-center overflow-hidden">
                     <div className="w-250 overflow-hidden">
                         <Swiper
-                            modules={[Navigation, Pagination]}
+                            modules={[Navigation, Pagination, EffectCoverflow]}
                             effect="coverflow"
                             grabCursor={true}
-                            spaceBetween={1}
+                            centeredSlides={true}
+                            spaceBetween={10}
+                            slidesPerView={1}
                             navigation
+                            coverflowEffect={{
+                                rotate: 50,
+                                stretch: 0,
+                                depth: 100,
+                                modifier: 1,
+                                slideShadows: true,
+                            }}
                             breakpoints={{
                                 0: {
                                     slidesPerView: 1,
-                                    centeredSlides: false,
-                                    coverflowEffect: { rotate: 0, stretch: 0, depth: 50, modifier: 1, slideShadows: false },
                                 },
                                 640: {
                                     slidesPerView: 1,
-                                    centeredSlides: false,
-                                    coverflowEffect: { rotate: 0, stretch: 0, depth: 60, modifier: 1, slideShadows: false },
                                 },
-                                768: { slidesPerView: 2, centeredSlides: false, coverflowEffect: { depth: 0, modifier: 0, slideShadows: false } },
-                                1024: { slidesPerView: 3, centeredSlides: false, coverflowEffect: { depth: 0, modifier: 0, slideShadows: false } },
+                                768: {
+                                    slidesPerView: 2,
+                                },
+                                1024: {
+                                    slidesPerView: 3,
+                                },
                             }}
                         >
                             {atletas.map((card, index) => (
                                 <SwiperSlide
                                     key={index}
-                                    className="flex flex-row flex-nowrap items-center justify-center"
+                                    className="flex items-center justify-center"
                                 >
-                                    <div className="bg-gradient-to-br from-[#713bc2] via-[#3c1970] to-[#5927a3] p-4 w-80">
+                                    <div className="bg-gradient-to-br from-[#713bc2] via-[#3c1970] to-[#5927a3] p-2 w-full max-w-[280px]">
                                         <p className="w-full text-white font-bold text-[30px] text-center leading-none">{card.nome}</p>
                                         <div className="flex justify-center">
-                                            <div className="flex flex-col justify-start bg-[#EE4D9A]- overflow-hidden h-70 w-70">
-
-                                                <h2 className=" relative z-15 w-full text-center text-white font-bold text-xl">{card.pos}</h2>
+                                            <div className="flex flex-col justify-start bg-[#EE4D9A] overflow-hidden h-70 w-70">
+                                                <h2 className="relative z-10 w-full text-center text-white font-bold text-xl">{card.pos}</h2>
                                                 <img
                                                     src={card.img}
                                                     alt={card.nome}
                                                     className="w-full max-w-[250px] md:max-w-[280px] lg:max-w-[300px]"
                                                 />
-
                                             </div>
                                         </div>
-                                        <div className="flex flex-row flex-nowrap items-center justify-center gap-20 ">
-                                            <div className="flex flex-col justify-left h-full">
+                                        <div className="flex flex-row flex-nowrap items-center justify-center gap-3">
+                                            <div className="flex flex-col justify-start h-full">
                                                 <h2 className="w-full text-white font-bold text-xl text-center">{card.jogos}</h2>
                                                 <h2 className="text-white font-bold text-xl text-center">{card.time}</h2>
-                                            </div >
-
+                                            </div>
                                             <div className="h-full">
                                                 <h2 className="text-white font-bold text-xl text-center">{card.gols}</h2>
                                                 <h2 className="text-white font-bold text-xl text-center">{card.assist}</h2>
@@ -200,10 +208,8 @@ export default function Hero() {
                             .swiper-button-next,
                             .swiper-button-prev {
                                 color: #EE4D9A;
-                                background-color: rgba(255,255,255,0.2);
                                 width: 40px;
                                 height: 40px;
-                                border-radius: 9999px;
                             }
 
                             .swiper-button-next:hover,
