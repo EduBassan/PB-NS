@@ -13,7 +13,9 @@ export default function DashboardTimes () {
         }
         setUsuario(user);
     }, [navigate])
-    if (!usuario) return <p>Carregando...</p>;
+    if (!usuario) {
+        return <p>Carregando...</p>;
+    } 
 
     const excluirConta = () => {
         const confirmacao = window.confirm("Tem certeza que deseja excluir sua conta? Esta ação não poderá ser desfeita.");
@@ -46,7 +48,7 @@ export default function DashboardTimes () {
                     <div className="text-white flex flex-col justify-end pb-2 ">
                         <div>
                             <h1 className="text-[50px] uppercase font-medium">{usuario.nome}</h1>
-                            <span className="text-[20px] italic">{usuario.cidade}</span>
+                            <span className="text-[20px] italic">Cidade: <span className="uppercase">{usuario.cidade}</span></span>
                         </div>
                         <div>
                             <a href={usuario.instagram} className="font-bold" target="_blank" rel="noopener noreferrer">Instagram | </a>
