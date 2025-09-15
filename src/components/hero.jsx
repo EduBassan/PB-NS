@@ -1,11 +1,14 @@
 import atletasDisputa from "../assets/atletas_disputa.png"
+import trofeu from "../assets/trofeuPassaBola.PNG"
+import staff from "../assets/staffPassaBola.PNG"
+import equipe from "../assets/equipePassaBola.png"
 import Logo from "../assets/logo-passa-a-bola.png";
 import { Link } from "react-router-dom"
 
 
 export default function Hero() {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 h-300">
+        <div className="grid grid-cols-1 md:grid-cols-2 h-420">
             <div className="flex justify-center items-center flex-wrap h-120">
 
                 <div className="flex item-left flex-col flex pl-10 md:pl-40">
@@ -36,14 +39,44 @@ export default function Hero() {
 
 
             <div className="flex justify-center items-center flex-wrap h-100 bg-[#3C1A6E] col-span-2">
-                <h2 className="inline-block text-white font-bold text-[50px] leading-none mb-3 -translate-x-[3.5px] w-full text-center">Por que o Passa a Bola?</h2>
-                <div className="grid grid-cols-2 bg-white p-10 justify-center items-center">
-                    <div className="h-full">
-                        <img src={atletasDisputa} alt="jogadoras disputando a bola" className="w-40" />
+                <div>
+                <h2 className="inline-block text-white font-bold text-[40px] leading-none mb-3 w-full text-center">Por que o Passa a Bola?</h2>
+                <h2 className="inline-block text-white font-bold text-[18px] leading-none w-full text-center">O campeonato amador que apresenta uma solução para cada dificuldade do Futebol Feminino</h2>
+                </div>
+                <div className="grid grid-cols-10 bg-white p-5 justify-center items-center">
+                    <div className="h-full col-span-3">
+                        <img src={equipe} alt="equipe da primeira edição da Copa Passa Bola" className="w-70" />
                     </div>
-                    <div>
-                        <p className="">Falta de oportunidade...</p>
-                        <h2 className="">→ Plataforma de inscrição simples.</h2>
+                    <div className="col-span-7 flex justify-center flex-col items-center">
+                        <p className="">Falta de oportunidades...</p>
+                        <h2 className="block text-[#EE4D9A] font-bold text-[40px] leading-none">→ Plataforma de inscrição simples.</h2>
+                    </div>
+                </div>
+            </div>
+
+            {/* as duas próximas seções precisam ser ajustadas após definirmos com vai ser a exibição em sm */}
+
+             <div className="flex justify-center items-center flex-wrap h-60 bg-white col-span-2">
+                <div className="grid grid-cols-10 bg-white p-10 justify-center items-center">
+                    <div className="h-full w-41 col-span-2">
+                        <img src={staff} alt="jogadoras disputando a bola" className="w-50" />
+                    </div>
+                    <div className="col-span-8 flex justify-center flex-col items-center">
+                        <p className="">Pouca visibilidade...</p>
+                        <h2 className="block text-[#EE4D9A] font-bold text-[40px] leading-none">→ Cobertura, vitrine de atletas.</h2>
+                    </div>
+                </div>
+            </div>
+
+
+             <div className="flex justify-center items-center flex-wrap h-100 bg-[#3C1A6E] col-span-2">
+                <div className="grid grid-cols-10 bg-white p-10 justify-center items-center">
+                    <div className="h-full w-41 col-span-2">
+                        <img src={trofeu} alt="jogadoras disputando a bola" className="w-50" />
+                    </div>
+                    <div className="col-span-8 flex justify-center flex-col items-center">
+                        <p className="">Chaveamento confuso...</p>
+                        <h2 className="block text-[#EE4D9A] font-bold text-[40px] leading-none">→ Chave visual + notificações.</h2>
                     </div>
                 </div>
             </div>
