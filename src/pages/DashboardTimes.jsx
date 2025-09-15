@@ -15,6 +15,20 @@ export default function DashboardTimes () {
     }, [navigate])
     if (!usuario) return <p>Carregando...</p>;
 
+    const excluirConta = () => {
+        const confirmacao = window.confirm("Tem certeza que deseja excluir sua conta? Esta ação não poderá ser desfeita.");
+        if (!confirmacao) return;
+
+        let jogadoras = JSON.parse(localStorage.getItem("jogadoras")) || [];
+        jogadoras = jogadoras.filter((j) => j.id !== usuario.id);
+        localStorage.setItem("jogadoras", JSON.stringify(jogadoras));
+
+        localStorage.removeItem("usuarioLogado");
+
+        alert("Conta excluída com sucesso!");
+        navigate("/");
+    };
+
     return (
         <div className="flex flex-col items-center">
             <div className="flex bg-[#3C1A6E] w-240 pt-25 pr-20 pl-20 pb-7 mt-10">
@@ -44,6 +58,11 @@ export default function DashboardTimes () {
                 </div>
             </div>
                 <Outlet/>
+            <div>
+                <button onClick={excluirConta}
+                className="border-2 border-red-600 text-red-600 font-medium p-2 pr-8 pl-8 mt-15 mb-15 cursor-pointer
+                hover:bg-red-600 hover:text-white hover:transition-all hover:duration-500">Excluir Conta</button>
+            </div>
             <div className="flex w-full bg-[#3C1A6E] h-60 items-center justify-center">
                 <h1 className="text-white text-[80px] font-medium">PASSA A BOLA</h1>
             </div>
