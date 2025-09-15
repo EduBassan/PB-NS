@@ -34,6 +34,13 @@ export default function CadastrarAtleta () {
 
     const jogadoras = carregarJogadoras() || [];
 
+    const emailJaExiste = jogadoras.some((j) => j.email === form.email);
+    
+    if (emailJaExiste) {
+        alert("Esse email já está sendo utilizado");
+        return;
+    }
+
     const novaJogadora = {
         id: Date.now(),
         nome: form.nome,

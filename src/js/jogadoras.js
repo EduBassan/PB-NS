@@ -11,6 +11,6 @@ export let jogadoras = [
         telefone: "11999999999",
         condicaoMedica: false,
         possuiTime: false,
-        tipo: "jogadora"
+        tipo: "jogadora",
     }
 ]
