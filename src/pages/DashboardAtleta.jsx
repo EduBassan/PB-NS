@@ -47,7 +47,7 @@ export default function DashboardAtleta () {
                         <div>
                             <h1 className="text-[50px] uppercase font-medium">{usuario.nome} {usuario.sobrenome}</h1>
                             {usuario.possuiTime? (
-                                <span className="text-[20px] italic">Time: {usuario.nomeTime}</span>
+                                <span className="text-[20px] italic">Time: {usuario.timeNome}</span>
                             ) : (
                                 <span className="text-[20px] italic">Sem time</span>
                             )}

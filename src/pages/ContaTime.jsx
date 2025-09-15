@@ -51,7 +51,7 @@ export default function ContaTime () {
             <div className="flex border-2 border-b-[#3C1A6E] border-t-white border-r-white border-l-white w-240 gap-5">
                 <Link to="/dashboard/clube" className="font-bold border-3 border-b-[#EE4D9A] border-t-white border-r-white border-l-white p-2">Conta</Link>
                 <Link to="/dashboard/clube/jogadoras" className=" border-3 border-b-white border-t-white border-r-white border-l-white p-2
-                hover:border-b-[#EE4D9A] hover:transition-all hover:duration-400">Times</Link>
+                hover:border-b-[#EE4D9A] hover:transition-all hover:duration-400">Jogadoras</Link>
                 <Link to="/dashboard/clube/candidatas" className=" border-3 border-b-white border-t-white border-r-white border-l-white p-2
                 hover:border-b-[#EE4D9A] hover:transition-all hover:duration-400">Pedidos</Link>
             </div>

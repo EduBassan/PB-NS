@@ -131,7 +131,7 @@ export default function NavBar() {
                         <Link to="/" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Passa a bola</Link>
                         <Link to="/copa" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Copa PB</Link>
                         <Link to="/apoiadores" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Apoiadores</Link>
-                        <Link to="/cadastrar" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Cadastre-se</Link>
+                        <Link to="/cadastrar" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Inscreva-se</Link>
                     </div>
                 )}
                 {usuarioLogado?.tipo === "jogadora" && (
