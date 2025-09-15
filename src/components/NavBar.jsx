@@ -43,6 +43,7 @@ export default function NavBar() {
                     )}
                     {usuarioLogado?.tipo === "jogadora" && (
                         <div className="flex flex-row items-center gap-2">
+                            <img src={usuarioLogado.foto} alt="" className="w-7 h-7 rounded-full object-cover"/>
                             <span>Olá, <strong>{usuarioLogado.nome}</strong></span>
                             <button onClick={sair}
                             className="border-2 border-red-500 p-1 pr-7 pl-7
@@ -54,6 +55,7 @@ export default function NavBar() {
                     )}
                     {usuarioLogado?.tipo === "time" && (
                         <div className="flex flex-row items-center gap-2">
+                            <img src={usuarioLogado.foto} alt="foto-do-time" className="w-7 h-7 rounded-full object-cover"/>
                             <span>Opaa, <strong>{usuarioLogado.nome}</strong></span>
                             <button onClick={sair}
                             className="border-2 border-red-500 p-1 pr-7 pl-7

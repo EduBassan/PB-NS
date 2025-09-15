@@ -4,6 +4,7 @@ import { carregarTimes } from "../js/storage";
 
 export default function CadastrarTime () {
     const navigate = useNavigate();
+    const timess = carregarTimes() || [];
 
     const [form, setForm] = useState({
         nome: "",
@@ -28,6 +29,12 @@ export default function CadastrarTime () {
         if (form.senha !== form.confirmSenha) {
         alert("As senhas não conferem!");
         return;
+        }
+
+        const emailJaExiste = timess.some((time) => time.email === form.email);
+        if (emailJaExiste) {
+            alert("Esse email já está sendo utilizado");
+            return;
         }
 
         const times = carregarTimes() || [];

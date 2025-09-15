@@ -21,6 +21,11 @@ import CadastrarTime from "../pages/CadastrarTime";
 import DashboardAtleta from "../pages/DashboardAtleta";
 import DashboardTimes from "../pages/DashboardTimes";
 import DashboardLayout from "../layouts/DashboardLayout";
+import ContaAtleta from "../pages/ContaAtleta";
+import TimesAtleta from "../pages/TimesAtleta";
+import ContaTime from "../pages/ContaTime";
+import JogadorasTime from "../pages/JogadorasTime";
+import CandidatasTime from "../pages/CandidatasTime";
 
 export const router = createBrowserRouter([
     {
@@ -82,10 +87,34 @@ export const router = createBrowserRouter([
                     {
                         path: 'jogadora',
                         element: <DashboardAtleta/>,
+                        children: [
+                            {
+                                index: true,
+                                element: <ContaAtleta/>,
+                            },
+                            {
+                                path: 'times',
+                                element: <TimesAtleta/>,
+                            },
+                        ],
                     },
                     {
                         path: 'clube',
                         element: <DashboardTimes/>,
+                        children: [
+                            {
+                                index: true,
+                                element: <ContaTime/>,
+                            },
+                            {
+                                path: 'jogadoras',
+                                element: <JogadorasTime/>,
+                            },
+                            {
+                                path: 'candidatas',
+                                element: <CandidatasTime/>,
+                            },
+                        ],
                     },
                 ],
             },
