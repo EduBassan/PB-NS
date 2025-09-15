@@ -38,9 +38,9 @@ export default function Jogos() {
                       text-[#EE4D9A] transition-all hover:translate-x-2 duration-500 transform">
             Lances em destaque
           </a>
-          <Link to="/chaveamento" className="font-bold text-center bg-[#EE4D9A] border-2 p-3  w-50
+          <Link to="/copa/chaveamento" className="font-bold text-center bg-[#EE4D9A] border-2 p-3  w-50
                     hover:translate-x-7 text-white transition-all duration-400">Chavemento</Link>
-          <Link to="/tabela" className="text-[15px] font-bold text-center bg-[#3C1A6E] border-2 p-3  w-50
+          <Link to="/copa/tabela" className="text-[15px] font-bold text-center bg-[#3C1A6E] border-2 p-3  w-50
                      text-white transition-all hover:translate-x-7 duration-400">Tabela</Link>
         </div>
       </div>
