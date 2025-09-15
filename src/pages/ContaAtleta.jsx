@@ -195,7 +195,7 @@ export default function ContaAtleta () {
                         id="tiktok"
                     />
                 </div>
-                <div className="flex justify-end border-2 border-b-[#3C1A6E] border-t-white border-r-white border-l-white w-240 pb-5 mb-20 ">
+                <div className="flex justify-end border-2 border-b-[#3C1A6E] border-t-white border-r-white border-l-white w-240 pb-5 ">
                     <button onClick={salvarAlteracoes}
                     className="bg-[#3C1A6E] text-white p-2 cursor-pointer pr-18 pl-18
                     hover:bg-[#EE4D9A] hover:transition-all hover:duration-500 ">Salvar</button>
