@@ -1,12 +1,25 @@
-# React + Vite
+# Plataforma Digital Passa a Bola
+## REACT + VITE + TAILWIND
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Problema
+- O Passa a Bola enfrentou diversos desafios na organização da última edição da Copa, principalmente relacionados ao processo de inscrição e ao gerenciamento do evento. Devido ao grande número de jogadoras, o processo de inscrição foi lento e totalmente manual, sobrecarregando a equipe responsável, que utilizava apenas o Google Forms para esse fim. Além disso, o chaveamento das partidas foi confuso e pouco intuitivo, dificultando que as participantes e o público soubessem os horários e confrontos com clareza.
+Outro ponto crítico foi a dificuldade em exibir informações atualizadas sobre a Copa e em estruturar os dados coletados, agravada pela limitação de recursos humanos da equipe.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Proposta
+- Disponibilizar uma plataforma digital para facilitar inscrições, gestão de jogos e comunicação do Passa a Bola, reduzindo o trabalho manual e melhorando a experiência das jogadoras, fãs e patrocinadores.
+  
+---
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Plataforma 
+A plataforma contém múltiplas páginas que podem auxiliar tanto a gestão da equipe Passa a Bola, quanto as jogadoras. As paginas existentes são:
+- Landing Page, para informações gerais sobre a equipe, futebol feminino e a Copa Passa a Bola,
+- Página de login e cadastro de times e jogadoras,
+- Página para Apoiadores,
+- Partes dedicadas para a COPA:
+    - Pagina de informações gerais sobre a COPA,
+    - Tabela de times,
+    - Chavemante das quartas de finais aleatório,
+- Dashboard de Jogadoras,
+- Dashboard de Times.
