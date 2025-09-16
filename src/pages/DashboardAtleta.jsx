@@ -45,7 +45,7 @@ export default function DashboardAtleta () {
 
                     <div className="text-white flex flex-col justify-end pb-2 ">
                         <div>
-                            <h1 className="text-[50px] uppercase font-medium overflow-hidden text-ellipsis whitespace-nowrap max-w-188">{usuario.nome} {usuario.sobrenome}</h1>
+                            <h1 className="text-[30px] uppercase font-medium overflow-hidden text-ellipsis whitespace-nowrap max-w-130">{usuario.nome} {usuario.sobrenome}</h1>
                             {usuario.possuiTime? (
                                 <span className="text-[20px] italic">Time: {usuario.timeNome}</span>
                             ) : (

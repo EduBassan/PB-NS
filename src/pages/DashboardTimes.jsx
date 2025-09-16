@@ -47,7 +47,7 @@ export default function DashboardTimes () {
 
                     <div className="text-white flex flex-col justify-end pb-2 ">
                         <div>
-                            <h1 className="text-[50px] uppercase font-medium">{usuario.nome}</h1>
+                            <h1 className="text-[30px] uppercase font-medium overflow-hidden text-ellipsis whitespace-nowrap max-w-130">{usuario.nome}</h1>
                             <span className="text-[20px] italic">Cidade: <span className="uppercase">{usuario.cidade}</span></span>
                         </div>
                         <div>
@@ -88,7 +88,7 @@ export default function DashboardTimes () {
                     </div>
                     <div className="text-white flex flex-col text-center pb-2 ">
                         <div>
-                            <h1 className="text-[50px] uppercase font-medium overflow-hidden text-ellipsis whitespace-nowrap max-w-188">{usuario.nome}</h1>
+                            <h1 className="text-[50px] uppercase font-medium overflow-hidden text-ellipsis whitespace-nowrap max-w-133">{usuario.nome}</h1>
                             <span className="text-[20px] italic">Cidade: <span className="uppercase">{usuario.cidade}</span></span>
                         </div>
                         <div>
