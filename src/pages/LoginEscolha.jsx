@@ -5,7 +5,7 @@ export default function LoginEscolha (){
     return(
         <div className="flex flex-col justify-center items-center h-screen">
             <div className="p-5">
-                <h1 className="text-[50px] font-bold">Então, me diz...👀</h1>
+                <h1 className="text-[50px] font-bold uppercase text-center">Então, me diz...👀</h1>
             </div>
             <div className="flex flex-col gap-10">
                 <button><Link to="/login/atleta" className="border-2 border-[#EE4D9A] bg-[#EE4D9A] text-xl p-3 pl-30 pr-30 text-white

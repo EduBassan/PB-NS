@@ -251,13 +251,13 @@ export default function TimesAtleta () {
 
 
 
-            <div className="md:hidden flex border-2 border-b-[#3C1A6E] border-t-white border-r-white border-l-white w-80 gap-5">
+            <div className="md:hidden flex border-2 border-b-[#3C1A6E] border-t-white border-r-white border-l-white w-85 gap-5">
                 <Link to="/dashboard/jogadora" className="border-3 border-b-white border-t-white border-r-white border-l-white p-2
                 hover:border-b-[#EE4D9A] hover:transition-all hover:duration-400">Conta</Link>
                 <Link to="/dashboard/jogadora/times" className="font-bold border-3 border-b-[#EE4D9A] border-t-white border-r-white border-l-white p-2">Times</Link>
             </div>
-            <div className="md:hidden flex flex-col w-80">
-                <div className="text-center">
+            <div className="md:hidden flex flex-col w-85">
+                <div>
                     {usuario?.possuiTime ? (
                         <div className="flex flex-col border-2 border-b-[#3C1A6E] border-t-white border-r-white border-l-white pt-2 pb-2 pl-3 ">
                             <h1 className="font-bold text-[50px]">TIME</h1>
@@ -285,14 +285,14 @@ export default function TimesAtleta () {
                 <div>
                     {timesFiltrados.length > 0 ? (
                     timesFiltrados.map((time) => (
-                        <div key={time.id} className=" pl-7 w-80 pb-5 mt-5 flex flex-col gap-7 justify-between items-center border-2 border-b-[#3C1A6E] border-t-white border-r-white border-l-white mb-5 ">
-                            <div className="flex items-center gap-4">
+                        <div key={time.id} className=" w-85 pb-5 mt-5 flex flex-col gap-7 justify-between items-center border-2 border-b-[#3C1A6E] border-t-white border-r-white border-l-white mb-5 ">
+                            <div className="flex flex-col justify-center items-center text-center gap-4">
                                 {time.foto && (
                                     <img
                                         src={time.foto} alt="Logo do time"
                                         className="w-20 h-20 object-cover rounded-full"/>
                                 )}
-                                <div className="flex flex-col w-80">
+                                <div className="flex flex-col w-80 text-center justify-center items-center">
                                     <h2 className="text-[23px] font-bold uppercase w-auto h-auto overflow-hidden text-ellipsis whitespace-nowrap max-w-55">{time.nome}</h2>
                                     <p className="text-[14px]">Jogadoras: {time.jogadoras?.length || 0}</p>
                                 </div>
