@@ -35,7 +35,7 @@ export default function Jogos() {
               document.getElementById("lance").scrollIntoView({ behavior: "smooth", block: "start" });
             }}
             className="text-[15px] font-bold text-center bg-white border-2 p-3 w-50
-                      text-[#EE4D9A] transition-all hover:translate-x-2 duration-500 transform">
+                      text-[#EE4D9A] transition-all hover:translate-x-7 duration-500 transform">
             Lances em destaque
           </a>
           <Link to="/copa/chaveamento" className="font-bold text-center bg-[#EE4D9A] border-2 p-3  w-50
