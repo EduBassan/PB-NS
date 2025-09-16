@@ -19,7 +19,7 @@ export default function LoginAtleta () {
         if (user) {
             localStorage.setItem("usuarioLogado", JSON.stringify({ ...user, tipo: "jogadora" }));
             alert("Login realizado!");
-            navigate("/dashboard/jogadora");
+            navigate("/PB-NS/dashboard/jogadora");
         } else {
             alert("Email ou senha incorretos!");
         }

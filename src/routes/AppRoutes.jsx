@@ -56,10 +56,10 @@ export const router = createBrowserRouter([
                         path: 'tabela',
                         element: <Tabela/>,
                     },
-                    {
-                        path: 'chaveamento',
-                        element: <Chaveamento/>
-                    },
+                    // {
+                    //     path: 'chaveamento',
+                    //     element: <Chaveamento/>
+                    // },
                 ],
             },
             {

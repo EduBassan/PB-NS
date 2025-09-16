@@ -19,7 +19,7 @@ export default function LoginTime () {
         if (user) {
             localStorage.setItem("usuarioLogado", JSON.stringify({ ...user, tipo: "time" }));
             alert("Login realizado!");
-            navigate("/dashboard/clube");
+            navigate("/PB-NS/dashboard/clube");
         } else {
             alert("Email ou senha incorretos!");
         }
