@@ -121,9 +121,9 @@ export default function DashboardAtleta () {
 
 
 
-            <div className="md:hidden flex w-160 pt-5 pr-20 pl-20 pb-7 mt-2 justify-center items-center">
+            <div className="md:hidden flex w-80 pt-5 mt-2 justify-center items-center">
                 <div className="flex flex-row gap-5 ">
-                    <div className="flex flex-col items-center p-10 border-2 border-t-[#3C1A6E] border-b-[##3C1A6E] border-l-white border-r-white">
+                    <div className="flex flex-col items-center p-10 border-2 border-t-white border-b-[##3C1A6E] border-l-white border-r-white">
                         <div>
                             {usuario.foto ? (
                                 <img src={usuario.foto} alt="foto-da-atleta" className="w-40 h-40 rounded-full object-cover" />
