@@ -36,7 +36,7 @@ export let times = [
         email: "corinthians@email.com",
         telefone: "11999999999",
         numero: 18,
-        foto: "https://cdn.freebiesupply.com/logos/large/2x/corinthians-paulista-logo-png-transparent.png",
+        foto: "https://logodetimes.com/times/corinthians/logo-corinthians-4096.png",
         jogadoras: [],
         candidatas: [],
         tipo: "time"  
