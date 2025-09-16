@@ -17,7 +17,7 @@ export default function Jogos() {
 
       {/*Menu*/}
       </div>
-      <div className="flex justify-start items-center h-120 col-span-1 lg:col-span-1">
+      <div className="flex justify-center lg:justify-start items-center h-120 col-span-1 lg:col-span-1">
         {/* Logo */}
         <div className="flex justify-center item-center flex-col">
           <div className="flex lg:justify-start justify-center mb-2">
@@ -37,12 +37,10 @@ export default function Jogos() {
               e.preventDefault();
               document.getElementById("lance").scrollIntoView({ behavior: "smooth", block: "start" });
             }}
-            className="text-[15px] font-bold text-center bg-white border-2 p-3 w-50
-                      text-[#EE4D9A] transition-all hover:translate-x-7 duration-500 transform">
+            className="text-[15px] font-bold text-center p-3 w-50
+                      text-white bg-[#EE4D9A] transition-all hover:translate-x-7 duration-500 transform">
             Lances em destaque
           </a>
-          <Link to="/copa/chaveamento" className="font-bold text-center bg-[#EE4D9A] border-2 p-3  w-50
-                    hover:translate-x-7 text-white transition-all duration-400">Chavemento</Link>
           <HashLink smooth to="/copa/tabela#tabela" className="text-[15px] font-bold text-center bg-[#3C1A6E] border-2 p-3  w-50
                      text-white transition-all hover:translate-x-7 duration-400">Tabela</HashLink></div>
         </div>
