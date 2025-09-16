@@ -13,7 +13,7 @@ import 'swiper/css/effect-coverflow';
 import { EffectCoverflow } from 'swiper/modules';
 
 const atletas = [
-     {
+    {
         img: destaque3,
         nome: "Marcela Dantas",
         jogos: "15 Jogos ",
@@ -44,84 +44,92 @@ const atletas = [
 
 
 export default function AtletasDestaque() {
-  return (
-  
+    return (
 
 
- <div className="flex justify-center items-center flex-wrap h-150 bg-white col-span-1 lg:col-span-2 mt-20">
-                <p className="block text-[#EE4D9A] font-bold text-[50px] leading-none w-full text-center mb-5">Atletas em Destaque</p>
-                <div className="w-full flex justify-center overflow-hidden mr-0">
-                    <div className="w-250 overflow-hidden">
-                        <Swiper
-                            modules={[Navigation, Pagination, EffectCoverflow]}
-                            effect="coverflow"
-                            grabCursor={true}
-                            centeredSlides={true}
-                            spaceBetween={10}
-                            slidesPerView={1}
-                            navigation
-                            coverflowEffect={{
-                                rotate: 50,
-                                stretch: 0,
-                                depth: 100,
-                                modifier: 1,
-                                slideShadows: false,
-                            }}
-                            breakpoints={{
-                                0: {
-                                    slidesPerView: 1,
-                                },
-                                640: {
-                                    slidesPerView: 1,
-                                },
-                                768: {
-                                    slidesPerView: 2,
-                                },
-                                1024: {
-                                    slidesPerView: 3,
-                                },
-                            }}
-                        >
 
-                            {atletas.map((card, index) => (
-                                <SwiperSlide
-                                    key={index}
-                                    className="flex items-center justify-center shadow-[0_0_30px_-3px_rgba(238,77,154,0.3)]"
-                                >
-                                    <div className="mt-5">
-                                        <p className="w-full justify-center text-[#3C1A6E] font-bold text-[30px] text-center leading-none">{card.nome}</p>
-                                        <div className="flex justify-center">
-                                            <div className="h-90 overflow-hidden">
-                                                <h2 className="relative z-10 w-full text-center text-[#3C1A6E] fonzt-bold text-xl border border-white font-bold">{card.pos}</h2>
-                                                <img
-                                                    src={card.img}
-                                                    alt={card.nome}
-                                                    className="w-full max-w-[250px] md:max-w-[280px] lg:max-w-[300px] border border-white"
-                                                />
-                                            </div>
-                                        </div>
-                                        <div className="flex flex-col flex-nowrap items-center justify-center gap-1 border border-white">
-                                            <div className="flex flex-row justify-start h-full">
-                                                <h2 className="text-[#3C1A6E] font-bold text-xl text-center">{card.time}</h2>
+        <div className="flex justify-center items-center flex-wrap h-150 bg-white col-span-1 lg:col-span-2 mt-20">
+            <p className="block text-[#EE4D9A] font-bold text-[30px] lg:text-[50px] leading-none w-full text-center mb-5">Atletas em Destaque</p>
+            <div className="w-full flex justify-center overflow-hidden mr-0">
+                <div className="w-250 overflow-hidden">
+                    <Swiper
+                        modules={[Navigation, Pagination, EffectCoverflow]}
+                        effect="coverflow"
+                        grabCursor={true}
+                        centeredSlides={true}
+                        spaceBetween={10}
+                        slidesPerView={1}
+                        navigation
+                        coverflowEffect={{
+                            rotate: 50,
+                            stretch: 0,
+                            depth: 100,
+                            modifier: 1,
+                            slideShadows: false,
+                        }}
+                        breakpoints={{
+                            0: {
+                                slidesPerView: 1,
+                            },
+                            640: {
+                                slidesPerView: 1,
+                            },
+                            768: {
+                                slidesPerView: 2,
+                            },
+                            1024: {
+                                slidesPerView: 3,
+                            },
+                        }}
+                    >
 
-                                            </div>
-                                            <div className="w-full h-[0.3px] bg-[#3C1A6E]"></div>
-                                            <div className="h-full flex flex-row gap-5 pb-3">
-                                                <h2 className="text-[#3C1A6E] font-bold text-xl text-center">{card.gols}</h2>
-                                                <h2 className="text-[#3C1A6E] font-bold text-xl text-center">{card.assist}</h2>
-                                            </div>
+                        {atletas.map((card, index) => (
+                            <SwiperSlide
+                                key={index}
+                                className="flex items-center justify-center shadow-[0_0_30px_-3px_rgba(238,77,154,0.3)]"
+                            >
+                                <div className="mt-5">
+                                    <p className="w-full justify-center text-[#3C1A6E] font-bold text-[30px] text-center leading-none">{card.nome}</p>
+                                    <div className="flex justify-center">
+                                        <div className="h-90 overflow-hidden">
+                                            <h2 className="relative z-10 w-full text-center text-[#3C1A6E] fonzt-bold text-xl border border-white font-bold">{card.pos}</h2>
+                                            <img
+                                                src={card.img}
+                                                alt={card.nome}
+                                                className="w-full max-w-[250px] md:max-w-[280px] lg:max-w-[300px] border border-white"
+                                            />
                                         </div>
                                     </div>
-                                </SwiperSlide>
-                            ))}
-                        </Swiper>
-                        <div className="w-full flex justify-center overflow-visible">
-                        <Link to="/copa" className="text-[12px] font-bold text-center border-[#3C1A6E]  bg-[#3C1A6E] border-2 p-3  w-50
-                     text-white transition-all hover:translate-y-1 hover:border-[#69489b] duration-400 mt-5">Ver Lances em Destaque</Link>
-                     </div>
+                                    <div className="flex flex-col flex-nowrap items-center justify-center gap-1 border border-white">
+                                        <div className="flex flex-row justify-start h-full">
+                                            <h2 className="text-[#3C1A6E] font-bold text-xl text-center">{card.time}</h2>
+
+                                        </div>
+                                        <div className="w-full h-[0.3px] bg-[#3C1A6E]"></div>
+                                        <div className="h-full flex flex-row gap-5 pb-3">
+                                            <h2 className="text-[#3C1A6E] font-bold text-xl text-center">{card.gols}</h2>
+                                            <h2 className="text-[#3C1A6E] font-bold text-xl text-center">{card.assist}</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                    <div className="w-full flex justify-center overflow-visible">
+                        <a
+                            href="#lance"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                document.getElementById("lance").scrollIntoView({ behavior: "smooth", block: "start" });
+                            }}
+                            className="text-[15px] font-bold text-center p-3 w-50
+                      text-white bg-[#EE4D9A] transition-all hover:translate-y-1 duration-500 transform mt-5">
+                            Lances em destaque
+                        </a>
                     </div>
-                    <style>
-                        {`
+                </div>
+                <style>
+                    {`
                             .swiper-slide {
                                 display: flex;
                                 transform: scale(0.89) !important;
@@ -146,10 +154,10 @@ export default function AtletasDestaque() {
                                 color: #3C1A6E;
                             }
                         `}
-                    </style>
-                </div>
-
-
+                </style>
             </div>
-  );
+
+
+        </div>
+    );
 }
