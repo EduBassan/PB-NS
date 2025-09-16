@@ -4,32 +4,34 @@ import { Link } from "react-router-dom"
 import bg from "../assets/bgPassaBola.PNG"
 import Logo from "../assets/logo-passa-a-bola.png";
 import AtletasDestaque from "../components/AtletasDestaque";
+import { HashLink } from "react-router-hash-link";
 
 export default function Jogos() {
   return (
     <div className="grid grid-cols-1 h-780 md:h-950 lg:grid-cols-2 lg:h-890">
       {/* Foto */}
-      <div className="flex justify-center col-span-1 h-80 md:h-150 lg:h-auto lg:pt-5 lg:col-span-1">
+      <div id="copa" className="flex justify-center col-span-1 h-80 md:h-150 lg:h-auto lg:pt-5 lg:col-span-1">
         <div>
           <img src={bg} alt="troféu do passa a bola" className="w-180 lg:w-120 xl:w-170 " />
         </div>
 
       {/*Menu*/}
       </div>
-      <div className="flex justify-center items-center flex-wrap h-120 col-span-1 lg:col-span-1">
+      <div className="flex justify-center items-center h-120 col-span-1 lg:col-span-1">
         {/* Logo */}
-        <div className="flex item-center flex-col">
-          <div className="block mb-2">
+        <div className="flex justify-center item-center flex-col">
+          <div className="flex lg:justify-start justify-center mb-2">
             <img src={Logo} alt="logo-passa-a-bola" className="w-20" />
           </div>
 
           {/* Texto */}
-          <h4 className="leading-none font-semibold">Nosso lema...</h4>
-          <p className="block text-[#EE4D9A] font-bold text-[20px] md:text-[30px] xl:text-[40px] leading-none mb-3 -translate-x-[3.5px]">FUTEBOL QUE TRANSFORMA</p>
-          <h3 className="mb-3 font-semibold w-75 lg:w-100 xl:w-150">A Copa Passa Bola surge como uma iniciativa que pode mudar o futuro do Futebol Feminino no Brasil.</h3>
-          <h3 className="font-bold mb-2 text-[#3C1A6E]">Conheça mais sobre o projeto:</h3>
+          <h4 className="lg:text-left text-center leading-none font-semibold">Nosso lema...</h4>
+          <p className="block lg:text-left text-center text-[#EE4D9A] font-bold text-[20px] md:text-[30px] xl:text-[40px] leading-none mb-3 -translate-x-[3.5px]">FUTEBOL QUE TRANSFORMA</p>
+          <h3 className="mb-3 lg:text-left text-center font-semibold w-75 lg:w-100 xl:w-150">A Copa Passa Bola surge como uma iniciativa que pode mudar o futuro do Futebol Feminino no Brasil.</h3>
+          <h3 className="font-bold lg:text-left text-center mb-2 text-[#3C1A6E]">Conheça mais sobre o projeto:</h3>
           {/* Botões */}
-        <a
+          <div className="flex justify-center items-center lg:items-start flex-col"> 
+          <a
             href="#lance"
             onClick={(e) => {
               e.preventDefault();
@@ -41,11 +43,12 @@ export default function Jogos() {
           </a>
           <Link to="/copa/chaveamento" className="font-bold text-center bg-[#EE4D9A] border-2 p-3  w-50
                     hover:translate-x-7 text-white transition-all duration-400">Chavemento</Link>
-          <Link to="/copa/tabela" className="text-[15px] font-bold text-center bg-[#3C1A6E] border-2 p-3  w-50
-                     text-white transition-all hover:translate-x-7 duration-400">Tabela</Link>
+          <HashLink smooth to="/copa/tabela#tabela" className="text-[15px] font-bold text-center bg-[#3C1A6E] border-2 p-3  w-50
+                     text-white transition-all hover:translate-x-7 duration-400">Tabela</HashLink></div>
         </div>
       </div>
 
+      <div id="destaques"></div>
       {/* Segunda Seção */}
       <AtletasDestaque/>
       <div className="flex justify-center items-center text-5xl flex-wrap font-semibold italic p-20 lg:col-span-2">
