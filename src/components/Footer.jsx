@@ -25,7 +25,7 @@ export default function Footer () {
                                 <h6 className="text-[10px]">Newsletter semanal — calendário, vagas de árbitro e destaques. Sem spam. Você pode sair quando quiser.</h6>
                             </div>
                             <div className="flex justify-center items-center">
-                                <button onClick={(e) => {e.target.addEventListener(alert("Ainda estamos trabalhando nessa função"))}} type="submit" className="bg-[#EE4D9A] border-[2px] border-[#EE4D9A] w-35 p-3 hover:bg-black hover:transition-all hover:duration-700"><a href="">Quero notícias</a></button>
+                                <button onClick={(e) => {e.target.addEventListener(alert("Ainda estamos trabalhando nessa função"))}} type="submit" className="bg-[#EE4D9A] border-[2px] border-[#EE4D9A] w-35 p-2.5 mt-3 hover:bg-black hover:transition-all hover:duration-700"><a href="">Quero notícias</a></button>
                             </div>
                         </form>
                     </div>
