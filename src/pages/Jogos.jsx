@@ -17,7 +17,7 @@ export default function Jogos() {
 
       {/*Menu*/}
       </div>
-      <div className="flex justify-center items-center h-120 col-span-1 lg:col-span-1">
+      <div className="flex justify-start items-center h-120 col-span-1 lg:col-span-1">
         {/* Logo */}
         <div className="flex justify-center item-center flex-col">
           <div className="flex lg:justify-start justify-center mb-2">
