@@ -8,7 +8,7 @@ import Postagens from "../pages/Postagens";
 
 export default function Hero() {
     return (
-        <div className="grid grid-cols-1 md:col-span-1 lg:grid-cols-2 h-780 w-full">
+        <div className="grid grid-cols-1 md:col-span-1 lg:grid-cols-2 h-670 w-full">
             <div className="md:flex lg:hidden justify-center md:h-120 h-90 flex bg-[#3C1A6E]">
                 <div >
                     <img src={atletasDisputa} alt="jogadoras disputando a bola" className="w-full" />
