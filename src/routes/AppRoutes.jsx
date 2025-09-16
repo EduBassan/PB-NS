@@ -6,7 +6,7 @@ import PageNotFound from "../pages/PageNotFound";
 import CopaLayout from "../layouts/CopaLayout";
 import Jogos from "../pages/Jogos";
 import Tabela from "../pages/Tabela";
-import Chaveamento from "../pages/Chaveamento";
+// import Chaveamento from "../pages/Chaveamento";
 import LoginLayout from "../layouts/LoginLayout";
 import LoginEscolha from "../pages/LoginEscolha";
 import LoginAtleta from "../pages/LoginAtleta";
