@@ -5,51 +5,9 @@ import equipe from "../assets/equipePassaBola.png"
 import Logo from "../assets/logo-passa-a-bola.png";
 import { Link } from "react-router-dom"
 
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
-import destaque1 from "../assets/destaque1.png";
-import destaque2 from "../assets/destaque2.png";
-import destaque3 from "../assets/destaque3.png";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import 'swiper/css/effect-coverflow';
-import {EffectCoverflow } from 'swiper/modules';
-
-const atletas = [
-    {
-        img: destaque1,
-        nome: "Alê Xavier ",
-        jogos: "13 Jogos ",
-        gols: "9 Gols",
-        assist: "1 Assist.",
-        pos: "Atacante",
-        time: "São Paulo"
-    },
-    {
-        img: destaque2,
-        nome: "Luana Maluf",
-        jogos: "17 Jogos ",
-        gols: "3 Gols ",
-        assist: "10 Assist.",
-        pos: "Meio-Campo",
-        time: "Palmeiras"
-    },
-    {
-        img: destaque3,
-        nome: "Marcela Dantas",
-        jogos: "15 Jogos ",
-        gols: "4 Gols ",
-        assist: "8 Assist.",
-        pos: "Atacante",
-        time: "Palmeiras"
-    }
-];
-
 export default function Hero() {
     return (
-        <div className="grid grid-cols-1 md:col-span-1 lg:grid-cols-2 h-720">
+        <div className="grid grid-cols-1 md:col-span-1 lg:grid-cols-2 h-480">
             <div className="md:flex lg:hidden justify-center md:h-120 h-90 flex bg-[#3C1A6E]">
                 <div >
                     <img src={atletasDisputa} alt="jogadoras disputando a bola" className="w-full" />
@@ -78,21 +36,27 @@ export default function Hero() {
                     <img src={atletasDisputa} alt="jogadoras disputando a bola" className="w-130" />
                 </div>
             </div>
+
+            {/* Segunda Seção */}
             <div className="flex justify-center items-start lg:items-center flex-wrap h-200 lg:h-300 bg-[#3C1A6E] col-span-1 lg:col-span-2 pt-3">
-                <div className="flex justify-center flex-col">
+                <div className="flex justify-center items-center w-full flex-col">
                     <h2 className="block text-white font-bold text-[22px] lg:text-[40px] leading-none mb-3 w-120 lg:w-full text-center">Por que o Passa a Bola?</h2>
                     <h2 className="block text-white font-bold text-[12px] lg:text-[18px] leading-none w-120 text-center">O campeonato amador que apresenta uma solução para cada dificuldade do Futebol Feminino</h2>
                 </div>
+
+                {/* Faixa 1 */}
                 <div className="grid grid-cols-10 bg-white p-5 justify-center items-center">
                     <div className="h-full col-span-3 hidden lg:block">
                         <img src={equipe} alt="equipe da primeira edição da Copa Passa Bola" className="hidden lg:block w-70" />
                     </div>
-                    <div className="col-span-10 lg:col-span-7 flex justify-center flex-col items-center">
+                    <div className="col-span-10 lg:col-span-7 flex justify-center flex-col items-center w-90 lg:w-auto">
                         <p className="">Falta de oportunidades...</p>
                         <h2 className="block text-center text-[#EE4D9A] font-bold text-[20px] lg:text-[40px] leading-none">→ Plataforma de inscrição simples.</h2>
                     </div>
                 </div>
-                <div className="grid grid-cols-10 bg-white p-5 justify-center items-center">
+
+                {/* Faixa 2 */}
+                <div className="grid grid-cols-10 bg-white p-5 justify-center items-center w-90 lg:w-auto">
                     <div className="h-full col-span-3 hidden lg:block">
                         <img src={staff} alt="equipe da primeira edição da Copa Passa Bola" className="hidden lg:block w-70" />
                     </div>
@@ -101,7 +65,14 @@ export default function Hero() {
                         <h2 className="block text-center text-[#EE4D9A] font-bold text-[20px] lg:text-[40px] leading-none">→ Cobertura, vitrine de atletas.</h2>
                     </div>
                 </div>
-                <div className="grid grid-cols-10 bg-white p-5 justify-center items-center">
+
+                <div className="sm:flex lg:hidden">
+                        <img src={trofeu} alt="equipe da primeira edição da Copa Passa Bola" className="hidden lg:block w-70" />
+                    </div>
+
+
+                {/* FAIXA 3 */}
+                <div className="grid grid-cols-10 bg-white p-5 justify-center items-center w-90 lg:w-auto">
                     <div className="col-span-3 hidden lg:block">
                         <img src={trofeu} alt="equipe da primeira edição da Copa Passa Bola" className="hidden lg:block w-70" />
                     </div>
@@ -111,141 +82,9 @@ export default function Hero() {
                     </div>
                 </div>
             </div>
-            
 
-            {/* as duas próximas seções precisam ser ajustadas após definirmos com vai ser a exibição em sm */}
-
-            {/* <div className="flex justify-center items-center flex-wrap h-60 bg-white col-span-2">
-                <div className="grid grid-cols-10 bg-white p-10 justify-center items-center">
-                    <div className="h-full w-41 col-span-2">
-                        <img src={staff} alt="jogadoras disputando a bola" className="w-50" />
-                    </div>
-                    <div className="col-span-8 flex justify-center flex-col items-center">
-                        <p className="">Pouca visibilidade...</p>
-                        <h2 className="block text-[#EE4D9A] font-bold text-[40px] leading-none">→ Cobertura, vitrine de atletas.</h2>
-                    </div>
-                </div>
-            </div>
-
-
-            <div className="flex justify-center items-center flex-wrap h-100 bg-[#3C1A6E] col-span-2">
-                <div className="grid grid-cols-10 bg-white p-10 justify-center items-center">
-                    <div className="h-full w-41 col-span-2">
-                        <img src={trofeu} alt="jogadoras disputando a bola" className="w-50" />
-                    </div>
-                    <div className="col-span-8 flex justify-center flex-col items-center">
-                        <p className="">Chaveamento confuso...</p>
-                        <h2 className="block text-[#EE4D9A] font-bold text-[40px] leading-none">→ Chave visual + notificações.</h2>
-                    </div>
-                </div>
-            </div> */}
-
-
-            <div className="flex justify-center items-center flex-wrap h-150 bg-white col-span-1 lg:col-span-2">
-                <p className="block text-[#EE4D9A] font-bold text-[50px] leading-none w-full text-center">Atletas em Destaque</p>
-                <div className="w-full flex justify-center overflow-hidden">
-                    <div className="w-250 overflow-hidden">
-                        <Swiper
-                            modules={[Navigation, Pagination, EffectCoverflow]}
-                            effect="coverflow"
-                            grabCursor={true}
-                            centeredSlides={true}
-                            spaceBetween={10}
-                            slidesPerView={1}
-                            navigation
-                            coverflowEffect={{
-                                rotate: 50,
-                                stretch: 0,
-                                depth: 100,
-                                modifier: 1,
-                                slideShadows: true,
-                            }}
-                            breakpoints={{
-                                0: {
-                                    slidesPerView: 1,
-                                },
-                                640: {
-                                    slidesPerView: 1,
-                                },
-                                768: {
-                                    slidesPerView: 2,
-                                },
-                                1024: {
-                                    slidesPerView: 3,
-                                },
-                            }}
-                        >
-                            {atletas.map((card, index) => (
-                                <SwiperSlide
-                                    key={index}
-                                    className="flex items-center justify-center"
-                                >
-                                    <div className="bg-gradient-to-br from-[#713bc2] via-[#3c1970] to-[#5927a3] p-2 w-full max-w-[280px] border-[4px] border-[#ffaad3]">
-                                        <p className="w-full justify-center text-white font-bold text-[30px] text-center leading-none">{card.nome}</p>
-                                        <div className="flex justify-center mt-2">
-                                            <div className="flex flex-col justify-start bg-gradient-to-br from-[#EE4D9A] via-[#f55da6] to-[#da5394] overflow-hidden h-60 w-70">
-                                                <h2 className="relative z-10 w-full text-center text-white fonzt-bold text-xl border border-white font-bold">{card.pos}</h2>
-                                                <img
-                                                    src={card.img}
-                                                    alt={card.nome}
-                                                    className="w-full max-w-[250px] md:max-w-[280px] lg:max-w-[300px] border border-white"
-                                                />
-                                            </div>
-                                        </div>
-                                        <div className="flex flex-col flex-nowrap items-center justify-center gap-3 border border-white">
-                                            <div className="flex flex-row justify-start h-full">
-                                                <h2 className="text-white font-bold text-xl text-center mt-2">{card.time}</h2>
-                                                <h2 className="w-full text-white font-bold text-xl text-center mt-2 ml-2">{card.jogos}</h2>
-                                                
-                                            </div>
-                                            <div className="w-full h-[1px] bg-white"></div>
-                                            <div className="h-full flex flex-row">
-                                                <h2 className="text-white font-bold text-xl text-center mb-2 mr-2">{card.gols}</h2>
-                                                <h2 className="text-white font-bold text-xl text-center mb-2">{card.assist}</h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </SwiperSlide>
-                            ))}
-                        </Swiper>
-
-                    </div>
-
-
-
-                    <style>
-                        {`
-                            .swiper-slide {
-                                transform: scale(0.9) !important;
-                                opacity: 0.4 !important;
-                                transition: transform 0.5s ease, opacity 0.5s ease;
-                            }
-
-                            .swiper-slide-active {
-                                transform: scale(1) !important;
-                                opacity: 1 !important;
-                            }
-
-                            .swiper-button-next,
-                            .swiper-button-prev {
-                                color: #EE4D9A;
-                                width: 40px;
-                                height: 40px;
-                            }
-
-                            .swiper-button-next:hover,
-                            .swiper-button-prev:hover {
-                                color: #3C1A6E;
-                            }
-                        `}
-                    </style>
-                </div>
-
-
-            </div>
+            {/* Terceira Seção */}
         </div>
-
-
 
     )
 }

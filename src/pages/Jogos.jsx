@@ -3,10 +3,11 @@ import CardJogos from "../components/CardJogos";
 import { Link } from "react-router-dom"
 import bg from "../assets/bgPassaBola.PNG"
 import Logo from "../assets/logo-passa-a-bola.png";
+import AtletasDestaque from "../components/AtletasDestaque";
 
 export default function Jogos() {
   return (
-    <div className="grid grid-cols-1 h-560 md:h-720 lg:grid-cols-2 lg:h-680">
+    <div className="grid grid-cols-1 h-760 md:h-820 lg:grid-cols-2 lg:h-850">
       {/* Foto */}
       <div className="flex justify-center col-span-1 h-80 md:h-150 lg:h-auto lg:pt-5 lg:col-span-1">
         <div>
@@ -46,6 +47,7 @@ export default function Jogos() {
       </div>
 
       {/* Segunda Seção */}
+      <AtletasDestaque/>
       <div className="flex justify-center items-center text-5xl flex-wrap font-semibold italic p-20 lg:col-span-2">
         <p className="text-[#EE4D9A] font-bold text-[20px] md:text-[30px] xl:text-[40px] leading-none w-full text-center">Histórico de Partidas</p>
       <CardJogos/>
