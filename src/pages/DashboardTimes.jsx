@@ -28,7 +28,7 @@ export default function DashboardTimes () {
         localStorage.removeItem("usuarioLogado");
 
         alert("Conta excluída com sucesso!");
-        navigate("/");
+        navigate("/PB-NS");
     };
 
     return (

@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function ContaAtleta () {
+    const navigate = useNavigate()
     const [usuario, setUsuario] = useState(null);
     const [form, setForm] = useState({
         nome: "",
@@ -42,13 +43,14 @@ export default function ContaAtleta () {
 
         setUsuario(usuarioAtualizado);
         alert("Alterações salvas com sucesso!");
+        navigate("/PB-NS/dashboard/jogadora")
 
     }
     return (
         <div className="flex flex-col">
             <div className="hidden lg:flex border-2 border-b-[#3C1A6E] border-t-white border-r-white border-l-white w-240 gap-5">
-                <Link to="/dashboard/jogadora" className="font-bold border-3 border-b-[#EE4D9A] border-t-white border-r-white border-l-white p-2">Conta</Link>
-                <Link to="/dashboard/jogadora/times" className=" border-3 border-b-white border-t-white border-r-white border-l-white p-2
+                <Link to="/PB-NS/dashboard/jogadora" className="font-bold border-3 border-b-[#EE4D9A] border-t-white border-r-white border-l-white p-2">Conta</Link>
+                <Link to="/PB-NS/dashboard/jogadora/times" className=" border-3 border-b-white border-t-white border-r-white border-l-white p-2
                 hover:border-b-[#EE4D9A] hover:transition-all hover:duration-400">Times</Link>
             </div>
             <div className="hidden lg:flex flex-col w-240">
@@ -205,8 +207,8 @@ export default function ContaAtleta () {
 
 
             <div className="lg:hidden hidden md:flex border-2 border-b-[#3C1A6E] border-t-white border-r-white border-l-white w-160 gap-5">
-                <Link to="/dashboard/jogadora" className="font-bold border-3 border-b-[#EE4D9A] border-t-white border-r-white border-l-white p-2">Conta</Link>
-                <Link to="/dashboard/jogadora/times" className=" border-3 border-b-white border-t-white border-r-white border-l-white p-2
+                <Link to="/PB-NS/dashboard/jogadora" className="font-bold border-3 border-b-[#EE4D9A] border-t-white border-r-white border-l-white p-2">Conta</Link>
+                <Link to="/PB-NS/dashboard/jogadora/times" className=" border-3 border-b-white border-t-white border-r-white border-l-white p-2
                 hover:border-b-[#EE4D9A] hover:transition-all hover:duration-400">Times</Link>
             </div>
             <div className="lg:hidden hidden md:flex flex-col w-160">
@@ -363,8 +365,8 @@ export default function ContaAtleta () {
 
 
             <div className="md:hidden flex border-2 border-b-[#3C1A6E] border-t-white border-r-white border-l-white w-85 gap-5">
-                <Link to="/dashboard/jogadora" className="font-bold border-3 border-b-[#EE4D9A] border-t-white border-r-white border-l-white p-2">Conta</Link>
-                <Link to="/dashboard/jogadora/times" className=" border-3 border-b-white border-t-white border-r-white border-l-white p-2
+                <Link to="/PB-NS/dashboard/jogadora" className="font-bold border-3 border-b-[#EE4D9A] border-t-white border-r-white border-l-white p-2">Conta</Link>
+                <Link to="/PB-NS/dashboard/jogadora/times" className=" border-3 border-b-white border-t-white border-r-white border-l-white p-2
                 hover:border-b-[#EE4D9A] hover:transition-all hover:duration-400">Times</Link>
             </div>
             <div className="md:hidden flex flex-col w-85">

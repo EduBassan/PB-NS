@@ -60,7 +60,7 @@ export default function CadastrarTime () {
         localStorage.setItem("usuarioLogado", JSON.stringify(novoTime));
 
         alert("Time criado com sucesso!");
-        navigate("/dashboard/clube");
+        navigate("/PB-NS/dashboard/clube");
 };
 
     return(

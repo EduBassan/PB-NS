@@ -1,6 +1,5 @@
 // src/pages/Jogos.jsx
 import CardJogos from "../components/CardJogos";
-import { Link } from "react-router-dom"
 import bg from "../assets/bgPassaBola.PNG"
 import Logo from "../assets/logo-passa-a-bola.png";
 import AtletasDestaque from "../components/AtletasDestaque";

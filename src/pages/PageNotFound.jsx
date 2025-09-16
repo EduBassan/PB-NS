@@ -11,7 +11,7 @@ export default function PageNotFound () {
                 <h1 className="text-white font-bold text-[30px]">Ih, deu ruim! Essa rota tá mais perdida que juiz sem VAR.</h1>
                 <h3 className="text-[#B70B2F] font-bold text-[20px]">Tenta recarregar ou volta pro campo principal antes que vire gol contra!</h3>  
             </div>        
-            <Link to="/" className="border-[#B70B2F] border-2 p-2 pr-17 pl-17 text-[18px] text-white
+            <Link to="/PB-NS" className="border-[#B70B2F] border-2 p-2 pr-17 pl-17 text-[18px] text-white
             hover:bg-[#B70B2F] hover:transition-all hover:duration-500">Voltar</Link>
 
         </div>
