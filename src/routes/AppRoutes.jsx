@@ -31,7 +31,7 @@ import Postagens from "../pages/Postagens";
 
 export const router = createBrowserRouter([
     {
-        path: "/",
+        path: "/PB-NS",
         element: <MainLayout/>,
         errorElement: <PageNotFound/>,
         children: [

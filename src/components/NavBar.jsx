@@ -24,8 +24,8 @@ export default function NavBar() {
                         <img src={Logo} alt="Logo-passa-a-bola" className="w-16" />
                     </div>
                     <div className="hidden lg:flex items-center gap-10">
-                        <Link to="/"className="hover:text-xl hover:text-[#EE4D9A] hover:font-bold transition-all ease-in-out duration-700">Passa a bola</Link>
-                        <Link to="/Copa" className="hover:text-xl hover:text-[#EE4D9A] hover:font-bold transition-all ease-in-out duration-700">Copa PB</Link>
+                        <Link to="/PB-NS"className="hover:text-xl hover:text-[#EE4D9A] hover:font-bold transition-all ease-in-out duration-700">Passa a bola</Link>
+                        <Link to="/PB-NS/Copa" className="hover:text-xl hover:text-[#EE4D9A] hover:font-bold transition-all ease-in-out duration-700">Copa PB</Link>
                         {/* <Link to="/postagens" className="hover:text-xl hover:text-[#EE4D9A] hover:font-bold transition-all ease-in-out duration-700">Entrevistas</Link> */}
                     </div>
                 </div>
