@@ -1,4 +1,4 @@
-import { createHashRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 
 import MainLayout from "../layouts/MainLayout";
 import PageNotFound from "../pages/PageNotFound";
@@ -29,7 +29,7 @@ import CandidatasTime from "../pages/CandidatasTime";
 import PostagensLayout from "../layouts/PostagensLayout";
 import Postagens from "../pages/Postagens";
 
-export const router = createHashRouter([
+export const router = createBrowserRouter([
     {
         path: "/PB-NS",
         element: <MainLayout/>,
