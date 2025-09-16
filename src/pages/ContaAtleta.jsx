@@ -210,7 +210,7 @@ export default function ContaAtleta () {
                 hover:border-b-[#EE4D9A] hover:transition-all hover:duration-400">Times</Link>
             </div>
             <div className="lg:hidden hidden md:flex flex-col w-160">
-                <div className="flex border-2 border-b-[#3C1A6E] border-t-white border-r-white border-l-white pt-2 pb-2 pl-3 ">
+                <div className="flex justify-center border-2 border-b-[#3C1A6E] border-t-white border-r-white border-l-white pt-2 pb-2 pl-3 ">
                     <h1 className="font-bold text-[50px]">CONTA</h1>
                 </div>
                 <div>

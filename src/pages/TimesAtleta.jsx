@@ -103,12 +103,12 @@ export default function TimesAtleta () {
 
     return (
         <div className="flex flex-col">
-            <div className="flex border-2 border-b-[#3C1A6E] border-t-white border-r-white border-l-white w-240 gap-5">
+            <div className="hidden lg:flex border-2 border-b-[#3C1A6E] border-t-white border-r-white border-l-white w-240 gap-5">
                 <Link to="/dashboard/jogadora" className="border-3 border-b-white border-t-white border-r-white border-l-white p-2
                 hover:border-b-[#EE4D9A] hover:transition-all hover:duration-400">Conta</Link>
                 <Link to="/dashboard/jogadora/times" className="font-bold border-3 border-b-[#EE4D9A] border-t-white border-r-white border-l-white p-2">Times</Link>
             </div>
-            <div className="flex flex-col w-240">
+            <div className="hidden lg:flex flex-col w-240">
                 {usuario?.possuiTime ? (
                     <div className="flex flex-col border-2 border-b-[#3C1A6E] border-t-white border-r-white border-l-white pt-2 pb-2 pl-3 ">
                         <h1 className="font-bold text-[50px]">TIME</h1>
@@ -120,7 +120,6 @@ export default function TimesAtleta () {
                         <span className="text-[14px] mb-2">Escolha o time que quiser e envie sua candidatura — uma por vez. A decisão final é deles, mas cada tentativa é uma chance de mostrar seu potencial!</span>
                     </div>
                 )}
-                
                 <div>
                     {!usuario?.possuiTime &&
                     !times.some((t) => t.candidatas?.some((c) => c.id === usuario?.id)) && (
@@ -133,7 +132,6 @@ export default function TimesAtleta () {
                         />
                     )}
                 </div>
-
                 <div>
                     {timesFiltrados.length > 0 ? (
                     timesFiltrados.map((time) => (
@@ -145,7 +143,157 @@ export default function TimesAtleta () {
                                         className="w-20 h-20 object-cover rounded-full"/>
                                 )}
                                 <div className="flex flex-col">
-                                    <h2 className="text-[23px] font-bold uppercase">{time.nome}</h2>
+                                    <h2 className="text-[23px] font-bold uppercase overflow-hidden text-ellipsis whitespace-nowrap max-w-155">{time.nome}</h2>
+                                    <p className="text-[14px]">Jogadoras: {time.jogadoras?.length || 0}</p>
+                                </div>
+                            </div>
+                            <div className="flex justify-center items-center">
+                                {usuario?.possuiTime && usuario.timeId === time.id ? (
+                                    <button
+                                    onClick={sairDoTime}
+                                    className="border-2 border-red-600 text-red-600 p-1 pr-10 pl-10
+                                    hover:bg-red-600 hover:text-white hover:transition-all hover:duration-500 cursor-pointer">Sair do time
+                                    </button>
+                                ) : (
+                                    <button
+                                    onClick={() => pedirParaEntrar(time.id)}
+                                    disabled={time.candidatas?.some((c) => c.id === usuario?.id)}
+                                    className={`p-1 pr-8 pl-8
+                                    ${time.candidatas?.some((c) => c.id === usuario?.id)? "bg-[#3C1A6E] text-white cursor-not-allowed" : "border-2 border-[#EE4D9A] text-[#EE4D9A] hover:bg-[#EE4D9A] hover:text-white hover:transition-all hover:duration-500 cursor-pointer"}`}>
+                                    {time.candidatas?.some((c) => c.id === usuario?.id)? "Aguardando aprovação..." : "Pedir para entrar"}
+                                    </button>
+                                )}        
+                            </div>
+                        </div>
+                    ))
+                    ) : (
+                        <div className="flex justify-center items-center">
+                            <p>Nenhum time encontrado.</p>
+                        </div>
+                    )}
+                </div>
+            </div>
+
+
+
+            <div className="lg:hidden hidden md:flex border-2 border-b-[#3C1A6E] border-t-white border-r-white border-l-white w-160 gap-5">
+                <Link to="/dashboard/jogadora" className="border-3 border-b-white border-t-white border-r-white border-l-white p-2
+                hover:border-b-[#EE4D9A] hover:transition-all hover:duration-400">Conta</Link>
+                <Link to="/dashboard/jogadora/times" className="font-bold border-3 border-b-[#EE4D9A] border-t-white border-r-white border-l-white p-2">Times</Link>
+            </div>
+            <div className="lg:hidden hidden md:flex flex-col w-160">
+                <div className="text-center">
+                    {usuario?.possuiTime ? (
+                        <div className="flex flex-col border-2 border-b-[#3C1A6E] border-t-white border-r-white border-l-white pt-2 pb-2 pl-3 ">
+                            <h1 className="font-bold text-[50px]">TIME</h1>
+                            <span className="text-[14px] mb-2">O seu atual time é o <strong className="uppercase">{usuario.timeNome}</strong></span>
+                        </div>
+                    ) : (
+                        <div className="flex flex-col border-2 border-b-[#3C1A6E] border-t-white border-r-white border-l-white pt-2 pb-2 pl-3 ">
+                            <h1 className="font-bold text-[50px]">TIMES</h1>
+                            <span className="text-[14px] mb-2">Escolha o time que quiser e envie sua candidatura — uma por vez. A decisão final é deles, mas cada tentativa é uma chance de mostrar seu potencial!</span>
+                        </div>
+                    )}
+                </div>
+                <div>
+                    {!usuario?.possuiTime &&
+                    !times.some((t) => t.candidatas?.some((c) => c.id === usuario?.id)) && (
+                        <input
+                            type="text"
+                            placeholder="Pesquisar time..."
+                            value={busca}
+                            onChange={(e) => setBusca(e.target.value)}
+                            className="border-2 border-[#EE4D9A] p-2 mb-5 mt-5 w-full"
+                        />
+                    )}
+                </div>
+                <div>
+                    {timesFiltrados.length > 0 ? (
+                    timesFiltrados.map((time) => (
+                        <div key={time.id} className=" pl-7 pb-5 mt-5 flex justify-between items-center border-2 border-b-[#3C1A6E] border-t-white border-r-white border-l-white mb-5 ">
+                            <div className="flex items-center gap-4">
+                                {time.foto && (
+                                    <img
+                                        src={time.foto} alt="Logo do time"
+                                        className="w-20 h-20 object-cover rounded-full"/>
+                                )}
+                                <div className="flex flex-col">
+                                    <h2 className="text-[23px] font-bold uppercase overflow-hidden text-ellipsis whitespace-nowrap max-w-60">{time.nome}</h2>
+                                    <p className="text-[14px]">Jogadoras: {time.jogadoras?.length || 0}</p>
+                                </div>
+                            </div>
+                            <div className="flex justify-center items-center">
+                                {usuario?.possuiTime && usuario.timeId === time.id ? (
+                                    <button
+                                    onClick={sairDoTime}
+                                    className="border-2 border-red-600 text-red-600 p-1 pr-10 pl-10
+                                    hover:bg-red-600 hover:text-white hover:transition-all hover:duration-500 cursor-pointer">Sair do time
+                                    </button>
+                                ) : (
+                                    <button
+                                    onClick={() => pedirParaEntrar(time.id)}
+                                    disabled={time.candidatas?.some((c) => c.id === usuario?.id)}
+                                    className={`p-1 pr-8 pl-8
+                                    ${time.candidatas?.some((c) => c.id === usuario?.id)? "bg-[#3C1A6E] text-white cursor-not-allowed text-[10px]" : "border-2 border-[#EE4D9A] text-[#EE4D9A] hover:bg-[#EE4D9A] hover:text-white hover:transition-all hover:duration-500 cursor-pointer"}`}>
+                                    {time.candidatas?.some((c) => c.id === usuario?.id)? "Aguardando aprovação..." : "Pedir para entrar"}
+                                    </button>
+                                )}        
+                            </div>
+                        </div>
+                    ))
+                    ) : (
+                        <div className="flex justify-center items-center">
+                            <p>Nenhum time encontrado.</p>
+                        </div>
+                    )}
+                </div>
+            </div>
+
+
+
+            <div className="md:hidden flex border-2 border-b-[#3C1A6E] border-t-white border-r-white border-l-white w-80 gap-5">
+                <Link to="/dashboard/jogadora" className="border-3 border-b-white border-t-white border-r-white border-l-white p-2
+                hover:border-b-[#EE4D9A] hover:transition-all hover:duration-400">Conta</Link>
+                <Link to="/dashboard/jogadora/times" className="font-bold border-3 border-b-[#EE4D9A] border-t-white border-r-white border-l-white p-2">Times</Link>
+            </div>
+            <div className="md:hidden flex flex-col w-80">
+                <div className="text-center">
+                    {usuario?.possuiTime ? (
+                        <div className="flex flex-col border-2 border-b-[#3C1A6E] border-t-white border-r-white border-l-white pt-2 pb-2 pl-3 ">
+                            <h1 className="font-bold text-[50px]">TIME</h1>
+                            <span className="text-[14px] mb-2">O seu atual time é o <strong className="uppercase">{usuario.timeNome}</strong></span>
+                        </div>
+                    ) : (
+                        <div className="flex flex-col border-2 border-b-[#3C1A6E] border-t-white border-r-white border-l-white pt-2 pb-2 pl-3 ">
+                            <h1 className="font-bold text-[50px]">TIMES</h1>
+                            <span className="text-[14px] mb-2">Escolha o time que quiser e envie sua candidatura — uma por vez. A decisão final é deles, mas cada tentativa é uma chance de mostrar seu potencial!</span>
+                        </div>
+                    )}
+                </div>
+                <div>
+                    {!usuario?.possuiTime &&
+                    !times.some((t) => t.candidatas?.some((c) => c.id === usuario?.id)) && (
+                        <input
+                            type="text"
+                            placeholder="Pesquisar time..."
+                            value={busca}
+                            onChange={(e) => setBusca(e.target.value)}
+                            className="border-2 border-[#EE4D9A] p-2 mb-5 mt-5 w-full"
+                        />
+                    )}
+                </div>
+                <div>
+                    {timesFiltrados.length > 0 ? (
+                    timesFiltrados.map((time) => (
+                        <div key={time.id} className=" pl-7 w-80 pb-5 mt-5 flex flex-col gap-7 justify-between items-center border-2 border-b-[#3C1A6E] border-t-white border-r-white border-l-white mb-5 ">
+                            <div className="flex items-center gap-4">
+                                {time.foto && (
+                                    <img
+                                        src={time.foto} alt="Logo do time"
+                                        className="w-20 h-20 object-cover rounded-full"/>
+                                )}
+                                <div className="flex flex-col w-80">
+                                    <h2 className="text-[23px] font-bold uppercase w-auto h-auto overflow-hidden text-ellipsis whitespace-nowrap max-w-55">{time.nome}</h2>
                                     <p className="text-[14px]">Jogadoras: {time.jogadoras?.length || 0}</p>
                                 </div>
                             </div>

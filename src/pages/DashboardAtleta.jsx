@@ -45,7 +45,7 @@ export default function DashboardAtleta () {
 
                     <div className="text-white flex flex-col justify-end pb-2 ">
                         <div>
-                            <h1 className="text-[50px] uppercase font-medium">{usuario.nome} {usuario.sobrenome}</h1>
+                            <h1 className="text-[50px] uppercase font-medium overflow-hidden text-ellipsis whitespace-nowrap max-w-188">{usuario.nome} {usuario.sobrenome}</h1>
                             {usuario.possuiTime? (
                                 <span className="text-[20px] italic">Time: {usuario.timeNome}</span>
                             ) : (
@@ -90,7 +90,7 @@ export default function DashboardAtleta () {
 
                         <div className="text-white flex flex-col pb-2 text-center gap-2 ">
                             <div>
-                                <h1 className="text-[40px] uppercase font-medium">{usuario.nome} {usuario.sobrenome}</h1>
+                                <h1 className="text-[40px] uppercase font-medium overflow-hidden text-ellipsis whitespace-nowrap max-w-146">{usuario.nome} {usuario.sobrenome}</h1>
                                 {usuario.possuiTime? (
                                     <span className="text-[18px] italic">Time: {usuario.timeNome}</span>
                                 ) : (
@@ -123,7 +123,7 @@ export default function DashboardAtleta () {
 
             <div className="md:hidden flex w-80 pt-5 mt-2 justify-center items-center">
                 <div className="flex flex-row gap-5 ">
-                    <div className="flex flex-col items-center p-10 border-2 border-t-white border-b-[##3C1A6E] border-l-white border-r-white">
+                    <div className="flex flex-col items-center p-10 border-2 w-84 border-t-white border-b-[##3C1A6E] border-l-white border-r-white">
                         <div>
                             {usuario.foto ? (
                                 <img src={usuario.foto} alt="foto-da-atleta" className="w-40 h-40 rounded-full object-cover" />
@@ -136,7 +136,7 @@ export default function DashboardAtleta () {
 
                         <div className="text-[#3C1A6E] flex flex-col pb-2 text-center gap-2 ">
                             <div>
-                                <h1 className="text-[25px] uppercase font-medium">{usuario.nome} {usuario.sobrenome}</h1>
+                                <h1 className="text-[25px] uppercase font-medium overflow-hidden text-ellipsis whitespace-nowrap max-w-80">{usuario.nome} {usuario.sobrenome}</h1>
                                 {usuario.possuiTime? (
                                     <span className="text-[15px] italic">Time: {usuario.timeNome}</span>
                                 ) : (
