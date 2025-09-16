@@ -12,7 +12,7 @@ export default function NavBar() {
 
     const sair = () => {
         localStorage.removeItem("usuarioLogado");
-        navigate("/login");
+        navigate("/PB-NS");
     };
     
 
@@ -48,7 +48,7 @@ export default function NavBar() {
                             <button onClick={sair}
                             className="border-2 border-red-500 p-1 pr-7 pl-7
                             hover:bg-red-500 hover:text-white transition-all duration-400 cursor-pointer">sair</button>
-                            <Link to="/dashboard/jogadora" 
+                            <Link to="/PB-NS/dashboard/jogadora" 
                             className="border-2 border-[#3C1A6E] p-1 pr-8 pl-8
                             hover:border-[#EE4D9A] hover:bg-[#EE4D9A] hover:text-white transition-all duration-400">Minha página</Link>
                         </div>
@@ -60,7 +60,7 @@ export default function NavBar() {
                             <button onClick={sair}
                             className="border-2 border-red-500 p-1 pr-7 pl-7
                             hover:bg-red-500 hover:text-white transition-all duration-400 cursor-pointer">sair</button>
-                            <Link to="/dashboard/clube"
+                            <Link to="/PB-NS/dashboard/clube"
                             className="border-2 border-[#3C1A6E] p-1 pr-8 pl-8
                             hover:border-[#EE4D9A] hover:bg-[#EE4D9A] hover:text-white transition-all duration-400">Minha página</Link>
                         </div>
@@ -128,26 +128,26 @@ export default function NavBar() {
                 <div>
                     {!usuarioLogado && (
                     <div className="flex flex-col items-center mt-4 gap-4 lg:hidden">
-                        <Link to="/" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Passa a bola</Link>
-                        <Link to="/copa" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Copa PB</Link>
+                        <Link to="/PB-NS" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Passa a bola</Link>
+                        <Link to="/PB-NS/copa" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Copa PB</Link>
                         {/* <Link to="/postagens" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Entrevistas</Link> */}
                         <Link to="/cadastrar" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Inscreva-se</Link>
                     </div>
                 )}
                 {usuarioLogado?.tipo === "jogadora" && (
                     <div className="flex flex-col items-center mt-4 gap-4 lg:hidden">
-                        <Link to="/" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Passa a bola</Link>
-                        <Link to="/copa" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Copa PB</Link>
+                        <Link to="/PB-NS" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Passa a bola</Link>
+                        <Link to="/PB-NS/copa" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Copa PB</Link>
                         {/* <Link to="/postagens" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Entrevistas</Link> */}
-                        <Link to="/dashboard/jogadora" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Minha página</Link>
+                        <Link to="/PB-NS/dashboard/jogadora" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Minha página</Link>
                     </div>
                 )}
                 {usuarioLogado?.tipo === "time" && (
                     <div className="flex flex-col items-center mt-4 gap-4 lg:hidden">
-                        <Link to="/" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Passa a bola</Link>
-                        <Link to="/copa" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Copa PB</Link>
+                        <Link to="/PB-NS" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Passa a bola</Link>
+                        <Link to="/PB-NS/copa" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Copa PB</Link>
                         {/* <Link to="/postagens" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Entrevistas</Link> */}
-                        <Link to="/dashboard/clube" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Minha página</Link>
+                        <Link to="/PB-NS/dashboard/clube" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Minha página</Link>
                     </div>
                 )}
                 </div>

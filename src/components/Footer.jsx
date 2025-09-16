@@ -8,11 +8,11 @@ export default function Footer () {
             <div className="lg:flex flex-row justify-center hidden gap-18">
                 <div className="flex flex-col">
                     <h1 className="text-gray-400 font-bold ">Links</h1>
-                    <Link to="" className="font-medium">Início</Link>
-                    <Link to="" className="font-medium">Inscrições</Link>
-                    <Link to="" className="font-medium">Copa Passa a Bola</Link>
-                    <Link to="" className="font-medium">Calendário & Jogos</Link>
-                    <Link to="" className="font-medium">Times & Jogadoras</Link>
+                    <Link to="/PB-NS" className="font-medium">Início</Link>
+                    <Link to="/cadastrar" className="font-medium">Inscrições</Link>
+                    <Link to="/PB-NS/Copa" className="font-medium">Copa Passa a Bola</Link>
+                    <Link to="/PB-NS/Copa" className="font-medium">Calendário & Jogos</Link>
+                    <Link to="/PB-NS/Copa/tabela" className="font-medium">Times & Jogadoras</Link>
                     <Link to="" className="font-medium">Apoiadores</Link>
                     <Link to="" className="font-medium">Trabalhe conosco</Link>
                 </div>
