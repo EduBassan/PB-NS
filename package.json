@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "postbuild": "cp dist/index.html dist/404.html",
+    "postbuild": "cpx dist/index.html dist/404.html",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
@@ -30,6 +30,7 @@
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
     "@vitejs/plugin-react": "^5.0.0",
+    "cpx": "^1.5.0",
     "eslint": "^9.33.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
