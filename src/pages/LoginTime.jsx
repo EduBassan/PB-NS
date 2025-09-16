@@ -31,7 +31,7 @@ export default function LoginTime () {
                 onSubmit={handleSubmit}
                 >
                 <div>
-                    <h1 className="text-white text-[60px] font-semibold">Bem-vindo de volta!</h1>
+                    <h1 className="text-white text-[60px] font-semibold uppercase text-center">Bem-vindo de volta!</h1>
                 </div>
                 <div>
                     <p className="text-white text-[20px]">Não tem conta?

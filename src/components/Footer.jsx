@@ -105,6 +105,11 @@ export default function Footer () {
                     </div>  
                 </div>  
             </div>
+            <div className="lg:hidden hidden md:flex flex-row items-center justify-center p-10">
+                <img src={pb} alt="Pb-escrita" className="w-30" />
+                <h2>© 2025 Passa a Bola. Todos os direitos reservados.</h2>
+                <img src={pb} alt="Pb-escrita" className="w-30" />
+            </div>
 
             <div className="md:hidden flex flex-col justify-center items-center gap-5">
                 <form className="flex flex-col justify-center items-center gap-3">
@@ -150,16 +155,11 @@ export default function Footer () {
                         <Link to="" className="font-medium hover:text-[#EE4D9A]">Política de Cookies</Link>
                         <Link to="" className="font-medium hover:text-[#EE4D9A]">Aviso LGPD</Link>
                     </div>  
-                </div>  
-
-
-
-
-
-            </div>
-
-            
-                
+                </div> 
+                <div className="md:hidden flex flex-row items-center justify-center text-center p-10">
+                    <h2>© 2025 Passa a Bola. Todos os direitos reservados.</h2>
+                </div>
+            </div>   
         </footer>
     )
 }
