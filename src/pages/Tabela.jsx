@@ -1,9 +1,7 @@
-import Corinthians from "../assets/corinthiansLogo.png"
 import Logo from "../assets/logo-passa-a-bola.png";
 import Adidas from "../assets/adidas.png";
 import { Link } from "react-router-dom";
 import { carregarTimes } from "../js/storage.js";
-import { times } from "../js/times.js";
  
 export default function Tabela() {
 const time = carregarTimes()
@@ -13,7 +11,7 @@ const SegundoLugar = pegar3Melhores[1]
 const TerceiroLugar = pegar3Melhores[2]
 
   return (
-    <div className="px-4 sm:px-6 md:px-20 m-10">
+    <div id="tabela" className="px-4 sm:px-6 md:px-20 m-10">
       <div className="flex flex-col lg:flex-row justify-center gap-10">
         <div className="flex-1">
           <span className="text-4xl sm:text-5xl font-semibold italic text-center lg:text-left">TABELA</span>
@@ -59,15 +57,15 @@ const TerceiroLugar = pegar3Melhores[2]
           </div>
         </div>
  
-        <div className="flex-1 flex flex-col items-center lg:items-start gap-6">
+        <div className="flex-1 flex flex-col items-center lg:items-start gap-1">
           <div className="text-4xl sm:text-5xl font-semibold italic text-center lg:text-left">
             MELHORES
           </div>
           <div className="text-2xl sm:text-3xl font-semibold italic text-center lg:text-left">
-            times
+            TIMES
           </div>
  
-          <div className="flex flex-col gap-4 w-full">
+          <div className="flex flex-col gap-10 w-full">
             <div className="bg-[#3C1A6E] text-white shadow-lg p-4 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 sm:max-w-150">
               <div className="text-5xl sm:text-9xl font-bold italic">{PrimeiroLugar?.pontos || 21}</div>
               <div className="text-xl italic">Pts</div>
