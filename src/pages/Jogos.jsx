@@ -7,7 +7,7 @@ import AtletasDestaque from "../components/AtletasDestaque";
 
 export default function Jogos() {
   return (
-    <div className="grid grid-cols-1 h-760 md:h-820 lg:grid-cols-2 lg:h-850">
+    <div className="grid grid-cols-1 h-780 md:h-950 lg:grid-cols-2 lg:h-890">
       {/* Foto */}
       <div className="flex justify-center col-span-1 h-80 md:h-150 lg:h-auto lg:pt-5 lg:col-span-1">
         <div>

@@ -13,6 +13,15 @@ import 'swiper/css/effect-coverflow';
 import { EffectCoverflow } from 'swiper/modules';
 
 const atletas = [
+     {
+        img: destaque3,
+        nome: "Marcela Dantas",
+        jogos: "15 Jogos ",
+        gols: "4 Gols ",
+        assist: "8 Assist.",
+        pos: "Atacante",
+        time: "Palmeiras"
+    },
     {
         img: destaque1,
         nome: "Alê Xavier ",
@@ -30,15 +39,6 @@ const atletas = [
         assist: "10 Assist.",
         pos: "Meio-Campo",
         time: "Palmeiras"
-    },
-    {
-        img: destaque3,
-        nome: "Marcela Dantas",
-        jogos: "15 Jogos ",
-        gols: "4 Gols ",
-        assist: "8 Assist.",
-        pos: "Atacante",
-        time: "Palmeiras"
     }
 ];
 
@@ -49,7 +49,7 @@ export default function AtletasDestaque() {
 
 
  <div className="flex justify-center items-center flex-wrap h-150 bg-white col-span-1 lg:col-span-2 mt-20">
-                <p className="block text-[#EE4D9A] font-bold text-[50px] leading-none w-full text-center">Atletas em Destaque</p>
+                <p className="block text-[#EE4D9A] font-bold text-[50px] leading-none w-full text-center mb-5">Atletas em Destaque</p>
                 <div className="w-full flex justify-center overflow-hidden mr-0">
                     <div className="w-250 overflow-hidden">
                         <Swiper
@@ -86,12 +86,12 @@ export default function AtletasDestaque() {
                             {atletas.map((card, index) => (
                                 <SwiperSlide
                                     key={index}
-                                    className="flex items-center justify-center shadow-[0_0_50px_-3px_rgba(238,77,154,0.2)]"
+                                    className="flex items-center justify-center shadow-[0_0_30px_-3px_rgba(238,77,154,0.3)]"
                                 >
                                     <div className="mt-5">
                                         <p className="w-full justify-center text-[#3C1A6E] font-bold text-[30px] text-center leading-none">{card.nome}</p>
                                         <div className="flex justify-center">
-                                            <div className="">
+                                            <div className="h-90 overflow-hidden">
                                                 <h2 className="relative z-10 w-full text-center text-[#3C1A6E] fonzt-bold text-xl border border-white font-bold">{card.pos}</h2>
                                                 <img
                                                     src={card.img}
@@ -106,7 +106,7 @@ export default function AtletasDestaque() {
 
                                             </div>
                                             <div className="w-full h-[0.3px] bg-[#3C1A6E]"></div>
-                                            <div className="h-full flex flex-row gap-5">
+                                            <div className="h-full flex flex-row gap-5 pb-3">
                                                 <h2 className="text-[#3C1A6E] font-bold text-xl text-center">{card.gols}</h2>
                                                 <h2 className="text-[#3C1A6E] font-bold text-xl text-center">{card.assist}</h2>
                                             </div>
@@ -117,7 +117,7 @@ export default function AtletasDestaque() {
                         </Swiper>
                         <div className="w-full flex justify-center overflow-visible">
                         <Link to="/copa" className="text-[12px] font-bold text-center border-[#3C1A6E]  bg-[#3C1A6E] border-2 p-3  w-50
-                     text-white transition-all hover:translate-y-0.5 hover:border-[#69489b] duration-400 mt-3">Ver Lances em Destaque</Link>
+                     text-white transition-all hover:translate-y-1 hover:border-[#69489b] duration-400 mt-5">Ver Lances em Destaque</Link>
                      </div>
                     </div>
                     <style>

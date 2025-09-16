@@ -4,10 +4,11 @@ import staff from "../assets/staffPassaBola.PNG"
 import equipe from "../assets/equipePassaBola.png"
 import Logo from "../assets/logo-passa-a-bola.png";
 import { Link } from "react-router-dom"
+import Postagens from "../pages/Postagens";
 
 export default function Hero() {
     return (
-        <div className="grid grid-cols-1 md:col-span-1 lg:grid-cols-2 h-480">
+        <div className="grid grid-cols-1 md:col-span-1 lg:grid-cols-2 h-670 w-full">
             <div className="md:flex lg:hidden justify-center md:h-120 h-90 flex bg-[#3C1A6E]">
                 <div >
                     <img src={atletasDisputa} alt="jogadoras disputando a bola" className="w-full" />
@@ -38,20 +39,20 @@ export default function Hero() {
             </div>
 
             {/* Segunda Seção */}
-            <div className="flex justify-center items-start lg:items-center flex-wrap h-200 lg:h-300 bg-[#3C1A6E] col-span-1 lg:col-span-2 pt-3">
+            <div className="flex justify-center items-start lg:items-center flex-wrap h-100 lg:h-250 bg-[#3C1A6E] col-span-1 lg:col-span-2 pt-3">
                 <div className="flex justify-center items-center w-full flex-col">
                     <h2 className="block text-white font-bold text-[22px] lg:text-[40px] leading-none mb-3 w-120 lg:w-full text-center">Por que o Passa a Bola?</h2>
-                    <h2 className="block text-white font-bold text-[12px] lg:text-[18px] leading-none w-120 text-center">O campeonato amador que apresenta uma solução para cada dificuldade do Futebol Feminino</h2>
+                    <h2 className="block text-white font-bold text-[12px] lg:text-[18px] leading-none w-70 lg:w-120 text-center">O campeonato amador que apresenta uma solução para cada dificuldade do Futebol Feminino</h2>
                 </div>
 
                 {/* Faixa 1 */}
-                <div className="grid grid-cols-10 bg-white p-5 justify-center items-center">
+                <div className="grid grid-cols-10 bg-white p-5 justify-center items-center w-90 lg:w-auto">
                     <div className="h-full col-span-3 hidden lg:block">
                         <img src={equipe} alt="equipe da primeira edição da Copa Passa Bola" className="hidden lg:block w-70" />
                     </div>
                     <div className="col-span-10 lg:col-span-7 flex justify-center flex-col items-center w-90 lg:w-auto">
                         <p className="">Falta de oportunidades...</p>
-                        <h2 className="block text-center text-[#EE4D9A] font-bold text-[20px] lg:text-[40px] leading-none">→ Plataforma de inscrição simples.</h2>
+                        <h2 className="block text-center text-[#EE4D9A] font-bold text-[18px] lg:text-[40px] leading-none">→ Plataforma de inscrição simples.</h2>
                     </div>
                 </div>
 
@@ -78,12 +79,15 @@ export default function Hero() {
                     </div>
                     <div className="col-span-10 lg:col-span-7 flex justify-center flex-col items-center">
                         <p className="">Falta de informações...</p>
-                        <h2 className="block text-center text-[#EE4D9A] font-bold text-[20px] lg:text-[40px] leading-none">→ Chave visual + Tabela Atualizada.</h2>
+                        <h2 className="block text-center text-[#EE4D9A] font-bold text-[20px] lg:text-[38px] leading-none">→ Chave visual + Tabela Atualizada.</h2>
                     </div>
                 </div>
             </div>
 
             {/* Terceira Seção */}
+            <div className="col-span-2">
+            <Postagens/>
+            </div>
         </div>
 
     )
