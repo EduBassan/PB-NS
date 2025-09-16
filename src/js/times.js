@@ -82,6 +82,34 @@ export let times = [
         jogadoras: [],
         candidatas: [],
         tipo: "time"  
+    },
+    {
+        id: 7,
+        nome: "São Paulo FC",
+        senha: "sp@",
+        cidade: "São Paulo",
+        responsavel: "Julio Casares",
+        email: "sp@email.com",
+        telefone: "11999999999",
+        numero: 18,
+        foto: "https://img.estadao.com.br/resources/jpg/1/3/1487962260931.jpg",
+        jogadoras: [],
+        candidatas: [],
+        tipo: "time"  
+    },
+    {
+        id: 8,
+        nome: "PSG",
+        senha: "psg@",
+        cidade: "Paris",
+        responsavel: "Nasser Al-Khelaïfi",
+        email: "psg@email.com",
+        telefone: "11999999999",
+        numero: 18,
+        foto: "https://logodetimes.com/times/paris-saint-germain/paris-saint-germain-4096.png",
+        jogadoras: [],
+        candidatas: [],
+        tipo: "time"
     }
 ]
 

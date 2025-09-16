@@ -39,8 +39,10 @@ export default function CadastrarTime () {
 
         const times = carregarTimes() || [];
 
+        const novoId = times.length > 0 ? Math.max(...times.map((t) => t.id)) + 1 : 1;
+
         const novoTime = {
-            id: Date.now(),
+            id: novoId,
             nome: form.nome,
             cidade: form.cidade,
             responsavel: form.responsavel,
