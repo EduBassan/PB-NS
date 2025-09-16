@@ -12,5 +12,77 @@ export let times = [
         jogadoras: [],
         candidatas: [],
         tipo: "time"
+    },
+    {
+        id: 2,
+        nome: "Palmeiras",
+        senha: "palmeiras@",
+        cidade: "São Paulo",
+        responsavel: "Leila Pereira",
+        email: "palmeiras@email.com",
+        telefone: "11999999999",
+        numero: 18,
+        foto: "https://imagepng.org/wp-content/uploads/2018/03/escudo-palmeiras.png",
+        jogadoras: [],
+        candidatas: [],
+        tipo: "time"
+    },
+    {
+        id: 3,
+        nome: "Corinthians",
+        senha: "corinthians@",
+        cidade: "São Paulo",
+        responsavel: "Osmar Stabile",
+        email: "corinthians@email.com",
+        telefone: "11999999999",
+        numero: 18,
+        foto: "https://cdn.freebiesupply.com/logos/large/2x/corinthians-paulista-logo-png-transparent.png",
+        jogadoras: [],
+        candidatas: [],
+        tipo: "time"  
+    },
+    {
+        id: 4,
+        nome: "City",
+        senha: "city@",
+        cidade: "Manchester",
+        responsavel: "Khaldoon Al Mubarak",
+        email: "city@email.com",
+        telefone: "11999999999",
+        numero: 18,
+        foto: "https://logodetimes.com/times/manchester-city/logo-manchester-city-1536.png",
+        jogadoras: [],
+        candidatas: [],
+        tipo: "time"  
+    },
+    {
+       id: 5,
+        nome: "Real Madrid",
+        senha: "real@",
+        cidade: "Madrid",
+        responsavel: "Florentino Pérez",
+        email: "madrid@email.com",
+        telefone: "11999999999",
+        numero: 18,
+        foto: "https://logodetimes.com/times/real-madrid/logo-real-madrid-escudo-2048.png",
+        jogadoras: [],
+        candidatas: [],
+        tipo: "time"  
+    },
+    {
+        id: 6,
+        nome: "Roma",
+        senha: "roma@",
+        cidade: "Roma",
+        responsavel: "Gian Piero Gasperini",
+        email: "roma@email.com",
+        telefone: "11999999999",
+        numero: 18,
+        foto: "https://logodetimes.com/times/roma/logo-roma-4096.png",
+        jogadoras: [],
+        candidatas: [],
+        tipo: "time"  
     }
 ]
+
+
