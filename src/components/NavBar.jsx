@@ -146,7 +146,7 @@ export default function NavBar() {
                     <div className="flex flex-col items-center mt-4 gap-4 lg:hidden">
                         <Link to="/" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Passa a bola</Link>
                         <Link to="/copa" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Copa PB</Link>
-                        <Link to="/postagens" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Entrevistas</Link>
+                        {/* <Link to="/postagens" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Entrevistas</Link> */}
                         <Link to="/dashboard/clube" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Minha página</Link>
                     </div>
                 )}
