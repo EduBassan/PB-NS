@@ -1,6 +1,7 @@
+// Essa página ficará para possíveis atualizações, provavelmente estará no Sprint 4
+
+
 import { Outlet } from "react-router-dom"
-import NavBar from "../components/NavBar"
-import Footer from "../components/Footer"
 
 export default function ApoiadoresLayout () {
     return(

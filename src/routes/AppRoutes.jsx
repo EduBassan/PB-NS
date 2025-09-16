@@ -11,8 +11,8 @@ import LoginLayout from "../layouts/LoginLayout";
 import LoginEscolha from "../pages/LoginEscolha";
 import LoginAtleta from "../pages/LoginAtleta";
 import LoginTime from "../pages/LoginTime";
-import ApoiadoresLayout from "../layouts/ApoiadoresLayout";
-import Apoiadores from "../pages/Apoiadores";
+// import ApoiadoresLayout from "../layouts/ApoiadoresLayout";
+// import Apoiadores from "../pages/Apoiadores";
 import LandingLayout from "../layouts/LandingLayout";
 import CadastrarLayout from "../layouts/CadastrarLayout";
 import CadastrarEscolha from "../pages/CadastrarEscolha";
@@ -26,6 +26,8 @@ import TimesAtleta from "../pages/TimesAtleta";
 import ContaTime from "../pages/ContaTime";
 import JogadorasTime from "../pages/JogadorasTime";
 import CandidatasTime from "../pages/CandidatasTime";
+import PostagensLayout from "../layouts/PostagensLayout";
+import Postagens from "../pages/Postagens";
 
 export const router = createBrowserRouter([
     {
@@ -99,14 +101,25 @@ export const router = createBrowserRouter([
                     },
                 ],
             },
+            // {
+            //     path: 'apoiadores',
+            //     element: <ApoiadoresLayout/>,
+            //     errorElement: <PageNotFound/>,
+            //     children: [
+            //         {
+            //             index: true,
+            //             element: <Apoiadores/>,
+            //         },
+            //     ],
+            // },
             {
-                path: 'apoiadores',
-                element: <ApoiadoresLayout/>,
+                path: 'postagens',
+                element: <PostagensLayout/>,
                 errorElement: <PageNotFound/>,
                 children: [
                     {
                         index: true,
-                        element: <Apoiadores/>,
+                        element: <Postagens/>,
                     },
                 ],
             },
