@@ -26,7 +26,7 @@ export default function NavBar() {
                     <div className="hidden lg:flex items-center gap-10">
                         <Link to="/"className="hover:text-xl hover:text-[#EE4D9A] hover:font-bold transition-all ease-in-out duration-700">Passa a bola</Link>
                         <Link to="/Copa" className="hover:text-xl hover:text-[#EE4D9A] hover:font-bold transition-all ease-in-out duration-700">Copa PB</Link>
-                        <Link to="/postagens" className="hover:text-xl hover:text-[#EE4D9A] hover:font-bold transition-all ease-in-out duration-700">Entrevistas</Link>
+                        {/* <Link to="/postagens" className="hover:text-xl hover:text-[#EE4D9A] hover:font-bold transition-all ease-in-out duration-700">Entrevistas</Link> */}
                     </div>
                 </div>
                 
@@ -130,7 +130,7 @@ export default function NavBar() {
                     <div className="flex flex-col items-center mt-4 gap-4 lg:hidden">
                         <Link to="/" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Passa a bola</Link>
                         <Link to="/copa" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Copa PB</Link>
-                        <Link to="/postagens" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Entrevistas</Link>
+                        {/* <Link to="/postagens" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Entrevistas</Link> */}
                         <Link to="/cadastrar" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Inscreva-se</Link>
                     </div>
                 )}
@@ -138,7 +138,7 @@ export default function NavBar() {
                     <div className="flex flex-col items-center mt-4 gap-4 lg:hidden">
                         <Link to="/" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Passa a bola</Link>
                         <Link to="/copa" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Copa PB</Link>
-                        <Link to="/postagens" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Entrevistas</Link>
+                        {/* <Link to="/postagens" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Entrevistas</Link> */}
                         <Link to="/dashboard/jogadora" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Minha página</Link>
                     </div>
                 )}
