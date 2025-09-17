@@ -90,7 +90,7 @@ const TerceiroLugar = pegar3Melhores[2]
       <div className="flex flex-col sm:flex-row justify-center items-center gap-4 m-10">
 
         <Link
-          to="/copa"
+          to="/PB-NS/Copa"
           className="border-2 border-[#EE4D9A] bg-white text-xl p-3 px-10 text-black hover:border-[#3C1A6E] w-full sm:w-auto hover:bg-[#EE4D9A] hover:text-[#3C1A6E] hover:transition-all hover:duration-300 text-center"
         >
           Voltar
