@@ -64,7 +64,7 @@ export default function Hero() {
                     </div>
                     <div className="col-span-10 lg:col-span-7 flex justify-center flex-col items-center">
                         <p className="">Pouca Visibilidade...</p>
-                        <HashLink smooth to="/copa#destaques" className="text-center text-[#EE4D9A] font-bold text-[20px] lg:text-[40px] leading-none">→ Cobertura, vitrine de atletas.</HashLink>
+                        <HashLink smooth to="/PB-NS/copa#destaques" className="text-center text-[#EE4D9A] font-bold text-[20px] lg:text-[40px] leading-none">→ Cobertura, vitrine de atletas.</HashLink>
                     </div>
                 </div>
 
@@ -80,7 +80,7 @@ export default function Hero() {
                     </div>
                     <div className="col-span-10 lg:col-span-7 flex justify-center flex-col items-center">
                         <p className="">Falta de informações...</p>
-                        <HashLink smooth to="/copa/tabela#tabela" className="block text-center text-[#EE4D9A] font-bold text-[20px] lg:text-[38px] leading-none">→ Chave visual + Tabela Atualizada.</HashLink>
+                        <HashLink smooth to="copa/tabela#tabela" className="block text-center text-[#EE4D9A] font-bold text-[20px] lg:text-[38px] leading-none">→ Chave visual + Tabela Atualizada.</HashLink>
                     </div>
                 </div>
             </div>

@@ -11,8 +11,7 @@ export default function CadastrarEscolha () {
                 hover:border-[#EE4D9A] hover:bg-white hover:text-[#EE4D9A] hover:transition-all hover:duration-500">Sou uma atleta!</Link></button>
                 <button><Link to="/cadastrar/time" className="border-2 border-[#3C1A6E] bg-[#3C1A6E] text-xl p-3 pl-[130px] pr-[130px] mt-[200px] text-white
                  hover:border-[#EE4D9A] hover:bg-white hover:text-[#EE4D9A] hover:transition-all hover:duration-500">Sou um time!</Link></button>
-
-                <button><Link to="/PB-NS" className="border-2 bg-[#EE4D9A] border-black p-1 pr-20 pl-20
+                <button><Link to="/PB-NS" className="border-2 border-black p-1 pr-20 pl-20
                 hover:bg-black hover:text-white hover hover:border-black hover:transition-all hover:duration-500">Prefiro voltar</Link></button>
             </div>
         </div>
