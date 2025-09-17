@@ -40,6 +40,10 @@ export const router = createBrowserRouter([
                 element: <LandingLayout/>,
             },
             {
+                path: "*",
+                element: <PageNotFound/>,
+            },
+            {
                 path: 'copa',
                 element: <CopaLayout/>,
                 errorElement: <PageNotFound/>,
@@ -60,6 +64,10 @@ export const router = createBrowserRouter([
                     //     path: 'chaveamento',
                     //     element: <Chaveamento/>
                     // },
+                    {
+                        path: "*",
+                        element: <PageNotFound/>,
+                    },
                 ],
             },
             {
@@ -79,6 +87,10 @@ export const router = createBrowserRouter([
                                 path: 'times',
                                 element: <TimesAtleta/>,
                             },
+                            {
+                                path: "*",
+                                element: <PageNotFound/>,
+                            },
                         ],
                     },
                     {
@@ -97,7 +109,15 @@ export const router = createBrowserRouter([
                                 path: 'candidatas',
                                 element: <CandidatasTime/>,
                             },
+                            {
+                                path: "*",
+                                element: <PageNotFound/>,
+                            },
                         ],
+                    },
+                    {
+                        path: "*",
+                        element: <PageNotFound/>,
                     },
                 ],
             },
@@ -121,7 +141,15 @@ export const router = createBrowserRouter([
                         index: true,
                         element: <Postagens/>,
                     },
+                    {
+                        path: "*",
+                        element: <PageNotFound/>,
+                    },
                 ],
+            },
+            {
+                path: "*",
+                element: <PageNotFound/>,
             },
         ],
     },
@@ -142,6 +170,10 @@ export const router = createBrowserRouter([
                 path: 'time',
                 element: <LoginTime/>,
             },
+            {
+                path: "*",
+                element: <PageNotFound/>,
+            },
         ],
     },
     {
@@ -160,7 +192,15 @@ export const router = createBrowserRouter([
             {
                 path: 'time',
                 element: <CadastrarTime/>
-            }
-        ]
+            },
+            {
+                path: "*",
+                element: <PageNotFound/>,
+            },
+        ],
+    },
+    {
+        path: "*",
+        element: <PageNotFound/>,
     },
 ])
