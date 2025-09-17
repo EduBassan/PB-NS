@@ -138,13 +138,13 @@ export default function CadastrarAtleta () {
                     <button type="submit" className="bg-[#EE4D9A] text-white p-3 pr-23 pl-23 border-2 border-[#EE4D9A]
                         hover:bg-[#3C1A6E] hover:transition-all hover:duration-500 cursor-pointer"> Tudo pronto? Clique Aqui!</button>
                     <Link to="/cadastrar" className="border-2 border-[#EE4D9A] text-white p-1 pr-10 pl-10
-                        hover:bg-[#EE4D9A] hover:text-white hover hover:border-[#EE4D9A] hover:transition-all hover:duration-500">Prefiro voltar</Link>
+                        bg-[#EE4D9A] hover:text-white hover hover:border-[#EE4D9A] hover:transition-all hover:duration-500">Prefiro voltar</Link>
                 </div>
                 <div className="md:hidden flex flex-col gap-5 w-93 items-center">
                     <button type="submit" className="bg-[#EE4D9A] text-white p-3 pl-22 pr-22 border-2 border-[#EE4D9A]
                         hover:bg-[#3C1A6E] hover:transition-all hover:duration-500 cursor-pointer"> Tudo pronto? Clique Aqui!</button>
                     <Link to="/cadastrar" className="border-2 border-[#EE4D9A] text-white p-1 pr-10 pl-10 w-50 text-center
-                        hover:bg-[#EE4D9A] hover:text-white hover hover:border-[#EE4D9A] hover:transition-all hover:duration-500">Prefiro voltar</Link>
+                        bg-[#EE4D9A] hover:text-white hover hover:border-[#EE4D9A] hover:transition-all hover:duration-500">Prefiro voltar</Link>
                 </div>
                 
         </form>
