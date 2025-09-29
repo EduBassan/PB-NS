@@ -90,46 +90,46 @@ export default function AtletasDestaque() {
                             >
 
 
-                                <div class="flex h-[395px] w-[291px] bg-[#713bc2]  p-3">
-                                    <div class="flex flex-wrap h-full w-full bg-[#EE4D9A] p-1">
-                                        <div class="flex flex-col h-[60%] w-full  bg-gradient-to-br from-[#713bc2] via-[#3c1970] to-[#5927a3]">
-                                            <div class="flex relative justify-between h-full">
-                                                <div class="w-auto font-medium text-white pt-2 pl-2">
+                                <div className="flex h-[395px] w-[291px] bg-[#713bc2]  p-3">
+                                    <div className="flex flex-wrap h-full w-full bg-[#EE4D9A] p-1">
+                                        <div className="flex flex-col h-[60%] w-full  bg-gradient-to-br from-[#713bc2] via-[#3c1970] to-[#5927a3]">
+                                            <div className="flex relative justify-between h-full">
+                                                <div className="w-auto font-medium text-white pt-2 pl-2">
                                                     {card.time}
                                                 </div>
 
-                                                <div class="flex flex-col items-center w-auto text-white pt-4 pr-4">
-                                                    <div class="font-thin italic leading-none text-[13px]">
+                                                <div className="flex flex-col items-center w-auto text-white pt-4 pr-4">
+                                                    <div className="font-thin italic leading-none text-[13px]">
                                                         Jogos
 
                                                     </div>
-                                                    <div class="font-bold text-3xl leading-none">
+                                                    <div className="font-bold text-3xl leading-none">
                                                         {card.jogos}
                                                     </div>
-                                                    <div class="font-thin italic leading-none text-[13px]">
+                                                    <div className="font-thin italic leading-none text-[13px]">
                                                         {card.pos}
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <div class="flex relative w-full overlfow-hidden justify-center items-start left-[0px] bottom-[64px]">
-                                                <img src={card.img} class="h-[210px] overlfow-hidden" />
+                                            <div className="flex relative w-full overlfow-hidden justify-center items-start left-[0px] bottom-[64px]">
+                                                <img src={card.img} className="h-[210px] overlfow-hidden" />
                                             </div>
                                         </div>
-                                        <div class="flex h-[40%] w-full bg-gradient-to-br from-[#EE4D9A] to-[#3c1970] justify-between px-5 pb-5 text-white">
-                                            <div class="flex flex-col w-full items-center pt-1">
-                                                <div class="leading-none font-medium text-[17px] mt-1">{card.nome}</div>
-                                                <div class="leading-none italic mb-2">{card.sobrenome}</div>
-                                                <div class="flex flex-col justify-center items-center  h-full w-full border-2">
-                                                    <div class="flex flex-row justify-center items-center">
+                                        <div className="flex h-[40%] w-full bg-gradient-to-br from-[#EE4D9A] to-[#3c1970] justify-between px-5 pb-5 text-white">
+                                            <div className="flex flex-col w-full items-center pt-1">
+                                                <div className="leading-none font-medium text-[17px] mt-1">{card.nome}</div>
+                                                <div className="leading-none italic mb-2">{card.sobrenome}</div>
+                                                <div className="flex flex-col justify-center items-center  h-full w-full border-2">
+                                                    <div className="flex flex-row justify-center items-center">
                                                         <div>Gols</div>
-                                                        <div class="w-[50px] h-[1px] bg-white m-5"></div>
+                                                        <div className="w-[50px] h-[1px] bg-white m-5"></div>
                                                         <div>{card.gols}</div>
                                                     </div>
-                                                    <div class="flex justify-center items-center text-[16px]">
+                                                    <div className="flex justify-center items-center text-[16px]">
                                                         <div>Assist.</div>
-                                                        <div class="w-[50px] h-[1px] bg-white m-5"></div>
-                                                        <div class="text-[16px]">{card.assist}</div>
+                                                        <div className="w-[50px] h-[1px] bg-white m-5"></div>
+                                                        <div className="text-[16px]">{card.assist}</div>
                                                     </div>
                                                 </div>
                                             </div>
