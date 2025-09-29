@@ -1,6 +1,3 @@
-// Essa página ficará para possíveis atualizações, provavelmente estará no Sprint 4
-
-
 import { Outlet } from "react-router-dom"
 
 export default function ApoiadoresLayout () {
