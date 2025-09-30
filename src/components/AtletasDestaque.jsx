@@ -3,11 +3,17 @@ import { Navigation, Pagination } from "swiper/modules";
 import destaque1 from "../assets/destaque1.png";
 import destaque2 from "../assets/destaque2.png";
 import destaque3 from "../assets/destaque3.png";
+import waiter from "../assets/waiter.png";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import 'swiper/css/effect-coverflow';
 import { EffectCoverflow } from 'swiper/modules';
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFutbol } from "@fortawesome/free-solid-svg-icons";
+
+
 
 const atletas = [
     {
@@ -15,8 +21,8 @@ const atletas = [
         nome: "Marcela",
         sobrenome: "Dantas",
         jogos: "15",
-        gols: "4",
-        assist: "8",
+        gols: "4 Gols",
+        assist: "8 Ass.",
         pos: "ATA",
         time: "Palmeiras",
     },
@@ -25,8 +31,8 @@ const atletas = [
         nome: "Alê",
         sobrenome: "Xavier ",
         jogos: "13",
-        gols: "9",
-        assist: "1",
+        gols: "9 Gols",
+        assist: "1 Ass.",
         pos: "ATA",
         time: "São Paulo"
     },
@@ -35,8 +41,8 @@ const atletas = [
         nome: "Luana",
         sobrenome: "Maluf",
         jogos: "17",
-        gols: "3",
-        assist: "10",
+        gols: "3 Gols",
+        assist: "10 Ass.",
         pos: "MEI",
         time: "Palmeiras"
     }
@@ -120,14 +126,14 @@ export default function AtletasDestaque() {
                                             <div className="flex flex-col w-full items-center pt-1">
                                                 <div className="leading-none font-medium text-[17px] mt-1">{card.nome}</div>
                                                 <div className="leading-none italic mb-2">{card.sobrenome}</div>
-                                                <div className="flex flex-col justify-center items-center  h-full w-full border-2">
+                                                <div className="flex flex-col justify-center items-center  h-full border-2 w-[100%]">
                                                     <div className="flex flex-row justify-center items-center">
-                                                        <div>Gols</div>
+                                                        <div>   <FontAwesomeIcon icon={faFutbol} className="text-[22px]" /> </div>
                                                         <div className="w-[50px] h-[1px] bg-white m-5"></div>
                                                         <div>{card.gols}</div>
                                                     </div>
-                                                    <div className="flex justify-center items-center text-[16px]">
-                                                        <div>Assist.</div>
+                                                    <div className="flex justify-center items-center text-[16px] w-[100%]">
+                                                        <div className="flex justify-end items-center"><img src={waiter} className="w-[22px]"/></div>
                                                         <div className="w-[50px] h-[1px] bg-white m-5"></div>
                                                         <div className="text-[16px]">{card.assist}</div>
                                                     </div>
