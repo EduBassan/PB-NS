@@ -5,6 +5,7 @@ import Logo from "../assets/logo-passa-a-bola.png";
 import AtletasDestaque from "../components/AtletasDestaque";
 import { HashLink } from "react-router-hash-link";
 
+
 export default function Jogos() {
   return (
     <div className="grid grid-cols-1 h-780 md:h-950 lg:grid-cols-2 lg:h-890">
@@ -40,7 +41,7 @@ export default function Jogos() {
                       text-white bg-[#EE4D9A] transition-all hover:translate-x-7 duration-500 transform">
             Lances em destaque
           </a>
-          <HashLink smooth to="/PB-NS/copa/tabela#tabela" className="text-[15px] font-bold text-center bg-[#3C1A6E] border-2 p-3  w-50
+          <HashLink smooth to="/copa/tabela#tabela" className="text-[15px] font-bold text-center bg-[#3C1A6E] border-2 p-3  w-50
                      text-white transition-all hover:translate-x-7 duration-400">Tabela</HashLink></div>
         </div>
       </div>

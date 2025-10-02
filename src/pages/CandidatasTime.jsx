@@ -67,11 +67,11 @@ export default function CandidatasTime () {
     return (
         <div className="flex flex-col">
             <div className="hidden lg:flex border-2 border-b-[#3C1A6E] border-t-white border-r-white border-l-white w-240 gap-5">
-                <Link to="/PB-NS/dashboard/clube" className="border-3 border-b-white border-t-white border-r-white border-l-white p-2
+                <Link to="/dashboard/clube" className="border-3 border-b-white border-t-white border-r-white border-l-white p-2
                 hover:border-b-[#EE4D9A] hover:transition-all hover:duration-400">Conta</Link>
-                <Link to="/PB-NS/dashboard/clube/jogadoras" className="border-3 border-b-white border-t-white border-r-white border-l-white p-2
+                <Link to="/dashboard/clube/jogadoras" className="border-3 border-b-white border-t-white border-r-white border-l-white p-2
                 hover:border-b-[#EE4D9A] hover:transition-all hover:duration-400">Jogadoras</Link>
-                <Link to="/PB-NS/dashboard/clube/candidatas" className=" font-bold border-3 border-b-[#EE4D9A] border-t-white border-r-white border-l-white p-2">Pedidos</Link>
+                <Link to="/dashboard/clube/candidatas" className=" font-bold border-3 border-b-[#EE4D9A] border-t-white border-r-white border-l-white p-2">Pedidos</Link>
             </div>
             <div className="hidden lg:flex flex-col">
                 <div className="flex flex-col border-2 border-b-[#3C1A6E] border-t-white border-r-white border-l-white pt-2 pb-2 pl-3 ">
@@ -144,11 +144,11 @@ export default function CandidatasTime () {
 
 
             <div className="lg:hidden hidden md:flex border-2 border-b-[#3C1A6E] border-t-white border-r-white border-l-white w-160 gap-5">
-                <Link to="/PB-NS/dashboard/clube" className="border-3 border-b-white border-t-white border-r-white border-l-white p-2
+                <Link to="/dashboard/clube" className="border-3 border-b-white border-t-white border-r-white border-l-white p-2
                 hover:border-b-[#EE4D9A] hover:transition-all hover:duration-400">Conta</Link>
-                <Link to="/PB-NS/dashboard/clube/jogadoras" className=" border-3 border-b-white border-t-white border-r-white border-l-white p-2
+                <Link to="/dashboard/clube/jogadoras" className=" border-3 border-b-white border-t-white border-r-white border-l-white p-2
                 hover:border-b-[#EE4D9A] hover:transition-all hover:duration-400">Jogadoras</Link>
-                <Link to="/PB-NS/dashboard/clube/candidatas" className=" font-bold border-3 border-b-[#EE4D9A] border-t-white border-r-white border-l-white p-2">Pedidos</Link>
+                <Link to="/dashboard/clube/candidatas" className=" font-bold border-3 border-b-[#EE4D9A] border-t-white border-r-white border-l-white p-2">Pedidos</Link>
             </div>
             <div className="lg:hidden hidden md:flex flex-col">
                 <div className="flex flex-col border-2 border-b-[#3C1A6E] border-t-white border-r-white border-l-white pt-2 pb-2 pl-3 ">
@@ -220,11 +220,11 @@ export default function CandidatasTime () {
 
 
             <div className="md:hidden flex border-2 border-b-[#3C1A6E] border-t-white border-r-white border-l-white w-85 gap-5 justify-center">
-                <Link to="/PB-NS/dashboard/clube" className="border-3 border-b-white border-t-white border-r-white border-l-white p-2
+                <Link to="/dashboard/clube" className="border-3 border-b-white border-t-white border-r-white border-l-white p-2
                 hover:border-b-[#EE4D9A] hover:transition-all hover:duration-400">Conta</Link>
-                <Link to="/PB-NS/dashboard/clube/jogadoras" className=" border-3 border-b-white border-t-white border-r-white border-l-white p-2
+                <Link to="/dashboard/clube/jogadoras" className=" border-3 border-b-white border-t-white border-r-white border-l-white p-2
                 hover:border-b-[#EE4D9A] hover:transition-all hover:duration-400">Jogadoras</Link>
-                <Link to="/PB-NS/dashboard/clube/candidatas" className=" font-bold border-3 border-b-[#EE4D9A] border-t-white border-r-white border-l-white p-2">Pedidos</Link>
+                <Link to="/dashboard/clube/candidatas" className=" font-bold border-3 border-b-[#EE4D9A] border-t-white border-r-white border-l-white p-2">Pedidos</Link>
             </div>
             <div className="md:hidden flex flex-col">
                 <div className="flex flex-col border-2 w-85 border-b-[#3C1A6E] border-t-white border-r-white border-l-white pt-2 pb-2 pl-3 justify-center items-center text-center ">
