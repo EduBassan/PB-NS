@@ -14,8 +14,6 @@ export default function NavBar() {
         localStorage.removeItem("usuarioLogado");
         navigate("/");
     };
-    
-
     return (
         <nav className="p-5 ml-10 mr-10">
             <div className="flex justify-between items-center">
@@ -65,6 +63,16 @@ export default function NavBar() {
                             hover:border-[#EE4D9A] hover:bg-[#EE4D9A] hover:text-white transition-all duration-400">Minha página</Link>
                         </div>
                     )}
+                    {usuarioLogado?.tipo === "adm" && (
+                        <div className="flex flex-row items-center gap-2">
+                            <button onClick={sair}
+                            className="border-2 border-red-500 p-1 pr-7 pl-7
+                            hover:bg-red-500 hover:text-white transition-all duration-400 cursor-pointer">sair</button>
+                            <Link to="/dashboard/clube"
+                            className="border-2 border-[#3C1A6E] p-1 pr-8 pl-8
+                            hover:border-[#EE4D9A] hover:bg-[#EE4D9A] hover:text-white transition-all duration-400">Minha página</Link>
+                        </div>
+                    )}
                 </div>
 
                 <div className="lg:hidden hidden md:flex w-screen justify-between content-center items-center gap-30">
@@ -82,6 +90,10 @@ export default function NavBar() {
                             hover:bg-red-500 hover:transition-all hover:duration-500 hover:text-white " onClick={sair}>Sair</Link>
                         )}
                         {usuarioLogado?.tipo === "time" && (
+                            <Link className=" border-[2.5px] border-red-500 p-2 pl-15 pr-15
+                            hover:bg-red-500 hover:transition-all hover:duration-500 hover:text-white " onClick={sair}>Sair</Link>
+                        )}
+                        {usuarioLogado?.tipo === "adm" && (
                             <Link className=" border-[2.5px] border-red-500 p-2 pl-15 pr-15
                             hover:bg-red-500 hover:transition-all hover:duration-500 hover:text-white " onClick={sair}>Sair</Link>
                         )}
@@ -110,6 +122,11 @@ export default function NavBar() {
                             </button>
                         )}
                         {usuarioLogado?.tipo === "time" && (
+                            <button className="md:hidden border-[2.5px] border-red-500 p-2 pl-12 pr-12 ">
+                                <Link onClick={sair}>Sair</Link>
+                            </button>
+                        )}
+                        {usuarioLogado?.tipo === "adm" && (
                             <button className="md:hidden border-[2.5px] border-red-500 p-2 pl-12 pr-12 ">
                                 <Link onClick={sair}>Sair</Link>
                             </button>
@@ -148,6 +165,14 @@ export default function NavBar() {
                         <Link to="/copa" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Copa PB</Link>
                         <Link to="/apoiadores" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Apoiadores</Link>
                         <Link to="/dashboard/clube" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Minha página</Link>
+                    </div>
+                )}
+                {usuarioLogado?.tipo === "adm" && (
+                    <div className="flex flex-col items-center mt-4 gap-4 lg:hidden">
+                        <Link to="/" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Passa a bola</Link>
+                        <Link to="/copa" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Copa PB</Link>
+                        <Link to="/apoiadores" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Apoiadores</Link>
+                        <Link to="/dashboardADM" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Minha página</Link>
                     </div>
                 )}
                 </div>

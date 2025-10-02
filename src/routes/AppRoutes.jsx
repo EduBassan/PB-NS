@@ -29,6 +29,7 @@ import CandidatasTime from "../pages/CandidatasTime";
 import PostagensLayout from "../layouts/PostagensLayout";
 import Postagens from "../pages/Postagens";
 import LoginAdm from "../pages/LoginAdm";
+import CodigoUnico from "@/pages/CodigoUnico";
 
 export const router = createBrowserRouter([
     {
@@ -180,6 +181,11 @@ export const router = createBrowserRouter([
                 element: <PageNotFound/>,
             },
         ],
+    },
+    {
+        path: 'codigo',
+        element: <CodigoUnico/>,
+        errorElement: <PageNotFound/>,
     },
     {
         path: 'cadastrar',
