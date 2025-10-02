@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 
+
 export default function DashboardAtleta () {
     const navigate = useNavigate ();
     const [usuario, setUsuario] = useState(null);
@@ -26,7 +27,7 @@ export default function DashboardAtleta () {
         localStorage.removeItem("usuarioLogado");
 
         alert("Conta excluída com sucesso!");
-        navigate("/PB-NS");
+        navigate("/");
     };
 
     return (

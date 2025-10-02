@@ -29,7 +29,7 @@ export default function Hero() {
                     <h3 className="font-bold  mb-3  text-[13px] lg:text-[16px] w-70 lg:w-110 text-center lg:text-left">Passa a Bola conecta meninas, times e comunidades para criar campeonatos acessíveis, divertidos e profissionais.</h3>
                     <Link to="/cadastrar" className="font-bold text-center bg-[#EE4D9A] border-2 p-3  w-50
                     hover:translate-x-7 text-white transition-all duration-400">Inscreva seu time</Link>
-                    <HashLink smooth to="/PB-NS/copa#copa" className="text-[12px] font-bold text-center bg-[#3C1A6E] border-2 p-3  w-50
+                    <HashLink smooth to="/copa#copa" className="text-[12px] font-bold text-center bg-[#3C1A6E] border-2 p-3  w-50
                      text-white transition-all hover:translate-x-7 duration-400">Ver programação da COPA PB </HashLink>
                 </div>
             </div>
@@ -64,7 +64,7 @@ export default function Hero() {
                     </div>
                     <div className="col-span-10 lg:col-span-7 flex justify-center flex-col items-center">
                         <p className="">Pouca Visibilidade...</p>
-                        <HashLink smooth to="/PB-NS/copa#destaques" className="text-center text-[#EE4D9A] font-bold text-[20px] lg:text-[40px] leading-none">→ Cobertura, vitrine de atletas.</HashLink>
+                        <HashLink smooth to="/copa#destaques" className="text-center text-[#EE4D9A] font-bold text-[20px] lg:text-[40px] leading-none">→ Cobertura, vitrine de atletas.</HashLink>
                     </div>
                 </div>
 

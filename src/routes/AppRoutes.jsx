@@ -28,10 +28,11 @@ import JogadorasTime from "../pages/JogadorasTime";
 import CandidatasTime from "../pages/CandidatasTime";
 import PostagensLayout from "../layouts/PostagensLayout";
 import Postagens from "../pages/Postagens";
+import LoginAdm from "../pages/LoginAdm";
 
 export const router = createBrowserRouter([
     {
-        path: "/PB-NS",
+        path: "/",
         element: <MainLayout/>,
         errorElement: <PageNotFound/>,
         children: [
@@ -169,6 +170,10 @@ export const router = createBrowserRouter([
             {
                 path: 'time',
                 element: <LoginTime/>,
+            },
+            {
+                path: 'adm',
+                element: <LoginAdm/>,
             },
             {
                 path: "*",

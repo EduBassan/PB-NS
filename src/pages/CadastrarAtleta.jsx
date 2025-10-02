@@ -62,7 +62,7 @@ export default function CadastrarAtleta () {
     localStorage.setItem("usuarioLogado", JSON.stringify(novaJogadora));
 
     alert("Conta criada com sucesso!");
-    navigate("/PB-NS/dashboard/jogadora"); 
+    navigate("/dashboard/jogadora"); 
 };
 
     return(
