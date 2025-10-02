@@ -8,39 +8,38 @@ import { useNavigate } from "react-router-dom";
 
 export function LoginCodigo({className,...props}) {
 
-  const [codigo, setCodigo] = useState("");
+    const [codigo, setCodigo] = useState("");
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  const admString = localStorage.getItem("01");
+    const admString = localStorage.getItem("01");
 
-  if (!admString) {
-    alert("Nenhum usuário encontrado!");
-    return;
-  }
-
-  try {
-    const admObj = JSON.parse(admString);
-
-    // Se for objeto único
-    const user = admObj.codigo === Number(codigo) ? admObj : null;
-
-    if (user) {
-      localStorage.setItem(
-        "usuarioLogado",
-        JSON.stringify({ ...user, tipo: "adm" })
-      );
-      navigate("/dashboardADM");
-    } else {
-      alert("Código inválido");
+    if (!admString) {
+        alert("Nenhum usuário encontrado!");
+        return;
     }
-  } catch (err) {
-    console.error("Erro ao ler usuários:", err);
-    alert("Erro no sistema, tente novamente.");
-  }
-};
+
+    try {
+        const admObj = JSON.parse(admString);
+
+        const user = admObj.codigo === Number(codigo) ? admObj : null;
+
+        if (user) {
+        localStorage.setItem(
+            "usuarioLogado",
+            JSON.stringify({ ...user, tipo: "adm" })
+        );
+        navigate("/dashboardADM");
+        } else {
+        alert("Código inválido");
+        }
+    } catch (err) {
+        console.error("Erro ao ler usuários:", err);
+        alert("Erro no sistema, tente novamente.");
+    }
+    };
 
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
