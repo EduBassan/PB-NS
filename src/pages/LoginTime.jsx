@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { carregarTimes } from "../js/storage";
 
+
 export default function LoginTime () {
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
@@ -19,7 +20,7 @@ export default function LoginTime () {
         if (user) {
             localStorage.setItem("usuarioLogado", JSON.stringify({ ...user, tipo: "time" }));
             alert("Login realizado!");
-            navigate("/PB-NS/dashboard/clube");
+            navigate("/dashboard/clube");
         } else {
             alert("Email ou senha incorretos!");
         }

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { carregarJogadoras } from "../js/storage";
 
+
 export default function LoginAtleta () {
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
@@ -19,7 +20,7 @@ export default function LoginAtleta () {
         if (user) {
             localStorage.setItem("usuarioLogado", JSON.stringify({ ...user, tipo: "jogadora" }));
             alert("Login realizado!");
-            navigate("/PB-NS/dashboard/jogadora");
+            navigate("/dashboard/jogadora");
         } else {
             alert("Email ou senha incorretos!");
         }
