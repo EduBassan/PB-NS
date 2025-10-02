@@ -6,6 +6,10 @@
 html{
     scroll-behavior: smooth;
 }
+.custom-selection::selection {
+  background: #FF69B4;
+  color: white;
+}
 
 @theme inline {
     --radius-sm: calc(var(--radius) - 4px);
