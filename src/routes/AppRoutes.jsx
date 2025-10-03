@@ -30,6 +30,12 @@ import PostagensLayout from "../layouts/PostagensLayout";
 import Postagens from "../pages/Postagens";
 import LoginAdm from "../pages/LoginAdm";
 import CodigoUnico from "@/pages/CodigoUnico";
+import DashboardAdm from "@/layouts/DashboardAdm";
+import PainelPrincipal from "@/adm/PainelPrincipal";
+import Pedidos from "@/adm/Pedidos";
+import JogadorasAdm from "@/adm/JogadorasAdm";
+import TimesAdm from "@/adm/TimesAdm";
+import Exportar from "@/adm/Exportar";
 
 export const router = createBrowserRouter([
     {
@@ -186,6 +192,34 @@ export const router = createBrowserRouter([
         path: 'codigo',
         element: <CodigoUnico/>,
         errorElement: <PageNotFound/>,
+    },
+    {
+        path: 'dashboardADM',
+        element: <DashboardAdm/>,
+        errorElement: <PageNotFound/>,
+        children: [
+            {
+                index:true,
+                element: <PainelPrincipal/>,
+                errorElement: <PageNotFound/>,
+            },
+            {
+                path: 'pedidos',
+                element: <Pedidos/>,
+            },
+            {
+                path: 'jogadorasADM',
+                element: <JogadorasAdm/>,
+            },
+            {
+                path: 'timesADM',
+                element: <TimesAdm/>,
+            },
+            {
+                path: 'exportar',
+                element: <Exportar/>,
+            },
+        ],
     },
     {
         path: 'cadastrar',

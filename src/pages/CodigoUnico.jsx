@@ -1,11 +1,9 @@
 import { LoginCodigo } from "@/components/login-codigo";
 import { Alert, AlertDescription, AlertTitle, } from "@/components/ui/alert"
-import { carregarAdm } from "@/js/storage";
 import { AlertCircleIcon, CheckCircle2Icon, PopcornIcon } from "lucide-react"
 
 export default function CodigoUnico () {
-    const administracao = carregarAdm()
-    console.log(administracao)
+    const adm = JSON.parse(localStorage.getItem("01"))
     return (
         <div className="bg-background flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10">
             <div>
@@ -15,7 +13,7 @@ export default function CodigoUnico () {
                     <AlertDescription>
                     <p>Como é apenas um protótipo, o envio de e-mail está desativado.<br/> Use o código abaixo para continuar:</p>
                     <ul className="list-inside list-disc text-sm">
-                        <li>a</li>
+                        <li>{adm.codigo}</li>
                     </ul>
                     </AlertDescription>
                 </Alert>
