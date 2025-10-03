@@ -1,6 +1,9 @@
 import { jogadoras } from "./jogadoras";
 import { times } from "./times";
 import { adm } from "./adm"
+import { pedidos } from "./pedidosAtletas";
+import { usuarioLogadoInicial } from "./usuarioLogadoInicial";
+import { pedidosTimes } from "./pedidosTimes";
 
 if (!localStorage.getItem("jogadoras")) {
   localStorage.setItem("jogadoras", JSON.stringify(jogadoras))
@@ -12,6 +15,18 @@ if (!localStorage.getItem("times")) {
 
 if (!localStorage.getItem("adm")) {
   localStorage.setItem("adm", JSON.stringify(adm))
+}
+
+if (!localStorage.getItem("pedidosTimes")) {
+  localStorage.setItem("pedidosTimes", JSON.stringify(pedidosTimes))
+}
+
+if (!localStorage.getItem("pedidos")) {
+  localStorage.setItem("pedidos", JSON.stringify(pedidos))
+}
+
+if (!localStorage.getItem("usuarioLogado")) {
+  localStorage.setItem("usuarioLogado", JSON.stringify(usuarioLogadoInicial))
 }
 
 export function carregarJogadoras() {

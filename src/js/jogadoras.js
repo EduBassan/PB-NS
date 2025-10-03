@@ -6,12 +6,13 @@ export let jogadoras = [
         senha: "123456",
         dataDeNascimento: "2000-01-01",
         posicao: "Atacante",
-        foto: null,
+        foto: "https://www.esportelandia.com.br/wp-content/uploads/2020/03/alex-morgan.jpg",
         email: "maria@email.com",
         telefone: "11999999999",
         condicaoMedica: false,
         possuiTime: false,
         tipo: "jogadora",
+        pedido: true,
     },
     {
        id: 2,
@@ -25,6 +26,7 @@ export let jogadoras = [
         telefone: "11999999999",
         condicaoMedica: false,
         possuiTime: false,
-        tipo: "jogadora", 
+        tipo: "jogadora",
+        pedido: true,
     },
 ]

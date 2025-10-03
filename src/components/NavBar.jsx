@@ -29,7 +29,7 @@ export default function NavBar() {
                 </div>
                 
                 <div className="hidden lg:flex flex-row items-center gap-5">
-                    {! usuarioLogado && (
+                    {usuarioLogado?.tipo === 'nenhum' && (
                         <div className="flex flex-row gap-5 items-center">
                             <Link to="/cadastrar" 
                             className="hover:text-xl 
@@ -68,7 +68,7 @@ export default function NavBar() {
                             <button onClick={sair}
                             className="border-2 border-red-500 p-1 pr-7 pl-7
                             hover:bg-red-500 hover:text-white transition-all duration-400 cursor-pointer">sair</button>
-                            <Link to="/dashboard/clube"
+                            <Link to="/dashboardADM"
                             className="border-2 border-[#3C1A6E] p-1 pr-8 pl-8
                             hover:border-[#EE4D9A] hover:bg-[#EE4D9A] hover:text-white transition-all duration-400">Minha página</Link>
                         </div>
@@ -80,7 +80,7 @@ export default function NavBar() {
                         <img src={Logo} alt="Logo-Passa-a-bola" className="w-13" />
                     </div>
                     <div>
-                        {!usuarioLogado && (
+                        {usuarioLogado?.tipo === 'nenhum' && (
                             <button className=" border-[2.5px] border-[#3C1A6E] p-2 pl-15 pr-15 hover:bg-[#3C1A6E] hover:transition-all hover:duration-500 hover:text-white ">
                                 <Link to="/login">Entrar</Link>
                             </button>
@@ -111,7 +111,7 @@ export default function NavBar() {
                         <img src={Logo} alt="Logo-Passa-a-bola" className="w-13" />
                     </div>
                     <div>
-                        {!usuarioLogado && (
+                        {usuarioLogado?.tipo === 'nenhum' && (
                             <button className="md:hidden border-[2.5px] border-[#3C1A6E] p-2 pl-12 pr-12 ">
                                 <Link to="/login">Entrar</Link>
                             </button>
@@ -143,7 +143,7 @@ export default function NavBar() {
 
             {isOpen && (
                 <div>
-                    {!usuarioLogado && (
+                    {usuarioLogado?.tipo === "nenhum" && (
                     <div className="flex flex-col items-center mt-4 gap-4 lg:hidden">
                         <Link to="/" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Passa a bola</Link>
                         <Link to="/copa" onClick={() => setIsOpen(false)} className="hover:text-[#EE4D9A] font-medium">Copa PB</Link>
