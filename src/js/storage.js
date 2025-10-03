@@ -4,6 +4,13 @@ import { adm } from "./adm"
 import { pedidos } from "./pedidosAtletas";
 import { usuarioLogadoInicial } from "./usuarioLogadoInicial";
 import { pedidosTimes } from "./pedidosTimes";
+import {atletasDestaque} from "./atletasDestaque"
+
+
+
+if (!localStorage.getItem("atletasDestaque")) {
+  localStorage.setItem("atletasDestaque", JSON.stringify(atletasDestaque))
+}
 
 if (!localStorage.getItem("jogadoras")) {
   localStorage.setItem("jogadoras", JSON.stringify(jogadoras))
