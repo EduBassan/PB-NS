@@ -15,10 +15,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFutbol } from "@fortawesome/free-solid-svg-icons";
 
 
-
-
-
 export default function AtletasDestaque() {
+    const destaques = JSON.parse(localStorage.getItem("atletasDestaque"));
     const [atletas, setAtletas] = useState([
         {
             id: 3,
@@ -143,7 +141,7 @@ export default function AtletasDestaque() {
                         }}
                     >
 
-                        {atletas.map((card, index) => (
+                        {destaques.map((card, index) => (
                             <SwiperSlide
                                 key={index}
                                 className="flex items-center justify-center"
@@ -172,7 +170,7 @@ export default function AtletasDestaque() {
 
                                             <div className="flex relative w-full justify-center items-start left-[0px] bottom-[64px]">
                                                 <div className="flex justify-center items-center w-full h-[210px] overflow-hidden">
-                                                    <img src={card.img} className="max-h-[210px]" />
+                                                    <img src= {card.img} className="max-h-[210px]" />
                                                 </div>
                                             </div>
                                         </div>
