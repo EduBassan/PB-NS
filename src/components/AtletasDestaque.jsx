@@ -13,6 +13,7 @@ import { EffectCoverflow } from 'swiper/modules';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFutbol } from "@fortawesome/free-solid-svg-icons";
+import { faUserPen } from "@fortawesome/free-solid-svg-icons";
 
 
 export default function AtletasDestaque() {
@@ -53,7 +54,7 @@ export default function AtletasDestaque() {
         },
     ]);
     const [novoAtleta, setNovoAtleta] = useState({
-        id:"",
+        id: "",
         nome: "",
         sobrenome: "",
         time: "",
@@ -66,7 +67,7 @@ export default function AtletasDestaque() {
     const adicionarAtleta = () => {
         setAtletas([...atletas, novoAtleta]);
         setNovoAtleta({
-            id:"",
+            id: "",
             nome: "",
             sobrenome: "",
             img: "",
@@ -78,9 +79,10 @@ export default function AtletasDestaque() {
         });
     };
 
-    const atualizarAtleta = (novoAtleta) => {setAtletas(atletas.map(a => a.id === novoAtleta.id ? novoAtleta : a));
+    const atualizarAtleta = (novoAtleta) => {
+        setAtletas(atletas.map(a => a.id === novoAtleta.id ? novoAtleta : a));
         setNovoAtleta({
-            id:"",
+            id: "",
             nome: "",
             sobrenome: "",
             img: "",
@@ -91,9 +93,10 @@ export default function AtletasDestaque() {
             time: ""
         });
     };
-    const deletarAtleta = (id) => { setAtletas(atletas.filter(a => a.id !== id));
+    const deletarAtleta = (id) => {
+        setAtletas(atletas.filter(a => a.id !== id));
         setNovoAtleta({
-            id:"",
+            id: "",
             nome: "",
             sobrenome: "",
             img: "",
@@ -141,7 +144,7 @@ export default function AtletasDestaque() {
                         }}
                     >
 
-                        {destaques.map((card, index) => (
+                        {atletas.map((card, index) => (
                             <SwiperSlide
                                 key={index}
                                 className="flex items-center justify-center"
@@ -170,7 +173,7 @@ export default function AtletasDestaque() {
 
                                             <div className="flex relative w-full justify-center items-start left-[0px] bottom-[64px]">
                                                 <div className="flex justify-center items-center w-full h-[210px] overflow-hidden">
-                                                    <img src= {card.img} className="max-h-[210px]" />
+                                                    <img src={card.img} className="max-h-[210px]" />
                                                 </div>
                                             </div>
                                         </div>
@@ -243,58 +246,140 @@ export default function AtletasDestaque() {
                 </style>
             </div>
 
-            <div className="flex flex-col w-full h-auto bg-[#3c1970] justify-center items-center text-white mt-2 mb-2">
-                <div className="flex flex-col gap-5 p-5">
-                    <input type="text" placeholder="Nome" className="bg-white text-black" value={novoAtleta.nome}
-                        onChange={e => {
-                            setNovoAtleta({ ...novoAtleta, nome: e.target.value })
-                        }}
-                    />
-                    <input type="text" placeholder="URL da Foto" className="bg-white text-black" value={novoAtleta.img}
-                        onChange={e => {
-                            setNovoAtleta({ ...novoAtleta, img: e.target.value })
-                        }}
-                    />
-                    <input type="text" placeholder="Sobrenome" className="bg-white text-black" value={novoAtleta.sobrenome}
-                        onChange={e => {
-                            setNovoAtleta({ ...novoAtleta, sobrenome: e.target.value })
-                        }}
-                    />
-                    <input type="text" placeholder="Jogos" className="bg-white text-black" value={novoAtleta.jogos}
-                        onChange={e => {
-                            setNovoAtleta({ ...novoAtleta, jogos: e.target.value })
-                        }}
-                    />
-                    <input type="text" placeholder="Gols" className="bg-white text-black" value={novoAtleta.gols}
-                        onChange={e => {
-                            setNovoAtleta({ ...novoAtleta, gols: e.target.value })
-                        }}
-                    />
-                    <input type="text" placeholder="Assistências" className="bg-white text-black" value={novoAtleta.assist}
-                        onChange={e => {
-                            setNovoAtleta({ ...novoAtleta, assist: e.target.value })
-                        }}
-                    />
-                    <input type="text" placeholder="Posição" className="bg-white text-black" value={novoAtleta.pos}
-                        onChange={e => {
-                            setNovoAtleta({ ...novoAtleta, pos: e.target.value })
-                        }}
-                    />
-                    <input type="text" placeholder="Time" className="bg-white text-black" value={novoAtleta.time}
-                        onChange={e => {
-                            setNovoAtleta({ ...novoAtleta,time: e.target.value })
-                        }}
-                    />
-                    <input type="text" placeholder="ID" className="bg-white text-black" value={novoAtleta.id}
-                        onChange={e => {
-                            setNovoAtleta({ ...novoAtleta, id: Number(e.target.value) })
-                        }}
-                    />
-                    <button className=" p-1 bg-[#EE4D9A] text-medium" onClick={adicionarAtleta}>Adicionar</button>
-                    <button className=" p-1 bg-[#EE4D9A] text-medium" onClick={() => atualizarAtleta(novoAtleta)}>Atualizar</button>
-                    <button className=" p-1 bg-[#EE4D9A] text-medium" onClick={() => deletarAtleta(Number(novoAtleta.id))}>Deletar</button>
+            <div className="px-1 w-full">
+            <div className="flex w-full h-auto bg-[#3c1970] justify-center items-center text-white p-2 mt-2 mb-2">
+                <div className="flex flex-col lg:flex-row justify-center items-center gap-x-1 gap-y-3">
+                    <div className="flex items-center justify-center flex-col gap-3 p-2">
+                        <span className="font-bold text-[25px] w-full text-center">Faça Parte do Time <FontAwesomeIcon icon={faUserPen} className="text-[22px]" />  </span>
+                        <div className="flex w-full gap-3">
+                            <input type="text" placeholder="Nome" className="bg-white text-black rounded-[2px] w-full" value={novoAtleta.nome}
+                                onChange={e => {
+                                    setNovoAtleta({ ...novoAtleta, nome: e.target.value })
+                                }}
+                            />
+                            <input type="text" placeholder="Sobrenome" className="bg-white text-black rounded-[2px] w-full" value={novoAtleta.sobrenome}
+                                onChange={e => {
+                                    setNovoAtleta({ ...novoAtleta, sobrenome: e.target.value })
+                                }}
+                            />
+                        </div>
+                        <div className="flex w-full gap-3">
+                            <input type="text" placeholder="Jogos" className="bg-white text-black rounded-[2px] w-full" value={novoAtleta.jogos}
+                                onChange={e => {
+                                    setNovoAtleta({ ...novoAtleta, jogos: e.target.value })
+                                }}
+                            />
+                            <input type="text" placeholder="Posição" className="bg-white text-black rounded-[2px] w-full" value={novoAtleta.pos}
+                                onChange={e => {
+                                    setNovoAtleta({ ...novoAtleta, pos: e.target.value })
+                                }}
+                            />
+                        </div>
+
+                        <div className="flex w-full">
+                            <input type="text" placeholder="Time" className="bg-white text-black rounded-[2px] w-full" value={novoAtleta.time}
+                                onChange={e => {
+                                    setNovoAtleta({ ...novoAtleta, time: e.target.value })
+                                }}
+                            />
+                        </div>
+                        <div className="flex w-full">
+                            <input type="text" placeholder="URL da Foto" className="bg-white text-black rounded-[2px] w-full" value={novoAtleta.img}
+                                onChange={e => {
+                                    setNovoAtleta({ ...novoAtleta, img: e.target.value })
+                                }}
+                            />
+                        </div>
+                        <div className="flex w-full gap-3">
+                            <input type="text" placeholder="Gols" className="bg-white text-black rounded-[2px] w-full" value={novoAtleta.gols}
+                                onChange={e => {
+                                    setNovoAtleta({ ...novoAtleta, gols: e.target.value })
+                                }}
+                            />
+                            <input type="text" placeholder="Assistências" className="bg-white text-black rounded-[2px] w-full" value={novoAtleta.assist}
+                                onChange={e => {
+                                    setNovoAtleta({ ...novoAtleta, assist: e.target.value })
+                                }}
+                            />
+                        </div>
+                        <div className="w-full hidden">
+                            <input type="text" placeholder="ID" className="bg-white text-black rounded-[2px] w-full" value={novoAtleta.id}
+                                onChange={e => {
+                                    setNovoAtleta({ ...novoAtleta, id: Number(e.target.value) })
+                                }}
+                            />
+                        </div>
+                        <div className="lg:flex hidden flex-wrap gap-3 w-full justify-center items-center">
+                            <button className="w-full p-1 bg-[#EE4D9A] text-medium transition-all hover:translate-y-1 duration-500 transform " onClick={adicionarAtleta}>Adicionar</button>
+                            <div className="flex w-full justify-center gap-2">
+                                <button className=" w-full p-1 bg-[#EE4D9A] text-medium transition-all hover:translate-y-1 duration-500 transform " onClick={() => atualizarAtleta(novoAtleta)}>Atualizar</button>
+                                <button className=" w-full p-1 bg-[#EE4D9A] text-medium transition-all hover:translate-y-1 duration-500 transform " onClick={() => deletarAtleta(Number(novoAtleta.id))}>Deletar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex flex-col items-center h-[395px] w-[291px] bg-[#713bc2]  p-3">
+                        <div className="flex flex-wrap h-full w-full bg-[#EE4D9A] p-1 justify-center">
+                            <div className="flex flex-col h-[60%] w-full  bg-gradient-to-br from-[#713bc2] via-[#3c1970] to-[#5927a3]">
+                                <div className="flex relative z-10 justify-between h-full">
+                                    <div className="w-auto font-medium text-white pt-2 pl-2">
+                                        {novoAtleta.time}
+                                    </div>
+
+                                    <div className="flex flex-col items-center w-auto text-white pt-4 pr-4">
+                                        <div className="font-thin italic leading-none text-[13px]">
+                                            Jogos
+
+                                        </div>
+                                        <div className="font-bold text-3xl leading-none">
+                                            {novoAtleta.jogos}
+                                        </div>
+                                        <div className="font-thin italic leading-none text-[13px]">
+                                            {novoAtleta.pos}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="flex relative w-full justify-center items-start left-[0px] bottom-[64px]">
+                                    <div className="flex justify-center items-center w-full h-[210px] overflow-hidden">
+                                        <img src={novoAtleta.img} className="max-h-[210px]" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="flex h-[40%] w-full bg-gradient-to-br from-[#EE4D9A] to-[#3c1970] justify-between px-5 pb-5 text-white">
+                                <div className="flex flex-col w-full items-center pt-1">
+                                    <div className="leading-none font-medium text-[17px] mt-1">{novoAtleta.nome}</div>
+                                    <div className="leading-none italic mb-2">{novoAtleta.sobrenome}</div>
+                                    <div className="flex flex-col justify-center items-center  h-full border-2 w-[100%]">
+                                        <div className="flex flex-row justify-center items-center">
+                                            <div>   <FontAwesomeIcon icon={faFutbol} className="text-[22px]" /> </div>
+                                            <div className="w-[50px] h-[1px] bg-white m-5"></div>
+                                            <div>{novoAtleta.gols} Gols</div>
+                                        </div>
+                                        <div className="flex justify-center items-center text-[16px] w-[100%]">
+                                            <div className="flex justify-end items-center"><img src={waiter} className="w-[22px]" /></div>
+                                            <div className="w-[50px] h-[1px] bg-white m-5"></div>
+                                            <div className="text-[16px]">{novoAtleta.assist} Ass.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="text-white text-[10px] leading-0">
+                            Nº{novoAtleta.id}
+                        </div>
+
+                    </div>
+                    <div className="flex lg:hidden flex-wrap gap-3 w-full justify-center items-center">
+                            <button className="w-full p-1 bg-[#EE4D9A] text-medium transition-all hover:translate-y-1 duration-500 transform " onClick={adicionarAtleta}>Adicionar</button>
+                            <div className="flex w-full justify-center gap-2">
+                                <button className=" w-full p-1 bg-[#EE4D9A] text-medium transition-all hover:translate-y-1 duration-500 transform " onClick={() => atualizarAtleta(novoAtleta)}>Atualizar</button>
+                                <button className=" w-full p-1 bg-[#EE4D9A] text-medium transition-all hover:translate-y-1 duration-500 transform " onClick={() => deletarAtleta(Number(novoAtleta.id))}>Deletar</button>
+                            </div>
+                        </div>
+                </div>
                 </div>
             </div>
+           
 
         </div>
     );
