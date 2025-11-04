@@ -17,7 +17,8 @@ export let jogadoras = [
         gols: "3",
         assist: "10",
         pos: "MEI",
-        time: "Palmeiras"
+        time: "Palmeiras",
+        destaque: false
     },
     {
        id: 2,
@@ -37,7 +38,8 @@ export let jogadoras = [
         gols: "3",
         assist: "10",
         pos: "MEI",
-        time: "Palmeiras"
+        time: "Palmeiras",
+        destaque: true
     },
     {"id":1759932743191,
         nome:"Laura",
@@ -50,59 +52,7 @@ export let jogadoras = [
         gols: "3",
         assist: "10",
         pos: "MEI",
-        time: "Palmeiras"
-    },
-    {
-        id: 1,
-        nome: "Maria",
-        sobrenome: "Silva",
-        senha: "123456",
-        dataDeNascimento: "2000-01-01",
-        posicao: "Atacante",
-        foto: "https://www.esportelandia.com.br/wp-content/uploads/2020/03/alex-morgan.jpg",
-        email: "maria@email.com",
-        telefone: "11999999999",
-        condicaoMedica: false,
-        possuiTime: false,
-        tipo: "jogadora",
-        pedido: true,
-        jogos: "17",
-        gols: "3",
-        assist: "10",
-        pos: "MEI",
-        time: "Palmeiras"
-    },
-    {
-       id: 2,
-        nome: "Luana",
-        sobrenome: "Maluf",
-        senha: "palmeiras",
-        dataDeNascimento: "1994-08-09",
-        posicao: "Atacante",
-        foto: "https://tedxblumenau.com.br/wp-content/uploads/2022/08/Luana-Maluf.jpeg.webp",
-        email: "luana@email.com",
-        telefone: "11999999999",
-        condicaoMedica: false,
-        possuiTime: false,
-        tipo: "jogadora",
-        pedido: true,
-        jogos: "17",
-        gols: "3",
-        assist: "10",
-        pos: "MEI",
-        time: "Palmeiras"
-    },
-    {"id":1759932743191,
-        nome:"Laura",
-        sobrenome:"dos Santos",
-        senha:"12345678",
-        dataDeNascimento:"2006-12-11",
-        posicao:"atacante",
-        foto:"https://cdn.meutimao.com.br/_upload/jogador/eloha-siqueira-no-corinthians_u_corinthians.jpg",
-        jogos: "17",
-        gols: "3",
-        assist: "10",
-        pos: "MEI",
-        time: "Palmeiras"
+        time: "Palmeiras",
+        destaque: true
     }
 ]
