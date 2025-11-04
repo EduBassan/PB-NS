@@ -69,142 +69,136 @@ export default function JogadorasDashboard() {
             {
                 openModal && (
                     <div className="w-full h-full relative z-20 flex">
-                        <div className="flex flex-wrap w-full h-auto bg-[#3c1970] justify-center items-center text-white p-2 mt-2 mb-2">
+                        <div className="flex flex-wrap w-full h-auto justify-center items-center text-white p-2 mt-2 mb-2">
 
                             <div className="w-full flex">
-                                <span className="font-bold text-[25px] w-full text-center">Lembre-se de Salvar as Alterações<FontAwesomeIcon icon={faUserPen} className="text-[22px]" />  </span></div>
+                                <span className="font-bold text-[25px] text-[#3c1970] w-full text-center">Lembre-se de Salvar as Alterações<FontAwesomeIcon icon={faUserPen} className="text-[22px]" />  </span></div>
 
                             <div className="w-full flex justify-center gap-12">
-                                <div className="flex flex-col w-[30%] gap-3 pt-10">
+                                
+                                <div className="flex flex-col w-[30%] gap-3 pt-5">
 
                                     <div className="w-full flex">
                                         <div className="flex flex-wrap mb-2">
-                                            {/* Nome */}
+                                            <div className="flex">
                                             <div className="w-full px-3 mb-3">
-                                                <label className="block text-white text-xs font-bold mb-2" htmlFor="nome">
+                                                <label className="block text-[#3c1970] text-xs font-bold mb-2" htmlFor="nome">
                                                     Nome
                                                 </label>
                                                 <input
                                                     id="nome"
                                                     type="text"
                                                     placeholder="Nome"
-                                                    className="appearance-none block w-full bg-white text-black border border-gray-300  p-2 leading-tight focus:outline-none focus:ring-2 focus:ring-[#713bc2]"
+                                                    className="appearance-none block w-full bg-white text-black p-2 leading-tight focus:outline-none focus:ring-2 border border-[#3c1970] focus:ring-[#713bc2]"
                                                     value={novoAtleta.nome}
                                                     onChange={e => setNovoAtleta({ ...novoAtleta, nome: e.target.value })}
                                                 />
                                             </div>
-
-                                            {/* Sobrenome */}
                                             <div className="w-full  px-3">
-                                                <label className="block text-white text-xs font-bold mb-2" htmlFor="sobrenome">
+                                                <label className="block text-[#3c1970] text-xs font-bold mb-2" htmlFor="sobrenome">
                                                     Sobrenome
                                                 </label>
                                                 <input
                                                     id="sobrenome"
                                                     type="text"
                                                     placeholder="Sobrenome"
-                                                    className="appearance-none block w-full bg-white text-black border border-gray-300  py-2 px-3 leading-tight focus:outline-none focus:ring-2 focus:ring-[#713bc2]"
+                                                    className="appearance-none block w-full bg-white text-black border border-[#3c1970]  py-2 px-3 leading-tight focus:outline-none focus:ring-2 focus:ring-[#713bc2]"
                                                     value={novoAtleta.sobrenome}
                                                     onChange={e => setNovoAtleta({ ...novoAtleta, sobrenome: e.target.value })}
                                                 />
-                                            </div>
+                                            </div></div>
 
-                                            {/* URL da Foto */}
                                             <div className="w-full px-3 mt-3">
-                                                <label className="block text-white text-xs font-bold mb-2" htmlFor="foto">
+                                                <label className="block text-[#3c1970] text-xs font-bold mb-2" htmlFor="foto">
                                                     URL da Foto
                                                 </label>
                                                 <input
                                                     id="foto"
                                                     type="text"
                                                     placeholder="URL da Foto"
-                                                    className="appearance-none block w-full bg-white text-black border border-gray-300  py-2 px-3 leading-tight focus:outline-none focus:ring-2 focus:ring-[#713bc2]"
+                                                    className="appearance-none block w-full bg-white text-black border border-[#3c1970]  py-2 px-3 leading-tight focus:outline-none focus:ring-2 focus:ring-[#713bc2]"
                                                     value={novoAtleta.foto}
                                                     onChange={e => setNovoAtleta({ ...novoAtleta, foto: e.target.value })}
                                                 />
                                             </div>
 
-                                            {/* Jogos, Gols, Assistências */}
                                             <div className="w-full md:w-1/3 px-3 3">
-                                                <label className="block text-white text-xs font-bold mt-2 mb-2" htmlFor="jogos">
+                                                <label className="block text-[#3c1970] text-xs font-bold mt-2 mb-2" htmlFor="jogos">
                                                     Jogos
                                                 </label>
                                                 <input
                                                     id="jogos"
                                                     type="text"
                                                     placeholder="Jogos"
-                                                    className="appearance-none block w-full bg-white text-black border border-gray-300  py-2 px-3 leading-tight focus:outline-none focus:ring-2 focus:ring-[#713bc2]"
+                                                    className="appearance-none block w-full bg-white text-black border border-[#3c1970]  py-2 px-3 leading-tight focus:outline-none focus:ring-2 focus:ring-[#713bc2]"
                                                     value={novoAtleta.jogos}
                                                     onChange={e => setNovoAtleta({ ...novoAtleta, jogos: e.target.value })}
                                                 />
                                             </div>
 
                                             <div className="w-full md:w-1/3 px-3 mt-2">
-                                                <label className="block text-white text-xs font-bold mb-2" htmlFor="gols">
+                                                <label className="block text-[#3c1970] text-xs font-bold mb-2" htmlFor="gols">
                                                     Gols
                                                 </label>
                                                 <input
                                                     id="gols"
                                                     type="text"
                                                     placeholder="Gols"
-                                                    className="appearance-none block w-full bg-white text-black border border-gray-300  py-2 px-3 leading-tight focus:outline-none focus:ring-2 focus:ring-[#713bc2]"
+                                                    className="appearance-none block w-full bg-white text-black border border-[#3c1970]  py-2 px-3 leading-tight focus:outline-none focus:ring-2 focus:ring-[#713bc2]"
                                                     value={novoAtleta.gols}
                                                     onChange={e => setNovoAtleta({ ...novoAtleta, gols: e.target.value })}
                                                 />
                                             </div>
 
                                             <div className="w-full md:w-1/3 px-3 mt-2 ">
-                                                <label className="block text-white text-xs font-bold mb-2" htmlFor="assist">
+                                                <label className="block text-[#3c1970] text-xs font-bold mb-2" htmlFor="assist">
                                                     Assistências
                                                 </label>
                                                 <input
                                                     id="assist"
                                                     type="text"
                                                     placeholder="Assistências"
-                                                    className="appearance-none block w-full bg-white text-black border border-gray-300  py-2 px-3 leading-tight focus:outline-none focus:ring-2 focus:ring-[#713bc2]"
+                                                    className="appearance-none block w-full bg-white text-black border border-[#3c1970]  py-2 px-3 leading-tight focus:outline-none focus:ring-2 focus:ring-[#713bc2]"
                                                     value={novoAtleta.assist}
                                                     onChange={e => setNovoAtleta({ ...novoAtleta, assist: e.target.value })}
                                                 />
                                             </div>
 
-                                            {/* Time */}
                                             <div className="w-full md:w-1/2 px-3 mt-2">
-                                                <label className="block text-white text-xs font-bold mb-2" htmlFor="time">
+                                                <label className="block text-[#3c1970] text-xs font-bold mb-2" htmlFor="time">
                                                     Time
                                                 </label>
                                                 <input
                                                     id="time"
                                                     type="text"
                                                     placeholder="Time"
-                                                    className="appearance-none block w-full bg-white text-black border border-gray-300  py-2 px-3 leading-tight focus:outline-none focus:ring-2 focus:ring-[#713bc2]"
+                                                    className="appearance-none block w-full bg-white text-black border border-[#3c1970]  py-2 px-3 leading-tight focus:outline-none focus:ring-2 focus:ring-[#713bc2]"
                                                     value={novoAtleta.time}
                                                     onChange={e => setNovoAtleta({ ...novoAtleta, time: e.target.value })}
                                                 />
                                             </div>
 
-                                            {/* ID (disabled) */}
                                             <div className="w-full md:w-1/2 px-3 mt-2">
-                                                <label className="block text-white text-xs font-bold mb-2" htmlFor="id">
+                                                <label className="block text-[#3c1970] text-xs font-bold mb-2" htmlFor="id">
                                                     ID
                                                 </label>
                                                 <input
                                                     id="id"
                                                     type="text"
                                                     placeholder="ID"
-                                                    className="appearance-none block w-full bg-gray-300 text-black border border-gray-300  py-2 px-3 leading-tight"
+                                                    className="appearance-none block w-full bg-[#d1c3e6] text-[#3c1970] border border-[#3c1970]  py-2 px-3 leading-tight"
                                                     disabled
                                                     value={edit.id}
                                                 />
                                             </div>
 
-                                            {/* Posição */}
                                             <div className="w-full px-3">
-                                                <label className="block text-white text-xs font-bold mb-2 mt-2" htmlFor="pos">
+                                                <label className="block text-[#3c1970] text-xs font-bold mb-2 mt-2" htmlFor="pos">
                                                     Posição
                                                 </label>
                                                 <select
                                                     id="pos"
-                                                    className="block w-full bg-white text-black border border-gray-300  py-2 px-3 leading-tight focus:outline-none focus:ring-2 focus:ring-[#713bc2]"
+                                                    className="block w-full bg-white text-black border border-[#3c1970]  py-2 px-3 leading-tight focus:outline-none focus:ring-2 focus:ring-[#713bc2]"
                                                     value={novoAtleta.pos}
                                                     onChange={e => setNovoAtleta({ ...novoAtleta, pos: e.target.value })}
                                                 >
