@@ -277,6 +277,11 @@ export default function JogadorasDashboard() {
                     </div>
                 )}
             <div className="flex justify-center flex-wrap gap-10 p-10">
+
+                    <div className="w-full flex">
+                                <span className="font-bold text-[25px] text-[#3c1970] w-full text-center">Atletas da Copa Passa Bola<FontAwesomeIcon icon={faUserPen} className="text-[22px]" />  </span></div>
+
+
                 {jogadoras.map(card => (
                     <div key={card.id}>
                         <div className="flex flex-col items-center h-[395px] w-[291px] bg-[#713bc2] p-3">
