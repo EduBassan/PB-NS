@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import destaque1 from "../assets/destaque1.png";
@@ -19,41 +20,15 @@ import { faFutbol } from "@fortawesome/free-solid-svg-icons";
 
 
 export default function AtletasDestaque() {
-    const [atletas, setAtletas] = useState([
-        {
-            id: 3,
-            img: destaque3,
-            nome: "Marcela",
-            sobrenome: "Dantas",
-            jogos: "15",
-            gols: "4",
-            assist: "8",
-            pos: "ATA",
-            time: "Palmeiras",
-        },
-        {
-            id: 1,
-            img: destaque1,
-            nome: "Alê",
-            sobrenome: "Xavier ",
-            jogos: "13",
-            gols: "9",
-            assist: "1",
-            pos: "ATA",
-            time: "São Paulo"
-        },
-        {
-            id: 2,
-            img: "https://tedxblumenau.com.br/wp-content/uploads/2022/08/Luana-Maluf.jpeg.webp",
-            nome: "Luana",
-            sobrenome: "Maluf",
-            jogos: "17",
-            gols: "3",
-            assist: "10",
-            pos: "MEI",
-            time: "Palmeiras"
-        },
-    ]);
+    const [atletas, setAtletas] = useState([]);
+
+    useEffect(() => {
+            const raw = localStorage.getItem("jogadoras");
+            const dados = raw ? JSON.parse(raw) : [];
+            setAtletas(dados)
+        }, []);
+
+
     const [novoAtleta, setNovoAtleta] = useState({
         id:"",
         nome: "",
@@ -143,7 +118,7 @@ export default function AtletasDestaque() {
                         }}
                     >
 
-                        {atletas.map((card, index) => (
+                        {atletas.filter(card => card.destaque == true ).map((card, index) => (
                             <SwiperSlide
                                 key={index}
                                 className="flex items-center justify-center"
@@ -158,7 +133,7 @@ export default function AtletasDestaque() {
                                                                                 </div>
                                                                             <div className="flex relative w-full">
                                                                                 <div className="flex justify-center items-center w-full overflow-hidden">
-                                                                                    <img src={card.img} alt={`${card.nome}`} className="w-34 h-34 rounded-full object-cover border-2 border-[#EE4D9A] shadow-md" />
+                                                                                    <img src={card.foto} alt={`${card.nome}`} className="w-34 h-34 rounded-full object-cover border-2 border-[#EE4D9A] shadow-md" />
                                                                                 </div>
                                                                             </div>
                                                                             <div className="flex relative z-10 justify-end">
@@ -250,7 +225,7 @@ export default function AtletasDestaque() {
                     />
                     <input type="text" placeholder="URL da Foto" className="bg-white text-black" value={novoAtleta.img}
                         onChange={e => {
-                            setNovoAtleta({ ...novoAtleta, img: e.target.value })
+                            setNovoAtleta({ ...novoAtleta, foto: e.target.value })
                         }}
                     />
                     <input type="text" placeholder="Sobrenome" className="bg-white text-black" value={novoAtleta.sobrenome}
