@@ -1,8 +1,10 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFutbol } from "@fortawesome/free-solid-svg-icons";
 import { faPencil } from "@fortawesome/free-solid-svg-icons";
 import { faUserPen } from "@fortawesome/free-solid-svg-icons";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 import waiter from "../assets/waiter.png";
 
@@ -64,6 +66,11 @@ export default function JogadorasDashboard() {
         setModal(false);
     };
 
+    const destacarAtleta = (card) => {
+        card.destaque = !card.destaque
+        const update = jogadoras.map(a => a.id === card.id ? card : a );
+        setJogadoras(update);}
+
     return (
         <>
             {
@@ -74,13 +81,13 @@ export default function JogadorasDashboard() {
                             <div className="w-full flex">
                                 <span className="font-bold text-[25px] text-[#3c1970] w-full text-center">Lembre-se de Salvar as Alterações<FontAwesomeIcon icon={faUserPen} className="text-[22px]" />  </span></div>
 
-                            <div className="w-full flex justify-center gap-12">
+                            <div className="w-full flex flex-col lg:flex-row md:max-w-[70%] items-center justify-center gap-12">
                                 
-                                <div className="flex flex-col w-[30%] gap-3 pt-5">
+                                <div className="flex flex-col gap-3 pt-5">
 
                                     <div className="w-full flex">
-                                        <div className="flex flex-wrap mb-2">
-                                            <div className="flex">
+                                        <div className="w-full flex flex-wrap mb-2">
+                                            <div className="w-full flex">
                                             <div className="w-full px-3 mb-3">
                                                 <label className="block text-[#3c1970] text-xs font-bold mb-2" htmlFor="nome">
                                                     Nome
@@ -94,7 +101,7 @@ export default function JogadorasDashboard() {
                                                     onChange={e => setNovoAtleta({ ...novoAtleta, nome: e.target.value })}
                                                 />
                                             </div>
-                                            <div className="w-full  px-3">
+                                            <div className="w-full px-3">
                                                 <label className="block text-[#3c1970] text-xs font-bold mb-2" htmlFor="sobrenome">
                                                     Sobrenome
                                                 </label>
@@ -284,7 +291,12 @@ export default function JogadorasDashboard() {
 
                 {jogadoras.map(card => (
                     <div key={card.id}>
+
+                        {card.destaque ? <div className="w-full text-center"><FontAwesomeIcon icon={faStar}className="text-[22px] text-[#EE4D9A]" /></div> : <div className="h-[25.5px] w-full"></div>}
+            
+                        
                         <div className="flex flex-col items-center h-[395px] w-[291px] bg-[#713bc2] p-3">
+                            
                             <div className="flex flex-wrap h-full w-full bg-[#EE4D9A] p-1 justify-center">
                                 <div className="flex flex-col h-[60%] w-full  bg-gradient-to-br from-[#713bc2] via-[#3c1970] to-[#5927a3] justify-center">
                                     <div className="flex relative z-10 justify-between">
@@ -297,8 +309,7 @@ export default function JogadorasDashboard() {
                                             <img src={card.foto} alt={`${card.nome}`} className="w-34 h-34 -full object-cover border-2 border-[#EE4D9A] shadow-md rounded-full" />
                                         </div>
                                     </div>
-                                    <div className="flex relative z-10 justify-between">
-                                        <button className="border-1 bg-gradient-to-br from-[#713bc2] to-[#381966] border-[#EE4D9A] text-white m-1 p-3 text-[15px]" onClick={() => setEdit(card)}><FontAwesomeIcon icon={faPencil} className="text-[17px]" /></button>
+                                    <div className="flex relative z-10 justify-end">
                                         <div className="flex flex-col items-center w-auto text-white pr-4">
                                             <div className="font-thin italic leading-none text-[13px]">
                                                 Jogos
@@ -335,8 +346,11 @@ export default function JogadorasDashboard() {
                             </div>
                             <div className="text-white text-[10px] leading-0">Nº{card.id}</div>
                         </div>
+                        <div className="w-full flex">
+                        <button className="border-1 bg-[#3c1970] w-[50%] text-white m-1 p-1 text-[15px]" onClick={() => setEdit(card)}><FontAwesomeIcon icon={faPencil} className="text-[17px]" /></button>
+                        <button className="border-1 bg-[#713bc2] w-[50%] text-white m-1 p-1 text-[15px]" onClick={() => destacarAtleta(card) }><FontAwesomeIcon icon={faHeart} className="text-[17px]" /></button></div>
                     </div>
-
+                        //lpo 
                 ))}
             </div>
         </>
