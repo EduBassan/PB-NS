@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFutbol } from "@fortawesome/free-solid-svg-icons";
+import { faFutbol, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faPencil } from "@fortawesome/free-solid-svg-icons";
 import { faUserPen } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faSave } from "@fortawesome/free-solid-svg-icons";
 
 import waiter from "../assets/waiter.png";
 
@@ -68,52 +69,55 @@ export default function JogadorasDashboard() {
 
     const destacarAtleta = (card) => {
         card.destaque = !card.destaque
-        const update = jogadoras.map(a => a.id === card.id ? card : a );
-        setJogadoras(update);}
+        const update = jogadoras.map(a => a.id === card.id ? card : a);
+        setJogadoras(update);
+    }
+
+    const [name, setName] = useState("")
 
     return (
         <>
             {
-                openModal && (
+                openModal ? (
                     <div className="w-full h-full relative z-20 flex">
                         <div className="flex flex-wrap w-full h-auto justify-center items-center text-white p-2 mt-2 mb-2">
 
-                            <div className="w-full flex">
-                                <span className="font-bold text-[25px] text-[#3c1970] w-full text-center">Lembre-se de Salvar as Alterações<FontAwesomeIcon icon={faUserPen} className="text-[22px]" />  </span></div>
+                            <div id='editTop' className="w-full flex">
+                                <span className="font-bold text-[25px] text-[#3c1970] w-full text-center">Lembre-se de Salvar as Alterações<FontAwesomeIcon icon={faSave} className="text-[22px]" />  </span></div>
 
                             <div className="w-full flex flex-col lg:flex-row md:max-w-[70%] items-center justify-center gap-12">
-                                
+
                                 <div className="flex flex-col gap-3 pt-5">
 
                                     <div className="w-full flex">
                                         <div className="w-full flex flex-wrap mb-2">
                                             <div className="w-full flex">
-                                            <div className="w-full px-3 mb-3">
-                                                <label className="block text-[#3c1970] text-xs font-bold mb-2" htmlFor="nome">
-                                                    Nome
-                                                </label>
-                                                <input
-                                                    id="nome"
-                                                    type="text"
-                                                    placeholder="Nome"
-                                                    className="appearance-none block w-full bg-white text-black p-2 leading-tight focus:outline-none focus:ring-2 border border-[#3c1970] focus:ring-[#713bc2]"
-                                                    value={novoAtleta.nome}
-                                                    onChange={e => setNovoAtleta({ ...novoAtleta, nome: e.target.value })}
-                                                />
-                                            </div>
-                                            <div className="w-full px-3">
-                                                <label className="block text-[#3c1970] text-xs font-bold mb-2" htmlFor="sobrenome">
-                                                    Sobrenome
-                                                </label>
-                                                <input
-                                                    id="sobrenome"
-                                                    type="text"
-                                                    placeholder="Sobrenome"
-                                                    className="appearance-none block w-full bg-white text-black border border-[#3c1970]  py-2 px-3 leading-tight focus:outline-none focus:ring-2 focus:ring-[#713bc2]"
-                                                    value={novoAtleta.sobrenome}
-                                                    onChange={e => setNovoAtleta({ ...novoAtleta, sobrenome: e.target.value })}
-                                                />
-                                            </div></div>
+                                                <div className="w-full px-3 mb-3">
+                                                    <label className="block text-[#3c1970] text-xs font-bold mb-2" htmlFor="nome">
+                                                        Nome
+                                                    </label>
+                                                    <input
+                                                        id="nome"
+                                                        type="text"
+                                                        placeholder="Nome"
+                                                        className="appearance-none block w-full bg-white text-black p-2 leading-tight focus:outline-none focus:ring-2 border border-[#3c1970] focus:ring-[#713bc2]"
+                                                        value={novoAtleta.nome}
+                                                        onChange={e => setNovoAtleta({ ...novoAtleta, nome: e.target.value })}
+                                                    />
+                                                </div>
+                                                <div className="w-full px-3">
+                                                    <label className="block text-[#3c1970] text-xs font-bold mb-2" htmlFor="sobrenome">
+                                                        Sobrenome
+                                                    </label>
+                                                    <input
+                                                        id="sobrenome"
+                                                        type="text"
+                                                        placeholder="Sobrenome"
+                                                        className="appearance-none block w-full bg-white text-black border border-[#3c1970]  py-2 px-3 leading-tight focus:outline-none focus:ring-2 focus:ring-[#713bc2]"
+                                                        value={novoAtleta.sobrenome}
+                                                        onChange={e => setNovoAtleta({ ...novoAtleta, sobrenome: e.target.value })}
+                                                    />
+                                                </div></div>
 
                                             <div className="w-full px-3 mt-3">
                                                 <label className="block text-[#3c1970] text-xs font-bold mb-2" htmlFor="foto">
@@ -217,7 +221,7 @@ export default function JogadorasDashboard() {
                                                 </select>
                                             </div>
                                         </div>
-                                         </div>
+                                    </div>
                                 </div>
                                 <div className="flex justify-center items-center flex-col mt-4">
                                     <div key={edit.id}>
@@ -278,25 +282,34 @@ export default function JogadorasDashboard() {
                                         <button className="text-[15px] font-bold text-center p-1 w-[49%]
                                                 text-white bg-[#f32133] transition-all hover:translate-y-1 duration-500 transform" onClick={() => { setEdit(null); setModal(false); }}>Cancelar</button>
                                     </div></div>
-                                    </div></div>
+                            </div></div>
 
 
                     </div>
-                )}
+                ) : <div id='editTop' className=""> </div>}
             <div className="flex justify-center flex-wrap gap-10 p-10">
 
-                    <div className="w-full flex">
-                                <span className="font-bold text-[25px] text-[#3c1970] w-full text-center">Atletas da Copa Passa Bola<FontAwesomeIcon icon={faUserPen} className="text-[22px]" />  </span></div>
+                <div className="w-full flex">
+                    <span className="font-bold text-[25px] text-[#3c1970] w-full text-center">Atletas da Copa Passa Bola<FontAwesomeIcon icon={faUserPen} className="text-[22px]" /> </span>
+                </div>
 
+                <div className="flex w-full justify-center items-center gap-2">
+                <FontAwesomeIcon icon={faSearch} className="text-[22px]" /> 
+                <input id="atletasSearch"
+                    value={name}
+                    type="text"
+                    placeholder="Pesquise uma atleta pelo nome..."
+                    className="appearance-none block w-[71%] bg-white text-black p-2 leading-tight focus:outline-none focus:ring-2 border border-[#3c1970] focus:ring-[#713bc2]" onChange={(e) => setName(e.target.value)}></input>
+                </div>
 
-                {jogadoras.map(card => (
+                {jogadoras.filter((jogadora) => jogadora.nome.toLowerCase().includes(name.toLowerCase()) || jogadora.sobrenome.toLowerCase().includes(name.toLowerCase()) ).map(card => (
                     <div key={card.id}>
 
-                        {card.destaque ? <div className="w-full text-center"><FontAwesomeIcon icon={faStar}className="text-[22px] text-[#EE4D9A]" /></div> : <div className="h-[25.5px] w-full"></div>}
-            
-                        
+                        {card.destaque ? <div className="w-full text-center"><FontAwesomeIcon icon={faStar} className="text-[22px] text-[#EE4D9A]" /></div> : <div className="h-[25.5px] w-full"></div>}
+
+
                         <div className="flex flex-col items-center h-[395px] w-[291px] bg-[#713bc2] p-3">
-                            
+
                             <div className="flex flex-wrap h-full w-full bg-[#EE4D9A] p-1 justify-center">
                                 <div className="flex flex-col h-[60%] w-full  bg-gradient-to-br from-[#713bc2] via-[#3c1970] to-[#5927a3] justify-center">
                                     <div className="flex relative z-10 justify-between">
@@ -347,10 +360,10 @@ export default function JogadorasDashboard() {
                             <div className="text-white text-[10px] leading-0">Nº{card.id}</div>
                         </div>
                         <div className="w-full flex">
-                        <button className="border-1 bg-[#3c1970] w-[50%] text-white m-1 p-1 text-[15px]" onClick={() => setEdit(card)}><FontAwesomeIcon icon={faPencil} className="text-[17px]" /></button>
-                        <button className="border-1 bg-[#713bc2] w-[50%] text-white m-1 p-1 text-[15px]" onClick={() => destacarAtleta(card) }><FontAwesomeIcon icon={faHeart} className="text-[17px]" /></button></div>
+                            <button className="border-1 bg-[#3c1970] w-[50%] text-white m-1 p-1 text-[15px]" onClick={() => { setEdit(card); document.getElementById('editTop').scrollIntoView() }}><FontAwesomeIcon icon={faPencil} className="text-[17px]" /></button>
+                            <button className="border-1 bg-[#713bc2] w-[50%] text-white m-1 p-1 text-[15px]" onClick={() => destacarAtleta(card)}><FontAwesomeIcon icon={faHeart} className="text-[17px]" /></button></div>
                     </div>
-                        //lpo 
+                    //lpo 
                 ))}
             </div>
         </>
