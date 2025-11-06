@@ -1,0 +1,69 @@
+import React from "react";
+
+const times = [
+  {
+    nome: "Corinthians",
+    cidade: "São Paulo",
+    logo: "https://logodetimes.com/times/corinthians/logo-corinthians-4096.png",
+  },
+  {
+    nome: "Flamengo",
+    cidade: "Rio de Janeiro",
+    logo: "https://th.bing.com/th/id/R.c7f858adcf5c6f5cd97f4b2a263cd5b1?rik=eksXhOCTAYsIrg&pid=ImgRaw&r=0",
+  },
+  {
+    nome: "Palmeiras",
+    cidade: "São Paulo",
+    logo: "https://imagepng.org/wp-content/uploads/2018/03/escudo-palmeiras.png",
+  },
+];
+
+export default function TimesCopa() {
+  return (
+    <section className="bg-purple-800 text-white py-10 px-4">
+      <div className="text-center mb-8">
+        <h2 className="text-xl md:text-2xl lg:text-5xl font-extrabold uppercase">
+          Conheça alguns times da Copa PB
+        </h2>
+        <p className="text-sm lg:text-xl text-white mt-2">
+          Cada equipe carrega talento, garra e a paixão pelo futebol feminino
+        </p>
+      </div>
+
+      <div className="relative max-w-6xl mx-auto">
+        
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 justify-items-center">
+          {times.map((time, index) => (
+            <div
+              key={index}
+              className="bg-white text-black  overflow-hidden shadow-lg w-full max-w-[400px] flex flex-col"
+            >
+              <div className="flex justify-center items-center bg-white py-12">
+                <img
+                  src={time.logo}
+                  alt={time.nome}
+                  className="w-50 h-50 object-contain"
+                />
+              </div>
+              <div className="bg-[#EE4D9A] text-white text-center py-10 flex flex-col gap-2 justify-start items-start">
+                <p className="text-xs uppercase tracking-wide ml-6">Aqui é</p>
+                <h3 className="text-4xl font-extrabold uppercase ml-6">
+                  {time.nome}
+                </h3>
+                <p className="text-sm text-white uppercase ml-6">
+                  Cidade: {time.cidade}
+                </p>
+
+                <button className="bg-white border-2 border-white text-[#EE4D9A] text-sm py-2 px-4  mt-3 mx-auto w-[90%] uppercase font-bold hover:bg-[#EE4D9A] hover:text-white transition-all hover:duration-500 cursor-pointer">
+                  Instagram
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+}
