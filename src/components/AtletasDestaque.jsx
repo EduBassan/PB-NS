@@ -13,7 +13,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFutbol } from "@fortawesome/free-solid-svg-icons";
 import { faUserPen } from "@fortawesome/free-solid-svg-icons";
 
-
 export default function AtletasDestaque() {
     const [atletas, setAtletas] = useState([]);
     
@@ -72,8 +71,12 @@ export default function AtletasDestaque() {
         });
     };
 
+    const [openModal, setModal] = useState(false)
+
     return (
+        <>
         <div className="flex justify-center items-center flex-wrap h-auto bg-white col-span-1 lg:col-span-2 mt-20">
+            <div id="cards" className="scroll-mt-7"></div>
             <p className="block text-[#EE4D9A] font-bold text-[30px] lg:text-[50px] leading-none w-full text-center mb-5">Atletas em Destaque</p>
             <div className="w-full flex justify-center overflow-hidden mr-0">
                 <div className="w-250 overflow-hidden">
@@ -107,7 +110,6 @@ export default function AtletasDestaque() {
                             },
                         }}
                     >
-
                         {atletas.filter(card => card.destaque == true ).map((card, index) => (
                             <SwiperSlide
                                 key={index}
@@ -164,7 +166,7 @@ export default function AtletasDestaque() {
                             </SwiperSlide>
                         ))}
                     </Swiper>
-                    <div className="w-full flex justify-center overflow-visible">
+                    <div className="w-full flex justify-center gap-3">
                         <a
                             href="#lance"
                             onClick={(e) => {
@@ -175,6 +177,8 @@ export default function AtletasDestaque() {
                       text-white bg-[#EE4D9A] transition-all hover:translate-y-1 duration-500 transform mt-5">
                             Lances em destaque
                         </a>
+                        <button className=" text-[15px] font-bold text-center p-3 w-50
+                      text-white bg-[#3c1970] transition-all hover:translate-y-1 duration-500 transform mt-5" onClick={() => {setModal(!openModal); !openModal ? document.getElementById('editEnd').scrollIntoView() : document.getElementById('cards').scrollIntoView()}}>Crie sua Carta</button>
                     </div>
                 </div>
                 <style>
@@ -206,11 +210,11 @@ export default function AtletasDestaque() {
                 </style>
             </div>
 
-            <div className="w-full">
+            {openModal && (<div className="w-full">
                 <div className="flex w-full h-auto justify-center items-center text-white p-2 mt-2 mb-2">
-                    <div className="flex flex-col lg:flex-row justify-center items-center gap-x-1 gap-y-3">
-                        <div className="flex w-[30%]  items-center justify-center flex-col gap-3 p-2">
-                             <div className="w-full  flex">
+                    <div className="flex flex-col-reverse lg:flex-row justify-center items-center gap-x-1 gap-y-3">
+                        <div className="flex w-full lg:w-[30%]  items-center justify-center flex-col gap-3 p-2">
+                             <div className="w-full flex">
                                         <div className="w-full flex flex-wrap mb-2">
                                             <div className="w-full flex">
                                             <div className="w-full px-3 mb-3">
@@ -309,7 +313,7 @@ export default function AtletasDestaque() {
                                                     onChange={e => setNovoAtleta({ ...novoAtleta, time: e.target.value })}
                                                 />
                                             </div>
-
+                                            
                                             <div className="w-full md:w-1/2 px-3 mt-2">
                                                 <label className="block text-[#3c1970] text-xs font-bold mb-2" htmlFor="id">
                                                     ID
@@ -319,14 +323,36 @@ export default function AtletasDestaque() {
                                                     type="text"
                                                     placeholder="ID"
                                                     className="appearance-none block w-full bg-[#d1c3e6] text-[#3c1970] border border-[#3c1970]  py-2 px-3 leading-tight"
-                                                    value={novoAtleta.id}
+                                                    value={novoAtleta.id || Math.random()}
                                                     onChange={e => setNovoAtleta({ ...novoAtleta, id: e.target.value })}
+                                                    onFocus={() => document.getElementById('id').value = ""}
+                                                    onBlur = {(e) => e.target.value ? e.target.value : Math.random()}
+
                                                 />
-                                            </div></div></div>
-                            <div className="lg:flex hidden flex-wrap gap-3 w-full justify-center items-center">
-                                <button className="w-full p-1 bg-[#EE4D9A] text-medium transition-all hover:translate-y-1 duration-500 transform " onClick={adicionarAtleta}>Adicionar</button>
+                                                
+                                            </div>
+                                            <div className="w-full px-3">
+                                                <label className="block text-[#3c1970] text-xs font-bold mb-2 mt-2" htmlFor="pos">
+                                                    Posição
+                                                </label>
+                                                <select
+                                                    id="pos"
+                                                    className="block w-full bg-white text-black border border-[#3c1970]  py-2 px-3 leading-tight focus:outline-none focus:ring-2 focus:ring-[#713bc2]"
+                                                    value={novoAtleta.pos}
+                                                    onChange={e => setNovoAtleta({ ...novoAtleta, pos: e.target.value })}
+                                                >
+                                                    <option hidden>Escolha sua posição</option>
+                                                    <option>ATA</option>
+                                                    <option>MEI</option>
+                                                    <option>ZAG</option>
+                                                    <option>GOL</option>
+                                                </select>
+                                            </div>
+                                            </div></div>
+                            <div className="flex  flex-wrap gap-3 w-full justify-center items-center">
+                                <button className="w-full p-1 bg-[#EE4D9A] text-medium transition-all hover:translate-y-1 duration-500 transform " onClick={() => {adicionarAtleta(); setModal(false); document.getElementById('cards').scrollIntoView()}}>Adicionar</button>
                                 <div className="flex w-full justify-center gap-2">
-                                    <button className=" w-full p-1 bg-[#EE4D9A] text-medium transition-all hover:translate-y-1 duration-500 transform " onClick={() => atualizarAtleta(novoAtleta)}>Atualizar</button>
+                                    <button className=" w-full p-1 bg-[#EE4D9A] text-medium transition-all hover:translate-y-1 duration-500 transform " onClick={() => {atualizarAtleta(novoAtleta); setModal(false); document.getElementById('cards').scrollIntoView()}}>Atualizar</button>
                                 </div>
                             </div>
                         </div>
@@ -381,17 +407,10 @@ export default function AtletasDestaque() {
                                                     </div>
                                                     <div className="text-white text-[10px] leading-0">Nº{novoAtleta.id}</div>
                                                 </div>
-                        <div className="flex lg:hidden flex-wrap gap-3 w-full justify-center items-center">
-                            <button className="w-full p-1 bg-[#EE4D9A] text-medium transition-all hover:translate-y-1 duration-500 transform " onClick={adicionarAtleta}>Adicionar</button>
-                            <div className="flex w-full justify-center gap-2">
-                                <button className=" w-full p-1 border-[#EE4D9A] border-2 text-medium transition-all hover:translate-y-1 duration-500 transform " onClick={() => atualizarAtleta(novoAtleta)}>Atualizar</button>
-                            </div>
-                        </div>
                     </div>
                 </div>
-            </div>
-
-
+            </div>)}
         </div>
+        <div id="editEnd" className=""></div></>
     );
 }
