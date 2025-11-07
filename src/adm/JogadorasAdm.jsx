@@ -362,8 +362,7 @@ export default function JogadorasDashboard() {
                         <div className="w-full flex">
                             <button className="border-1 bg-[#3c1970] w-[50%] text-white m-1 p-1 text-[15px]" onClick={() => { setEdit(card); document.getElementById('editTop').scrollIntoView() }}><FontAwesomeIcon icon={faPencil} className="text-[17px]" /></button>
                             <button className="border-1 bg-[#713bc2] w-[50%] text-white m-1 p-1 text-[15px]" onClick={() => destacarAtleta(card)}><FontAwesomeIcon icon={faHeart} className="text-[17px]" /></button></div>
-                    </div>
-                    //lpo 
+                </div>
                 ))}
             </div>
         </>
