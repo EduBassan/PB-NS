@@ -1,6 +1,6 @@
 import atletasDisputa from "../assets/atletas_disputa.png"
 import trofeu from "../assets/trofeuPassaBola.jpg"
-import staff from "../assets/staffPassaBola.PNG"
+import staff from "../assets/staffPassaBola.png"
 import equipe from "../assets/equipePassaBola.png"
 import Logo from "../assets/logo-passa-a-bola.png";
 import { Link } from "react-router-dom"
