@@ -1,4 +1,17 @@
 export let jogadoras = [
+    {   id:3,
+        nome:"Laura",
+        sobrenome:"dos Santos",
+        senha:"12345678",
+        dataDeNascimento:"2006-12-11",
+        foto:"https://cdn.meutimao.com.br/_upload/jogador/eloha-siqueira-no-corinthians_u_corinthians.jpg",
+        jogos: "8",
+        gols: "1",
+        assist: "2",
+        pos: "ZAG",
+        time: "Palmeiras",
+        destaque: true
+    },
     {
         id: 1,
         nome: "Maria",
@@ -12,12 +25,12 @@ export let jogadoras = [
         possuiTime: false,
         tipo: "jogadora",
         pedido: true,
-        jogos: "17",
+        jogos: "12",
         gols: "3",
         assist: "10",
-        pos: "MEI",
+        pos: "ATA",
         time: "Palmeiras",
-        destaque: false
+        destaque: true
     },
     {
        id: 2,
@@ -32,19 +45,6 @@ export let jogadoras = [
         possuiTime: false,
         tipo: "jogadora",
         pedido: true,
-        jogos: "17",
-        gols: "3",
-        assist: "10",
-        pos: "MEI",
-        time: "Palmeiras",
-        destaque: true
-    },
-    {   id:1759932743191,
-        nome:"Laura",
-        sobrenome:"dos Santos",
-        senha:"12345678",
-        dataDeNascimento:"2006-12-11",
-        foto:"https://cdn.meutimao.com.br/_upload/jogador/eloha-siqueira-no-corinthians_u_corinthians.jpg",
         jogos: "17",
         gols: "3",
         assist: "10",

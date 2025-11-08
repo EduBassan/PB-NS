@@ -64,7 +64,7 @@ export default function CadastrarTime () {
 };
 
     return(
-        <div className="bg-[#3C1A6E]">
+        <div className=" flex justify-center items-center h-[1000px] bg-[#3C1A6E]">
                 <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center gap-3 h-screen ">
                     <div className="flex text-center">
                         <h1 className="hidden lg:flex text-white text-[52px] font-bold uppercase">Faça parte da nossa linha de frente!</h1>

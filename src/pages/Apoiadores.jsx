@@ -17,7 +17,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import 'swiper/css/effect-coverflow';
 import { EffectCoverflow } from 'swiper/modules';
-import AtletasDestaque from "@/components/AtletasDestaque";
+
 
 const atletas = [
     {
@@ -190,9 +190,6 @@ export default function Apoiadores() {
                         </div>
                     ))}
                 </div>
-            </div>
-            <div>
-                <AtletasDestaque/>
             </div>
         </div>
     );

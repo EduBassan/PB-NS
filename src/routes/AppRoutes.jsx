@@ -203,10 +203,10 @@ export const router = createBrowserRouter([
                 element: <PainelPrincipal/>,
                 errorElement: <PageNotFound/>,
             },
-            {
-                path: 'pedidos',
-                element: <Pedidos/>,
-            },
+            // {
+            //     path: 'pedidos',
+            //     element: <Pedidos/>,
+            // },
             {
                 path: 'jogadorasADM',
                 element: <JogadorasAdm/>,
