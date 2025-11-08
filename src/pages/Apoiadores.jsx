@@ -5,10 +5,10 @@ import { Navigation, Pagination } from "swiper/modules";
 import destaque1 from "../assets/fiapLogo.jpg";
 import destaque2 from "../assets/ferrariLogo.jpg";
 import destaque3 from "../assets/adidasLogo.jpg";
-import destaque4 from "../assets/cbfLogo.PNG"
-import destaque5 from "../assets/gatoradeLogo.PNG"
-import destaque6 from "../assets/youtubeLogo.PNG"
-import destaque7 from "../assets/teslaLogo.PNG"
+import destaque4 from "../assets/cbfLogo.png"
+import destaque5 from "../assets/gatoradeLogo.png"
+import destaque6 from "../assets/youtubeLogo.png"
+import destaque7 from "../assets/teslaLogo.png"
 import destaque8 from "../assets/rbLogo.jpg"
 
 
