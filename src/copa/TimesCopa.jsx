@@ -23,7 +23,7 @@ export default function TimesCopa() {
       <div className="relative max-w-6xl mx-auto">
         
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 justify-items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {tabelaTimes.filter((time) => time.destaque === true).map((time, index) => (
             <div
               key={index}
