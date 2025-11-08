@@ -1,24 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-const times = [
-  {
-    nome: "Corinthians",
-    cidade: "São Paulo",
-    logo: "https://logodetimes.com/times/corinthians/logo-corinthians-4096.png",
-  },
-  {
-    nome: "Flamengo",
-    cidade: "Rio de Janeiro",
-    logo: "https://th.bing.com/th/id/R.c7f858adcf5c6f5cd97f4b2a263cd5b1?rik=eksXhOCTAYsIrg&pid=ImgRaw&r=0",
-  },
-  {
-    nome: "Palmeiras",
-    cidade: "São Paulo",
-    logo: "https://imagepng.org/wp-content/uploads/2018/03/escudo-palmeiras.png",
-  },
-];
 
 export default function TimesCopa() {
+  const [tabelaTimes, setTabela] = useState([])
+
+  useEffect(() => {
+    const raw = localStorage.getItem('times');
+    const dados = raw ? JSON.parse(raw) : [];
+    setTabela(dados)
+  },[]);
   return (
     <section className="bg-purple-800 text-white py-10 px-4">
       <div className="text-center mb-8">
@@ -34,14 +24,14 @@ export default function TimesCopa() {
         
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 justify-items-center">
-          {times.map((time, index) => (
+          {tabelaTimes.filter((time) => time.destaque === true).map((time, index) => (
             <div
               key={index}
               className="bg-white text-black  overflow-hidden shadow-lg w-full max-w-[400px] flex flex-col"
             >
               <div className="flex justify-center items-center bg-white py-12">
                 <img
-                  src={time.logo}
+                  src={time.foto}
                   alt={time.nome}
                   className="w-50 h-50 object-contain"
                 />

@@ -11,7 +11,15 @@ export let times = [
         foto: "https://tse4.mm.bing.net/th/id/OIP.NDm13GNNxvtUwW32gFLWbAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3",
         jogadoras: [],
         candidatas: [],
-        tipo: "time"
+        tipo: "time",
+        pos: "4",
+        jogos: 0,
+        pontos: 0,
+        vitorias: 0,
+        empates: 0,
+        derrotas: 0,
+        destaque: false
+    
     },
     {
         id: 2,
@@ -25,7 +33,14 @@ export let times = [
         foto: "https://imagepng.org/wp-content/uploads/2018/03/escudo-palmeiras.png",
         jogadoras: [],
         candidatas: [],
-        tipo: "time"
+        tipo: "time",
+        pos: "2",
+        jogos: 0,
+        pontos: 0,
+        vitorias: 0,
+        empates: 0,
+        derrotas: 0,
+        destaque: true
     },
     {
         id: 3,
@@ -39,7 +54,14 @@ export let times = [
         foto: "https://logodetimes.com/times/corinthians/logo-corinthians-4096.png",
         jogadoras: [],
         candidatas: [],
-        tipo: "time"  
+        tipo: "time",
+        pos: "1",
+        jogos: 0,
+        pontos: 0,
+        vitorias: 0,
+        empates: 0,
+        derrotas: 0,
+        destaque: true
     },
     {
         id: 4,
@@ -53,7 +75,13 @@ export let times = [
         foto: "https://logodetimes.com/times/manchester-city/logo-manchester-city-1536.png",
         jogadoras: [],
         candidatas: [],
-        tipo: "time"  
+        tipo: "time",pos: "3",
+        jogos: 0,
+        pontos: 0,
+        vitorias: 0,
+        empates: 0,
+        derrotas: 0,
+        destaque: true 
     },
     {
        id: 5,
@@ -67,7 +95,14 @@ export let times = [
         foto: "https://logodetimes.com/times/real-madrid/logo-real-madrid-escudo-2048.png",
         jogadoras: [],
         candidatas: [],
-        tipo: "time"  
+        tipo: "time",
+        pos: "5",
+        jogos: 0,
+        pontos: 0,
+        vitorias: 0,
+        empates: 0,
+        derrotas: 0,
+        destaque: false  
     },
     {
         id: 6,
@@ -81,7 +116,14 @@ export let times = [
         foto: "https://logodetimes.com/times/roma/logo-roma-4096.png",
         jogadoras: [],
         candidatas: [],
-        tipo: "time"  
+        tipo: "time",
+        pos: "6",
+        jogos: 0,
+        pontos: 0,
+        vitorias: 0,
+        empates: 0,
+        derrotas: 0,
+        destaque: false 
     },
     {
         id: 7,
@@ -95,7 +137,14 @@ export let times = [
         foto: "https://img.estadao.com.br/resources/jpg/1/3/1487962260931.jpg",
         jogadoras: [],
         candidatas: [],
-        tipo: "time"  
+        tipo: "time",
+        pos: "7",
+        jogos: 0,
+        pontos: 0,
+        vitorias: 0,
+        empates: 0,
+        derrotas: 0,
+        destaque: false  
     },
     {
         id: 8,
@@ -109,7 +158,14 @@ export let times = [
         foto: "https://logodetimes.com/times/paris-saint-germain/paris-saint-germain-4096.png",
         jogadoras: [],
         candidatas: [],
-        tipo: "time"
+        tipo: "time",
+        pos: "8",
+        jogos: 0,
+        pontos: 0,
+        vitorias: 0,
+        empates: 0,
+        derrotas: 0,
+        destaque: false  
     }
 ]
 

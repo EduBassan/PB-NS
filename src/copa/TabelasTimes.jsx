@@ -1,90 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
-const tabelaTimes = [
-  {
-    pos: "01",
-    nome: "CORINTHIANS",
-    logo: "https://logodetimes.com/times/corinthians/logo-corinthians-4096.png",
-    jogos: 7,
-    pontos: 19,
-    vitorias: 6,
-    empates: 1,
-    derrotas: 0,
-  },
-  {
-    pos: "02",
-    nome: "PALMEIRAS",
-    logo: "https://imagepng.org/wp-content/uploads/2018/03/escudo-palmeiras.png",
-    jogos: 7,
-    pontos: 17,
-    vitorias: 5,
-    empates: 2,
-    derrotas: 0,
-  },
-  {
-    pos: "03",
-    nome: "SANTOS",
-    logo: "https://logodetimes.com/times/santos/logo-santos-1536.png",
-    jogos: 7,
-    pontos: 16,
-    vitorias: 5,
-    empates: 1,
-    derrotas: 1,
-  },
-  {
-    pos: "04",
-    nome: "SÃO PAULO",
-    logo: "https://logodetimes.com/times/sao-paulo/logo-sao-paulo-4096.png",
-    jogos: 7,
-    pontos: 14,
-    vitorias: 4,
-    empates: 2,
-    derrotas: 1,
-  },
-  {
-    pos: "05",
-    nome: "GRÊMIO",
-    logo: "https://logodetimes.com/times/gremio/logo-gremio-4096.png",
-    jogos: 7,
-    pontos: 12,
-    vitorias: 3,
-    empates: 3,
-    derrotas: 1,
-  },
-  {
-    pos: "06",
-    nome: "FLAMENGO",
-    logo: "https://th.bing.com/th/id/R.c7f858adcf5c6f5cd97f4b2a263cd5b1?rik=eksXhOCTAYsIrg&pid=ImgRaw&r=0",
-    jogos: 7,
-    pontos: 11,
-    vitorias: 3,
-    empates: 2,
-    derrotas: 2,
-  },
-  {
-    pos: "07",
-    nome: "MIRASSOL",
-    logo: "https://logodetimes.com/times/mirassol/logo-mirassol-atualizado-2048.png",
-    jogos: 7,
-    pontos: 8,
-    vitorias: 2,
-    empates: 2,
-    derrotas: 3,
-  },
-  {
-    pos: "08",
-    nome: "ATLÉTICO MINEIRO",
-    logo: "https://logodetimes.com/times/atletico-mineiro/logo-atletico-mineiro-4096.png",
-    jogos: 7,
-    pontos: 4,
-    vitorias: 1,
-    empates: 1,
-    derrotas: 5,
-  },
-];
+import { json } from "zod";
 
 export default function TabelaTimes() {
+
+  const [tabelaTimes, setTabela] = useState([])
+
+  useEffect(() => {
+    const raw = localStorage.getItem('times');
+    const dados = raw ? JSON.parse(raw) : [];
+    setTabela(dados)
+  },[]);
+
+
   return (
     <section className="bg-purple-900 text-white py-10 px-4">
       <div className="max-w-6xl mx-auto">
@@ -114,7 +42,7 @@ export default function TabelaTimes() {
                   <td className="text-pink-500 font-bold p-3">{time.pos}</td>
                   <td className="flex items-center gap-3 p-3 justify-start font-semibold uppercase">
                     <img
-                      src={time.logo}
+                      src={time.foto}
                       alt={time.nome}
                       className="w-12 h-12 object-contain"
                     />
@@ -138,7 +66,7 @@ export default function TabelaTimes() {
         </div>
 
         <div className="md:hidden flex flex-col gap-4">
-          {tabelaTimes.map((time, i) => (
+          {tabelaTimes.sort((a, b) => a.pos - b.pos).map((time, i) => (
             <div
               key={i}
               className="bg-white text-black rounded-lg shadow-md p-4 flex flex-col gap-2"
@@ -149,7 +77,7 @@ export default function TabelaTimes() {
                     {time.pos}
                   </span>
                   <img
-                    src={time.logo}
+                    src={time.foto}
                     alt={time.nome}
                     className="w-7 h-7 object-contain"
                   />
