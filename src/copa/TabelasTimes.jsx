@@ -66,7 +66,7 @@ export default function TabelaTimes() {
         </div>
 
         <div className="md:hidden flex flex-col gap-4">
-          {tabelaTimes.map((time, i) => (
+          {tabelaTimes.sort((a, b) => a.pos - b.pos).map((time, i) => (
             <div
               key={i}
               className="bg-white text-black rounded-lg shadow-md p-4 flex flex-col gap-2"
