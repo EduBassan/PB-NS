@@ -97,7 +97,7 @@ export default function TimesAdm() {
     <div className="col w-full h-full justify-center items-center"> 
       {
         openModal ? (
-          <div className="w-[60%] md:w-full relative z-20 flex">
+          <div className="w-full relative z-20 flex justify-center items-center">
             <div className="flex flex-wrap w-full h-auto justify-center items-center text-white p-2 mt-2 mb-2">
 
               <div id='editTop' className="w-full flex">
