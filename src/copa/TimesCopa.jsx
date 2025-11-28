@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-
 export default function TimesCopa() {
   const [tabelaTimes, setTabela] = useState([])
 
@@ -23,20 +22,20 @@ export default function TimesCopa() {
       <div className="relative max-w-6xl mx-auto">
         
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="flex gap-8 justify-center items-center flex-wrap">
           {tabelaTimes.filter((time) => time.destaque === true).map((time, index) => (
             <div
               key={index}
-              className="bg-white text-black  overflow-hidden shadow-lg w-full max-w-[400px] flex flex-col"
+              className="bg-white text-black  overflow-hidden shadow-lg w-full max-w-[320px] lg:max-w-[360px] flex flex-col"
             >
-              <div className="flex justify-center items-center bg-white py-12">
+              <div className="flex justify-center items-center bg-white py-3 lg:py-10">
                 <img
                   src={time.foto}
                   alt={time.nome}
                   className="w-50 h-50 object-contain"
                 />
               </div>
-              <div className="bg-[#EE4D9A] text-white text-center py-10 flex flex-col gap-2 justify-start items-start">
+              <div className="bg-[#EE4D9A] text-white text-center py-6 flex flex-col gap-2 justify-start items-start">
                 <p className="text-xs uppercase tracking-wide ml-6">Aqui é</p>
                 <h3 className="text-4xl font-extrabold uppercase ml-6">
                   {time.nome}
