@@ -4,6 +4,7 @@ import { adm } from "./adm"
 import { pedidos } from "./pedidosAtletas";
 import { usuarioLogadoInicial } from "./usuarioLogadoInicial";
 import { pedidosTimes } from "./pedidosTimes";
+import {jogos} from "./jogos";
 
 
 if (!localStorage.getItem("jogadoras")) {
@@ -28,6 +29,10 @@ if (!localStorage.getItem("pedidos")) {
 
 if (!localStorage.getItem("usuarioLogado")) {
   localStorage.setItem("usuarioLogado", JSON.stringify(usuarioLogadoInicial))
+}
+
+if (!localStorage.getItem("jogos")) {
+  localStorage.setItem("jogos", JSON.stringify(jogos))
 }
 
 export function carregarJogadoras() {
