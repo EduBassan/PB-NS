@@ -32,10 +32,10 @@ import LoginAdm from "../pages/LoginAdm";
 import CodigoUnico from "@/pages/CodigoUnico";
 import DashboardAdm from "@/layouts/DashboardAdm";
 import PainelPrincipal from "@/adm/PainelPrincipal";
-import Pedidos from "@/adm/Pedidos";
 import JogadorasAdm from "@/adm/JogadorasAdm";
 import TimesAdm from "@/adm/TimesAdm";
 import Exportar from "@/adm/Exportar";
+import JogosAdm from "@/adm/JogosAdm";
 
 export const router = createBrowserRouter([
     {
@@ -203,10 +203,10 @@ export const router = createBrowserRouter([
                 element: <PainelPrincipal/>,
                 errorElement: <PageNotFound/>,
             },
-            // {
-            //     path: 'pedidos',
-            //     element: <Pedidos/>,
-            // },
+            {
+                path: 'jogosADM',
+                element: <JogosAdm/>,
+            },
             {
                 path: 'jogadorasADM',
                 element: <JogadorasAdm/>,
