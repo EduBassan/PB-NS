@@ -48,8 +48,8 @@ const data = {
       icon: IconDashboard,
     },
     {
-      title: "Pedidos",
-      url: "pedidos",
+      title: "Jogos",
+      url: "jogosADM",
       icon: IconListDetails,
     },
     {
