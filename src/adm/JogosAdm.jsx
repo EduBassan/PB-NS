@@ -94,17 +94,16 @@ export default function JogosAdm() {
         "Jan", "Fev", "Mar", "Abr", "Mai", "Jun",
         "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
 
-    const [dataNumber, setDataNumber] = useState("")
+    const days = Array.from({ length: 31 }, (_, i) => String(i + 1))
 
-    const handleData = (data) => {
-        const dataFormatada = new Date(data); 
-        console.log(dataFormatada);
-        setDataNumber(dataFormatada);
-        const month = months[dataFormatada.getMonth()];
-        const day = dataFormatada.getDate();
-        console.log(day);
-        const textData = month + " " + day
-        return textData
+    const [dataNumber, setDataNumber] = useState("")
+    const [dayNumber, setDayNumber] = useState("")
+
+    const handleData = (data, isMonth) => {
+        if(isMonth){
+        setDataNumber(months[(Number(data))])}
+
+        else{setDayNumber(Number(data)+1);}
     }
 
 
@@ -171,19 +170,45 @@ export default function JogosAdm() {
                                     {novoJogo.futuro ? "Agendada" : "Finalizada"}
                                 </button></div>
                             <div className="flex flex-row flex-nowrap">
+
+<div className="w-full px-3 mb-3">
+                                    <label className="block text-[#3c1970] text-xs font-bold mb-2" htmlFor="matchDate">
+                                        Dia da Partida
+                                    </label>
+                                    <select
+                                        id="matchDate"
+                                        type="number"
+                                        placeholder="Nome do Confronto"
+                                        className="block w-[100%] bg-white text-black p-2 leading-tight focus:outline-none focus:ring-2 border border-[#3c1970] focus:ring-[#713bc2]"
+                                        value={novoJogo.dayNumber}
+                                        onChange= {e => {setNovoJogo({...novoJogo,dayNumber: e.target.value, data: handleData(e.target.value,false)})}}
+                                    >
+                                        {days.map(a => <option value={days.indexOf(a)}>{a}</option>)}
+                                    </select>
+                                    
+                                    
+                                    
+                                </div>
+
                                 <div className="w-full px-3 mb-3">
                                     <label className="block text-[#3c1970] text-xs font-bold mb-2" htmlFor="matchDate">
-                                        Data da Partida
+                                        Mês da Partida
                                     </label>
-                                    <input
+                                    <select
                                         id="matchDate"
-                                        type="date"
+                                        type="number"
                                         placeholder="Nome do Confronto"
-                                        className="appearance-none block w-full bg-white text-black p-2 leading-tight focus:outline-none focus:ring-2 border border-[#3c1970] focus:ring-[#713bc2]"
+                                        className="block w-[100%] bg-white text-black p-2 leading-tight focus:outline-none focus:ring-2 border border-[#3c1970] focus:ring-[#713bc2]"
                                         value={novoJogo.dataNumber}
-                                        onChange={e =>(setNovoJogo({...novoJogo, data: handleData(e.target.value)}))}
-                                    />
+                                        onChange= {e => {setNovoJogo({...novoJogo,dataNumber: e.target.value, data: handleData(e.target.value,true)})}}
+                                    >
+                                        {months.map(a => <option value={months.indexOf(a)}>{a}</option>)}
+                                    </select>
+                                    
+                                    
+                                    
                                 </div>
+                                
                                 <div className="w-full px-3 mb-3">
                                     <label className="block text-[#3c1970] text-xs font-bold mb-2" htmlFor="id">
                                         Id
@@ -273,10 +298,12 @@ export default function JogosAdm() {
                                     </label>
                                     <input
                                         id="horario"
-                                        type="text"
+                                        type="time"
                                         placeholder="Horário da Partida"
                                         className="appearance-none block w-full bg-white text-black p-2 leading-tight focus:outline-none focus:ring-2 border border-[#3c1970] focus:ring-[#713bc2]"
                                         value={novoJogo.hora}
+                                        min={"00:00"}
+                                        max={"23:59"}
                                         onChange={e => setNovoJogo({ ...novoJogo, hora: e.target.value })}
                                     />
                                 </div>
@@ -325,7 +352,7 @@ export default function JogosAdm() {
                         </span>
 
                         <div className="bg-[#3C1A6E] text-white px-4 py-1 text-sm font-semibold mb-4">
-                            {novoJogo.data}
+                            {`${dayNumber} ${dataNumber}`}
                         </div>
 
                         <div className="flex items-center justify-center gap-4 mb-3">
@@ -351,7 +378,7 @@ export default function JogosAdm() {
                         </div>
 
                         <p className="text-[#EE4D9A] font-semibold text-sm uppercase">
-                            {novoJogo.estadio} – {novoJogo.hora}
+                            {novoJogo.estadio} – {novoJogo.hora}H
                         </p>
                     </div></div>)}
         </div>
@@ -397,7 +424,7 @@ export default function JogosAdm() {
                 </div>
 
                 <p className="text-[#EE4D9A] font-semibold text-sm uppercase">
-                    {jogo.estadio} – {jogo.hora}
+                    {jogo.estadio} – {jogo.hora}h
                 </p>
 
                 <div className="w-full flex flex-nowrap gap-2">
