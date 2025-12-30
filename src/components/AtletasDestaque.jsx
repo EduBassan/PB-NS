@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
@@ -11,21 +11,56 @@ import { EffectCoverflow } from 'swiper/modules';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFutbol } from "@fortawesome/free-solid-svg-icons";
-import { faUserPen } from "@fortawesome/free-solid-svg-icons";
 
 export default function AtletasDestaque() {
     const [atletas, setAtletas] = useState([]);
+    const [cartaCriada, setCriacao] = useState(false);
     
         useEffect(() => {
             const raw = localStorage.getItem("jogadoras");
             const dados = raw ? JSON.parse(raw) : [];
             setAtletas(dados)
         }, []);
-    
+
+    const generateId = () => Math.floor(Math.random() * 9999);
+
+    const isVoid = () => {
+            console.log(document.getElementById('id').value)
+
+            if(novoAtleta.nome.trim() == ""){
+                alert("Preencha o nome da sua carta para continuar")
+                return false
+            }
+            if(novoAtleta.sobrenome.trim() == ""){
+                alert("Preencha o sobrenome da sua carta para continuar")
+                return false
+            }
+             if(novoAtleta.pos.trim() == ""){
+                alert("Preencha a posição da sua carta para continuar")
+                return false
+            }
+            if(novoAtleta.foto.trim() == ""){
+                alert("Preencha a URL da foto da sua carta para continuar")
+                return false
+            }
+            if(novoAtleta.jogos.trim() == ""){
+                alert("Preencha a quantidade de jogos da sua carta para continuar")
+                return false
+            }
+            if(novoAtleta.gols.trim() == ""){
+                alert("Preencha a quantidade de gols da sua carta para continuar")
+                return false
+            }
+            if(novoAtleta.assist.trim() == ""){
+                alert("Preencha a quantidade de assistências da sua carta para continuar")
+                return false
+            }
+            return true
+        }
 
 
     const [novoAtleta, setNovoAtleta] = useState({
-        id:"",
+        id: generateId(),
         nome:"",
         sobrenome:"",
         posicao:"",
@@ -37,27 +72,12 @@ export default function AtletasDestaque() {
         time: "",
         destaque: true
     });
+
+
     const adicionarAtleta = () => {
         setAtletas([...atletas, novoAtleta]);
         setNovoAtleta({
-        id:"",
-        nome:"",
-        sobrenome:"",
-        posicao:"",
-        foto:"",
-        jogos: "",
-        gols: "",
-        assist: "",
-        pos: "",
-        time: "",
-        destaque: true
-        });
-    };
-
-    const atualizarAtleta = (novoAtleta) => {
-        setAtletas(atletas.map(a => a.id === novoAtleta.id ? novoAtleta : a));
-        setNovoAtleta({
-        id:"",
+        id: generateId(),
         nome:"",
         sobrenome:"",
         posicao:"",
@@ -112,7 +132,7 @@ export default function AtletasDestaque() {
                     >
                         {atletas.filter(card => card.destaque == true ).map((card, index) => (
                             <SwiperSlide
-                                key={index}
+                                key={card.id}
                                 className="flex items-center justify-center"
                             >
                                 <div className="flex flex-col items-center h-[395px] w-[291px] bg-[#713bc2]  p-3">
@@ -177,8 +197,12 @@ export default function AtletasDestaque() {
                       text-white bg-[#EE4D9A] transition-all hover:translate-y-1 duration-500 transform mt-5">
                             Lances em destaque
                         </a>
-                        <button className=" text-[15px] font-bold text-center p-3 w-50
-                      text-white bg-[#3c1970] transition-all hover:translate-y-1 duration-500 transform mt-5" onClick={() => {setModal(!openModal); !openModal ? document.getElementById('editEnd').scrollIntoView() : document.getElementById('cards').scrollIntoView()}}>Crie sua Carta</button>
+
+
+                       {!cartaCriada ? <button className=" text-[15px] font-bold text-center p-3 w-50
+                      text-white bg-[#3c1970] transition-all hover:translate-y-1 duration-500 transform mt-5" onClick={() => {setModal(!openModal); !openModal ? document.getElementById('editEnd').scrollIntoView() : document.getElementById('cards').scrollIntoView()}}>Crie sua Carta</button> : <div> </div>}
+
+
                     </div>
                 </div>
                 <style>
@@ -264,11 +288,11 @@ export default function AtletasDestaque() {
                                                 </label>
                                                 <input
                                                     id="jogos"
-                                                    type="text"
+                                                    type="number"
                                                     placeholder="Jogos"
                                                     className="appearance-none block w-full bg-white text-black border border-[#3c1970]  py-2 px-3 leading-tight focus:outline-none focus:ring-2 focus:ring-[#713bc2]"
                                                     value={novoAtleta.jogos}
-                                                    onChange={e => setNovoAtleta({ ...novoAtleta, jogos: e.target.value })}
+                                                    onChange={e => {setNovoAtleta({ ...novoAtleta, jogos: e.target.value })}}
                                                 />
                                             </div>
 
@@ -278,7 +302,7 @@ export default function AtletasDestaque() {
                                                 </label>
                                                 <input
                                                     id="gols"
-                                                    type="text"
+                                                    type="number"
                                                     placeholder="Gols"
                                                     className="appearance-none block w-full bg-white text-black border border-[#3c1970]  py-2 px-3 leading-tight focus:outline-none focus:ring-2 focus:ring-[#713bc2]"
                                                     value={novoAtleta.gols}
@@ -292,7 +316,7 @@ export default function AtletasDestaque() {
                                                 </label>
                                                 <input
                                                     id="assist"
-                                                    type="text"
+                                                    type="number"
                                                     placeholder="Assistências"
                                                     className="appearance-none block w-full bg-white text-black border border-[#3c1970]  py-2 px-3 leading-tight focus:outline-none focus:ring-2 focus:ring-[#713bc2]"
                                                     value={novoAtleta.assist}
@@ -320,14 +344,11 @@ export default function AtletasDestaque() {
                                                 </label>
                                                 <input
                                                     id="id"
+                                                    disabled
                                                     type="text"
                                                     placeholder="ID"
                                                     className="appearance-none block w-full bg-[#d1c3e6] text-[#3c1970] border border-[#3c1970]  py-2 px-3 leading-tight"
-                                                    value={novoAtleta.id || Math.random()}
-                                                    onChange={e => setNovoAtleta({ ...novoAtleta, id: e.target.value })}
-                                                    onFocus={() => document.getElementById('id').value = ""}
-                                                    onBlur = {(e) => e.target.value ? e.target.value : Math.random()}
-
+                                                    value={novoAtleta.id}
                                                 />
                                                 
                                             </div>
@@ -350,10 +371,7 @@ export default function AtletasDestaque() {
                                             </div>
                                             </div></div>
                             <div className="flex  flex-wrap gap-3 w-full justify-center items-center">
-                                <button className="w-full p-1 bg-[#EE4D9A] text-medium transition-all hover:translate-y-1 duration-500 transform " onClick={() => {adicionarAtleta(); setModal(false); document.getElementById('cards').scrollIntoView()}}>Adicionar</button>
-                                <div className="flex w-full justify-center gap-2">
-                                    <button className=" w-full p-1 bg-[#EE4D9A] text-medium transition-all hover:translate-y-1 duration-500 transform " onClick={() => {atualizarAtleta(novoAtleta); setModal(false); document.getElementById('cards').scrollIntoView()}}>Atualizar</button>
-                                </div>
+                                <button className="w-full p-1 bg-[#EE4D9A] text-medium transition-all hover:translate-y-1 duration-500 transform " onClick={() => {isVoid() ? (adicionarAtleta(), setCriacao(true), setModal(false), document.getElementById('cards').scrollIntoView()) : pass }}>Adicionar</button>
                             </div>
                         </div>
                         <div className="flex flex-col items-center h-[395px] w-[291px] bg-[#713bc2] p-3">
