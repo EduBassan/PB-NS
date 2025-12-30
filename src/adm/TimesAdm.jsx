@@ -123,20 +123,7 @@ export default function TimesAdm() {
                             onChange={e => setNovoTime({ ...novoTime, nome: e.target.value })}
                           />
                         </div>
-                        <div className="w-full px-3">
-                          <label className="block text-[#3c1970] text-xs font-bold mb-2" htmlFor="Posição">
-                            Posição
-                          </label>
-                          <input
-                            id="posicao"
-                            type="number"
-                            min="0"
-                            placeholder="Posição do Time"
-                            className="appearance-none block w-full bg-white text-black border border-[#3c1970]  py-2 px-3 leading-tight focus:outline-none focus:ring-2 focus:ring-[#713bc2]"
-                            value={novoTime.pos}
-                            onInput={e => (setNovoTime({ ...novoTime, pos: e.target.value }))}
-                          />
-                        </div></div>
+                    </div>
 
                       <div className="w-full px-3 mt-3">
                         <label className="block text-[#3c1970] text-xs font-bold mb-2" htmlFor="foto">
@@ -196,20 +183,6 @@ export default function TimesAdm() {
                           onChange={e => setNovoTime({ ...novoTime, derrotas: e.target.value })}
                         />
                       </div>
-                      <div className="w-full px-3 mt-2 ">
-                        <label className="block text-[#3c1970] text-xs font-bold mb-2" htmlFor="jogos">
-                          Jogos
-                        </label>
-                        <input
-                          id="jogos"
-                          type="number"
-                          min="0"
-                          placeholder="Jogos"
-                          className="appearance-none block w-full bg-white text-black border border-[#3c1970]  py-2 px-3 leading-tight focus:outline-none focus:ring-2 focus:ring-[#713bc2]"
-                          value={novoTime.jogos}
-                          onChange={e => setNovoTime({ ...novoTime, jogos: e.target.value })}
-                        />
-                      </div>
                       <div className="w-full px-3 mt-2">
                         <label className="block text-[#3c1970] text-xs font-bold mb-2" htmlFor="id">
                           ID
@@ -237,9 +210,9 @@ export default function TimesAdm() {
                               <img src={novoTime.foto} alt={`${edit.nome}`} className="w-34 h-34 -full object-cover rounded-full" />
                             </div>
                           </div>
-                          <div className="flex relative z-10 justify-between">
+                          <div className="flex relative z-10 justify-end">
 
-                            <div className="flex flex-col items-center w-auto text-white pr-4">
+                            {/* <div className="flex flex-col items-center w-auto text-white pr-4">
                               <div className="font-thin italic leading-none text-[13px] pl-3">
                                 Posição
                               </div>
@@ -247,14 +220,14 @@ export default function TimesAdm() {
                                 {novoTime.pos}º
                               </div>
 
-                            </div>
+                            </div> */}
 
                             <div className="flex flex-col items-center w-auto text-white pr-4">
                               <div className="font-thin italic leading-none text-[13px]">
                                 Pontos
                               </div>
                               <div className="font-bold text-3xl leading-none">
-                                {novoTime.pontos}
+                                {Number(novoTime.vitorias)*3+Number(novoTime.empates)}
                               </div>
 
                             </div>
@@ -263,7 +236,7 @@ export default function TimesAdm() {
                         <div className="flex h-[40%] w-full bg-gradient-to-br from-[#EE4D9A] to-[#3c1970] justify-between px-5 pb-5 text-white">
                           <div className="flex flex-col w-full items-center pt-1">
                             <div className="leading-none font-medium text-[17px] mt-1 mb-[0.5px] ">{novoTime.nome}</div>
-                            <div className="mb-1">{novoTime.jogos} Jogos</div>
+                            <div className="mb-1">{Number(novoTime.vitorias)+Number(novoTime.empates)+Number(novoTime.derrotas)} Jogos</div>
                             <div className="flex flex-col justify-center items-center  h-full border-2 w-[100%]">
                               <div>{novoTime.vitorias} -  Vitória{Number(novoTime.vitorias) > 1 ? "s" : ""}</div>
                               <div>{novoTime.empates} - Empate{Number(novoTime.empates) > 1 ? "s" : ""} </div>
@@ -282,7 +255,7 @@ export default function TimesAdm() {
                   <div className="flex w-full justify-between mt-5">
                     <button className="text-[15px] font-bold text-center p-1 w-[49%]
                                                       text-white bg-[#EE4D9A] transition-all hover:translate-y-1 duration-500 transform" onClick={() => {
-
+                        
                         if(novoTime.pos == ""){
                           alert("Não esqueça de preencher mais tarde ou o time não aparecerá na tabela")
                           atualizarTime(novoTime);
@@ -293,7 +266,11 @@ export default function TimesAdm() {
                         } else {
                           atualizarTime(novoTime);
                         }}
+
+
                       }
+                      
+
                       }>Salvar</button>
                     <button className="text-[15px] font-bold text-center p-1 w-[49%]
                                                       text-white bg-[#f32133] transition-all hover:translate-y-1 duration-500 transform" onClick={() => { setEdit(null); setModal(false); }}>Cancelar</button>
@@ -317,7 +294,7 @@ export default function TimesAdm() {
             placeholder="Pesquise um time pelo nome..."
             className="appearance-none block w-[71%] bg-white text-black p-2 leading-tight focus:outline-none focus:ring-2 border border-[#3c1970] focus:ring-[#713bc2]" onChange={(e) => setName(e.target.value)}></input>
         </div>
-        {tabelaTimes.sort((a, b) => a.pos - b.pos).filter((time) => time.nome.toLowerCase().includes(name.toLowerCase())).map((card) => (
+        {tabelaTimes.sort((a, b) => (Number(b.vitorias)*3+Number(b.empates)) - (Number(a.vitorias)*3+Number(a.empates))).filter((time) => time.nome.toLowerCase().includes(name.toLowerCase())).map((card, index) => (
           <div key={card.id}>
 
             {card.destaque ? <div className="w-full text-center"><FontAwesomeIcon icon={faStar} className="text-[22px] text-[#EE4D9A]" /></div> : <div className="h-[25.5px] w-full"></div>}
@@ -338,7 +315,7 @@ export default function TimesAdm() {
                         Posição
                       </div>
                       <div className="font-bold text-3xl leading-none pl-3">
-                        {card.pos}º
+                        {index+1}º
                       </div>
 
                     </div>
@@ -348,7 +325,7 @@ export default function TimesAdm() {
                         Pontos
                       </div>
                       <div className="font-bold text-3xl leading-none">
-                        {card.pontos}
+                        {Number(card.vitorias)*3+Number(card.empates)}
                       </div>
 
                     </div>
@@ -357,7 +334,7 @@ export default function TimesAdm() {
                 <div className="flex h-[40%] w-full bg-gradient-to-br from-[#EE4D9A] to-[#3c1970] justify-between px-5 pb-5 text-white">
                   <div className="flex flex-col w-full items-center pt-1">
                     <div className="leading-none font-medium text-[17px] mt-1 mb-[0.5px] ">{card.nome}</div>
-                    <div className="mb-1">{card.jogos} Jogos</div>
+                    <div className="mb-1">{Number(card.vitorias) + Number(card.derrotas) + Number(card.empates)} Jogos</div>
                     <div className="flex flex-col justify-center items-center  h-full border-2 w-[100%]">
                       <div>{card.vitorias} -  Vitória{Number(card.vitorias) > 1 ? "s" : ""}</div>
                       <div>{card.empates} - Empate{Number(card.empates) > 1 ? "s" : ""} </div>

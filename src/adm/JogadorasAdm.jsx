@@ -139,10 +139,11 @@ export default function JogadorasDashboard() {
                                                 </label>
                                                 <input
                                                     id="jogos"
-                                                    type="text"
+                                                    type="number"
                                                     placeholder="Jogos"
                                                     className="appearance-none block w-full bg-white text-black border border-[#3c1970]  py-2 px-3 leading-tight focus:outline-none focus:ring-2 focus:ring-[#713bc2]"
                                                     value={novoAtleta.jogos}
+                                                    min={0}
                                                     onChange={e => setNovoAtleta({ ...novoAtleta, jogos: e.target.value })}
                                                 />
                                             </div>
@@ -153,10 +154,11 @@ export default function JogadorasDashboard() {
                                                 </label>
                                                 <input
                                                     id="gols"
-                                                    type="text"
+                                                    type="number"
                                                     placeholder="Gols"
                                                     className="appearance-none block w-full bg-white text-black border border-[#3c1970]  py-2 px-3 leading-tight focus:outline-none focus:ring-2 focus:ring-[#713bc2]"
                                                     value={novoAtleta.gols}
+                                                    min={0}
                                                     onChange={e => setNovoAtleta({ ...novoAtleta, gols: e.target.value })}
                                                 />
                                             </div>
@@ -167,10 +169,11 @@ export default function JogadorasDashboard() {
                                                 </label>
                                                 <input
                                                     id="assist"
-                                                    type="text"
+                                                    type="number"
                                                     placeholder="Assistências"
                                                     className="appearance-none block w-full bg-white text-black border border-[#3c1970]  py-2 px-3 leading-tight focus:outline-none focus:ring-2 focus:ring-[#713bc2]"
                                                     value={novoAtleta.assist}
+                                                    min={0}
                                                     onChange={e => setNovoAtleta({ ...novoAtleta, assist: e.target.value })}
                                                 />
                                             </div>

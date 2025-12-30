@@ -6,6 +6,43 @@ import { faEye } from "@fortawesome/free-solid-svg-icons";
 
 export default function JogosAdm() {
 
+    const isVoid = () => {
+        console.log(novoJogo.id)
+            if(novoJogo.id.trim() == ""){
+                alert("Preencha o ID do jogo para continuar")
+                return false
+            }
+            if(dayNumber == ""){
+                alert("Preencha a data do jogo para continuar")
+                return false
+            }
+            if(dataNumber == ""){
+                alert("Preencha a data do jogo para continuar")
+                return false
+            }
+             if(novoJogo.timeCasa.trim() == ""){
+                alert("Preencha o time mandante para continuar")
+                return false
+            }
+            if(novoJogo.timeFora.trim() == ""){
+                alert("Preencha o time visitante para continuar")
+                return false
+            }
+            if(novoJogo.hora.trim() == ""){
+                alert("Preencha o horário do jogo para continuar")
+                return false
+            }
+            if(novoJogo.estadio.trim() == ""){
+                alert("Preencha o nome do estádio para continuar")
+                return false
+            }
+            if(novoJogo.hashtag.trim() == ""){
+                alert("Preencha o nome do confronto para continuar")
+                return false
+            }
+            return true
+        }
+
     const [times, setTimes] = useState([])
 
     useEffect(() => {
@@ -30,10 +67,11 @@ export default function JogosAdm() {
             localStorage.setItem('jogos', JSON.stringify(jogos))
         }
     })
-    const [novoJogo, setNovoJogo] = useState([
+    const [novoJogo, setNovoJogo] = useState(
         {
-            id: "",
-            data: "",
+            id: " ",
+            dayNumber: "",
+            dataNumber: "",
             timeCasa: "",
             logoCasa: "",
             golsCasa: "",
@@ -45,16 +83,17 @@ export default function JogosAdm() {
             hashtag: "",
             futuro: false
         }
-    ]);
+    );
 
     const atualizarJogos = (jogo) => {
         const update = jogos.map((a) => jogo.id === a.id ? jogo : a);
         setJogos(update);
-        setNovoJogo([
+        setNovoJogo(
             {
                 id: "",
-                data: "",
-                timeCasa: "",
+                dayNumber: "",
+                dataNumber: "",
+                timeCasa: "", 
                 logoCasa: "",
                 golsCasa: "",
                 timeFora: "",
@@ -65,16 +104,17 @@ export default function JogosAdm() {
                 hashtag: "",
                 futuro: true
             }
-        ]);
+        );
         setModal(null)
     };
     const adicionarJogo = (jogo) => {
         const update = [jogo, ...jogos]
         setJogos(update);
-        setNovoJogo([
+        setNovoJogo(
             {
                 id: "",
-                data: "",
+                dayNumber: "",
+                dataNumber: "",
                 timeCasa: "",
                 logoCasa: "",
                 golsCasa: "",
@@ -86,7 +126,7 @@ export default function JogosAdm() {
                 hashtag: "",
                 futuro: true
             }
-        ]);
+        );
         setModal(null)
     };
 
@@ -94,28 +134,17 @@ export default function JogosAdm() {
         "Jan", "Fev", "Mar", "Abr", "Mai", "Jun",
         "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
 
-    const [dataNumber, setDataNumber] = useState("")
-
-    const handleData = (data) => {
-        const dataFormatada = new Date(data); 
-        console.log(dataFormatada);
-        setDataNumber(dataFormatada);
-        const month = months[dataFormatada.getMonth()];
-        const day = dataFormatada.getDate();
-        console.log(day);
-        const textData = month + " " + day
-        return textData
-    }
-
+    const days = Array.from({ length: 31 }, (_, i) => String(i + 1))
 
     const [modal, setModal] = useState(null);
     const [modalNovo, setModalNovo] = useState(false)
 
     const abrirModal = (jogo, novo) => {
-        setNovoJogo([
+        setNovoJogo(
             {
                 id: "",
-                data: "",
+                dayNumber: "",
+                dataNumber: "",
                 timeCasa: "",
                 logoCasa: "",
                 golsCasa: "",
@@ -126,7 +155,7 @@ export default function JogosAdm() {
                 hora: "",
                 hashtag: "",
                 futuro: true
-            }])
+            })
         novo ? setModalNovo(true) : setModalNovo(false)
         setNovoJogo(jogo)
         setModal(jogo)
@@ -171,19 +200,45 @@ export default function JogosAdm() {
                                     {novoJogo.futuro ? "Agendada" : "Finalizada"}
                                 </button></div>
                             <div className="flex flex-row flex-nowrap">
+
+<div className="w-full px-3 mb-3">
+                                    <label className="block text-[#3c1970] text-xs font-bold mb-2" htmlFor="matchDate">
+                                        Dia da Partida
+                                    </label>
+                                    <select
+                                        id="matchDate"
+                                        type="number"
+                                        placeholder="Nome do Confronto"
+                                        className="block w-[100%] bg-white text-black p-2 leading-tight focus:outline-none focus:ring-2 border border-[#3c1970] focus:ring-[#713bc2]"
+                                        value={novoJogo.dayNumber}
+                                        onChange= {e => {setNovoJogo({...novoJogo,dayNumber: e.target.value})}}
+                                    >
+                                        {days.map(a => <option value={a}>{a}</option>)}
+                                    </select>
+                                    
+                                    
+                                    
+                                </div>
+
                                 <div className="w-full px-3 mb-3">
                                     <label className="block text-[#3c1970] text-xs font-bold mb-2" htmlFor="matchDate">
-                                        Data da Partida
+                                        Mês da Partida
                                     </label>
-                                    <input
+                                    <select
                                         id="matchDate"
-                                        type="date"
+                                        type="number"
                                         placeholder="Nome do Confronto"
-                                        className="appearance-none block w-full bg-white text-black p-2 leading-tight focus:outline-none focus:ring-2 border border-[#3c1970] focus:ring-[#713bc2]"
+                                        className="block w-[100%] bg-white text-black p-2 leading-tight focus:outline-none focus:ring-2 border border-[#3c1970] focus:ring-[#713bc2]"
                                         value={novoJogo.dataNumber}
-                                        onChange={e =>(setNovoJogo({...novoJogo, data: handleData(e.target.value)}))}
-                                    />
+                                        onChange= {e => {setNovoJogo({...novoJogo, dataNumber: e.target.value})}}
+                                    >
+                                        {months.map(a => <option value={a}>{a}</option>)}
+                                    </select>
+                                    
+                                    
+                                    
                                 </div>
+                                
                                 <div className="w-full px-3 mb-3">
                                     <label className="block text-[#3c1970] text-xs font-bold mb-2" htmlFor="id">
                                         Id
@@ -273,17 +328,19 @@ export default function JogosAdm() {
                                     </label>
                                     <input
                                         id="horario"
-                                        type="text"
+                                        type="time"
                                         placeholder="Horário da Partida"
                                         className="appearance-none block w-full bg-white text-black p-2 leading-tight focus:outline-none focus:ring-2 border border-[#3c1970] focus:ring-[#713bc2]"
                                         value={novoJogo.hora}
+                                        min={"00:00"}
+                                        max={"23:59"}
                                         onChange={e => setNovoJogo({ ...novoJogo, hora: e.target.value })}
                                     />
                                 </div>
                             </div>
                             <div className="flex flex-nowrap gap-2">
                                 {modalNovo ? (
-                                    <button className="w-[100%] mt-2 bg-[#EE4D9A] border-2 border-[#EE4D9A] text-white font-semibold text-sm py-2 px-6 hover:bg-white hover:text-[#EE4D9A] transition-all hover:duration-500" onClick={() => { adicionarJogo(novoJogo) }}>
+                                    <button className="w-[100%] mt-2 bg-[#EE4D9A] border-2 border-[#EE4D9A] text-white font-semibold text-sm py-2 px-6 hover:bg-white hover:text-[#EE4D9A] transition-all hover:duration-500" onClick={() => {isVoid() && adicionarJogo(novoJogo)}}>
                                         Criar Novo
                                     </button>) : ""}
                                 {!modalNovo ? (
@@ -292,10 +349,11 @@ export default function JogosAdm() {
                                     </button>) : ""}
 
                                 <button className="w-[100%] mt-2 bg-[#3C1A6E] border-2 border-[#3C1A6E] text-white font-semibold text-sm py-2 px-6 hover:bg-white hover:text-[#3C1A6E] transition-all hover:duration-500" onClick={() => {
-                                    setModal(null); setNovoJogo([
+                                    setModal(null); setNovoJogo(
                                         {
                                             id: "",
-                                            data: "",
+                                            dayNumber: "",
+                                            dataNumber: "",
                                             timeCasa: "",
                                             logoCasa: "",
                                             golsCasa: "",
@@ -307,7 +365,7 @@ export default function JogosAdm() {
                                             hashtag: "",
                                             futuro: true
                                         }
-                                    ]);
+                                    );
                                 }}>
                                     Cancelar
                                 </button>
@@ -325,7 +383,7 @@ export default function JogosAdm() {
                         </span>
 
                         <div className="bg-[#3C1A6E] text-white px-4 py-1 text-sm font-semibold mb-4">
-                            {novoJogo.data}
+                            {`${novoJogo.dayNumber} ${novoJogo.dataNumber}`}
                         </div>
 
                         <div className="flex items-center justify-center gap-4 mb-3">
@@ -351,7 +409,7 @@ export default function JogosAdm() {
                         </div>
 
                         <p className="text-[#EE4D9A] font-semibold text-sm uppercase">
-                            {novoJogo.estadio} – {novoJogo.hora}
+                            {novoJogo.estadio} – {novoJogo.hora}H
                         </p>
                     </div></div>)}
         </div>
@@ -371,7 +429,7 @@ export default function JogosAdm() {
                 </span>
 
                 <div className="bg-[#3C1A6E] text-white px-4 py-1 text-sm font-semibold mb-4">
-                    {jogo.data}
+                   {`${jogo.dayNumber} ${jogo.dataNumber}`}
                 </div>
 
                 <div className="flex items-center justify-center gap-4 mb-3">
@@ -397,7 +455,7 @@ export default function JogosAdm() {
                 </div>
 
                 <p className="text-[#EE4D9A] font-semibold text-sm uppercase">
-                    {jogo.estadio} – {jogo.hora}
+                    {jogo.estadio} – {jogo.hora}h
                 </p>
 
                 <div className="w-full flex flex-nowrap gap-2">

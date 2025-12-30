@@ -32,14 +32,14 @@ export default function TabelaTimes() {
               </tr>
             </thead>
             <tbody>
-              {tabelaTimes.map((time, i) => (
+              {tabelaTimes.sort((a, b) => Number(b.vitorias)*3+Number(b.empates) - Number(a.vitorias)*3+Number(a.empates)).map((time, i) => (
                 <tr
                   key={i}
                   className={`border-b border-purple-800 ${
                     i % 2 === 0 ? "bg-white" : "bg-gray-50"
                   }`}
                 >
-                  <td className="text-pink-500 font-bold p-3">{time.pos}</td>
+                  <td className="text-pink-500 font-bold p-3">{i+1}</td>
                   <td className="flex items-center gap-3 p-3 justify-start font-semibold uppercase">
                     <img
                       src={time.foto}
@@ -48,8 +48,8 @@ export default function TabelaTimes() {
                     />
                     {time.nome}
                   </td>
-                  <td className="text-pink-500 font-bold">{time.jogos}</td>
-                  <td className="text-pink-500 font-bold">{time.pontos}</td>
+                  <td className="text-pink-500 font-bold">{(Number(time.vitorias)) + (Number(time.derrotas)) + (Number(time.empates))}</td>
+                  <td className="text-pink-500 font-bold">{(Number(time.vitorias)*3) + (Number(time.empates))}</td>
                   <td className="text-gray-800 font-semibold">
                     {time.vitorias}
                   </td>
@@ -66,7 +66,7 @@ export default function TabelaTimes() {
         </div>
 
         <div className="md:hidden flex flex-col gap-4">
-          {tabelaTimes.sort((a, b) => a.pos - b.pos).map((time, i) => (
+          {tabelaTimes.sort((a, b) => Number(b.vitorias)*3+Number(b.empates) - Number(a.vitorias)*3+Number(a.empates)).map((time, i) => (
             <div
               key={i}
               className="bg-white text-black rounded-lg shadow-md p-4 flex flex-col gap-2"
@@ -74,7 +74,7 @@ export default function TabelaTimes() {
               <div className="flex justify-between items-center border-b pb-2">
                 <div className="flex items-center gap-2">
                   <span className="text-pink-500 font-bold text-lg">
-                    {time.pos}
+                    {i+1}
                   </span>
                   <img
                     src={time.foto}
@@ -86,7 +86,7 @@ export default function TabelaTimes() {
                   </span>
                 </div>
                 <span className="text-sm text-pink-600 font-bold">
-                  {time.pontos} pts
+                  {(Number(time.vitorias)*3) + (Number(time.empates))} pts
                 </span>
               </div>
               <div className="grid grid-cols-3 text-center text-sm mt-2">
