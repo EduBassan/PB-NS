@@ -8,7 +8,7 @@ export default function JogosCopa() {
   const raw = localStorage.getItem("jogos");
   const dados = raw ? JSON.parse(raw) : [];
   setTimes(dados)
-}, [jogos])
+}, [])
 
   return (
     <section className="bg-white text-black py-10 px-4">
@@ -26,7 +26,7 @@ export default function JogosCopa() {
               key={jogo.id}
               className="border border-pink-200 rounded-lg shadow-md w-full max-w-[320px] p-5 flex flex-col items-center"
             >
-              <span className="text-xs text-[#EE4D9A] font-semibold border border-pink-300 rounded-full px-3 py-0.5 mb-3">
+              <span className="text-xs md:text-lg text-[#EE4D9A] font-semibold border border-pink-300 rounded-full px-3 py-0.5 mb-3">
                 {jogo.hashtag}
               </span>
 
@@ -39,7 +39,7 @@ export default function JogosCopa() {
                   <img
                     src={jogo.logoCasa}
                     alt={jogo.timeCasa}
-                    className="w-12 h-12 object-contain mb-1"
+                    className="w-15 h-15 object-contain mb-1"
                   />
                   <span className="text-lg font-bold">{jogo.golsCasa}</span>
                 </div>
@@ -56,7 +56,7 @@ export default function JogosCopa() {
                 </div>
               </div>
 
-              <p className="text-[#EE4D9A] font-semibold text-sm uppercase">
+              <p className="text-[#EE4D9A] font-semibold text-sm md:text-lg uppercase">
                 {jogo.estadio} – {jogo.hora}
               </p>
 
