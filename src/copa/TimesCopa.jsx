@@ -9,7 +9,7 @@ export default function TimesCopa() {
     setTabela(dados)
   },[]);
   return (
-    <section className="bg-purple-800 text-white py-10 px-4">
+    <section className="bg-purple-800 text-white py-8 px-1">
       <div className="text-center mb-8">
         <h2 className="text-xl md:text-2xl lg:text-5xl font-extrabold uppercase">
           Conheça alguns times da Copa PB
@@ -28,16 +28,16 @@ export default function TimesCopa() {
               key={index}
               className="bg-white text-black  overflow-hidden shadow-lg w-full max-w-[320px] lg:max-w-[360px] flex flex-col"
             >
-              <div className="flex justify-center items-center bg-white py-3 lg:py-10">
+              <div className="flex justify-center items-center bg-white py-3 lg:py-7">
                 <img
                   src={time.foto}
                   alt={time.nome}
-                  className="w-50 h-50 object-contain"
+                  className="w-40 h-40 object-contain"
                 />
               </div>
               <div className="bg-[#EE4D9A] text-white text-center py-6 flex flex-col gap-2 justify-start items-start">
                 <p className="text-xs uppercase tracking-wide ml-6">Aqui é</p>
-                <h3 className="text-4xl font-extrabold uppercase ml-6">
+                <h3 className="text-3xl font-extrabold uppercase ml-6">
                   {time.nome}
                 </h3>
                 <p className="text-sm text-white uppercase ml-6">
