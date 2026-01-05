@@ -6,7 +6,6 @@ import PageNotFound from "../pages/PageNotFound";
 import CopaLayout from "../layouts/CopaLayout";
 import Jogos from "../pages/Jogos";
 import Tabela from "../pages/Tabela";
-// import Chaveamento from "../pages/Chaveamento";
 import LoginLayout from "../layouts/LoginLayout";
 import LoginEscolha from "../pages/LoginEscolha";
 import LoginAtleta from "../pages/LoginAtleta";
@@ -36,6 +35,7 @@ import JogadorasAdm from "@/adm/JogadorasAdm";
 import TimesAdm from "@/adm/TimesAdm";
 import Exportar from "@/adm/Exportar";
 import JogosAdm from "@/adm/JogosAdm";
+import VideosDestaque from "@/components/VideosDestaque";
 
 export const router = createBrowserRouter([
     {
@@ -68,10 +68,10 @@ export const router = createBrowserRouter([
                         path: 'tabela',
                         element: <Tabela/>,
                     },
-                    // {
-                    //     path: 'chaveamento',
-                    //     element: <Chaveamento/>
-                    // },
+                    {
+                        path: 'videosDestaque',
+                        element: <VideosDestaque/>
+                    },
                     {
                         path: "*",
                         element: <PageNotFound/>,
