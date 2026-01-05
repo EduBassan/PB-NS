@@ -8,15 +8,11 @@ export default function JogosAdm() {
 
     const isVoid = () => {
         console.log(novoJogo.id)
-            if(novoJogo.id.trim() == ""){
-                alert("Preencha o ID do jogo para continuar")
-                return false
-            }
-            if(dayNumber == ""){
+            if(novoJogo.dayNumber == ""){
                 alert("Preencha a data do jogo para continuar")
                 return false
             }
-            if(dataNumber == ""){
+            if(novoJogo.dataNumber == ""){
                 alert("Preencha a data do jogo para continuar")
                 return false
             }
@@ -39,6 +35,16 @@ export default function JogosAdm() {
             if(novoJogo.hashtag.trim() == ""){
                 alert("Preencha o nome do confronto para continuar")
                 return false
+            }
+            if(novoJogo.id.trim() == ""){
+                alert("Preencha o ID do jogo para continuar")
+                return false
+            }
+            else{
+                if(jogos.map((jogo) =>  jogo.id).some((id) => id == novoJogo.id)){
+                    alert("Já existe um jogo registado com esse número de ID, por favor selecione outro")
+                    return false 
+                }
             }
             return true
         }

@@ -1,4 +1,5 @@
 // src/pages/Jogos.jsx
+import VideosDestaque from "@/components/VideosDestaque";
 import Inicio from "@/copa/Inicio";
 import JogosCopa from "@/copa/JogosCopa";
 import SegundaSeccao from "@/copa/SegundaSeccao";
@@ -10,6 +11,7 @@ export default function Jogos() {
     <div>
       <Inicio/>
       <SegundaSeccao/>
+      <VideosDestaque/>
       <TimesCopa/>
       <JogosCopa/>
       <TabelaTimes/>
