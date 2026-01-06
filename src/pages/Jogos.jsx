@@ -11,7 +11,6 @@ export default function Jogos() {
     <div>
       <Inicio/>
       <SegundaSeccao/>
-      <VideosDestaque/>
       <TimesCopa/>
       <JogosCopa/>
       <TabelaTimes/>
