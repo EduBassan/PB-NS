@@ -95,10 +95,10 @@ export default function AtletasDestaque() {
 
     return (
         <>
-            <div className="flex justify-center items-center flex-wrap h-auto bg-white col-span-1 lg:col-span-2 mt-20">
+            <div className="flex justify-center items-center flex-wrap h-auto bg-white col-span-1 lg:col-span-2 mt-10">
 
                 <div id="cards" className="scroll-mt-7"></div>
-                <p className="block text-[#EE4D9A] font-bold text-[30px] lg:text-[50px] leading-none w-full text-center mb-5">Atletas em Destaque</p>
+                <p className="text-pink-500 text-3xl lg:text-5xl font-extrabold uppercase mb-10">Atletas em Destaque</p>
                 <div className="w-full flex justify-center overflow-hidden mr-0">
                     <div className="w-250 overflow-hidden">
                         <Swiper
@@ -188,20 +188,8 @@ export default function AtletasDestaque() {
                             ))}
                         </Swiper>
                         <div className="w-full flex justify-center gap-3">
-                            <a
-                                href="#lance"
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    document.getElementById("lance").scrollIntoView({ behavior: "smooth", block: "start" });
-                                }}
-                                className="text-[15px] font-bold text-center p-3 w-50
-                      text-white bg-[#EE4D9A] transition-all hover:translate-y-1 duration-500 transform mt-5">
-                                Lances em destaque
-                            </a>
 
-
-                            {!cartaCriada ? <button className=" text-[15px] font-bold text-center p-3 w-50
-                      text-white bg-[#3c1970] transition-all hover:translate-y-1 duration-500 transform mt-5" onClick={() => { setModal(!openModal); !openModal ? document.getElementById('editEnd').scrollIntoView() : document.getElementById('cards').scrollIntoView() }}>Crie sua Carta</button> : <div> </div>}
+                            {!cartaCriada ? <button className="border-1 border-[#EE4D9A] text-[#EE4D9A] pt-2 p-2 pl-7 pr-7 uppercase font-bold text-base hover:bg-[#EE4D9A] hover:text-white hover:transition-all hover:duration-500 mt-5" onClick={() => { setModal(!openModal); !openModal ? document.getElementById('editEnd').scrollIntoView() : document.getElementById('cards').scrollIntoView() }}>Crie sua Carta</button> : <div> </div>}
 
 
                         </div>

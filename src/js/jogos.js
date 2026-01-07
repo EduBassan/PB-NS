@@ -1,6 +1,6 @@
 export let jogos = [
   {
-    id: 1,
+    id: "1",
     dataNumber: "Fev",
     dayNumber: "8",
     timeCasa: "SPFC",
@@ -16,7 +16,7 @@ export let jogos = [
     exibir: false
   },
   {
-    id: 2,
+    id: "2",
     dataNumber: "Fev",
     dayNumber: "15",
     timeCasa: "Corinthians",
@@ -32,7 +32,7 @@ export let jogos = [
     exibir: true
   },
   {
-    id: 3,
+    id: "3",
     dataNumber: "Fev",
     dayNumber: "1",
     logoCasa: "https://th.bing.com/th/id/R.c7f858adcf5c6f5cd97f4b2a263cd5b1?rik=eksXhOCTAYsIrg&pid=ImgRaw&r=0",
