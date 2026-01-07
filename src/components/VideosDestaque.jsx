@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 export default function VideosDestaque() {
-    const [idVideo, setVideo] = useState("")
+    const [idVideo, setVideo] = useState([])
     const [posts, setPosts] = useState([]);
     const [postSelecionado, setPostSelecionado] = useState(null);
 
@@ -13,8 +13,7 @@ export default function VideosDestaque() {
             const response1 = await fetch(`https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&q=passa+a+bola&maxResults=2&type=video&videoDuration=medium&channelId=UCGEtu-1QcpI_wRA7okljuJA&key=${aKey}`)
 
             const data1 = await response1.json();
-            console.log(data1)
-            setVideo(data1.items[0].id.videoId, data1.items[1].id.videoId)
+            setVideo([data1.items[0].id.videoId, data1.items[1].id.videoId])
 
            const response = await fetch(`https://www.googleapis.com/youtube/v3/commentThreads?order=relevance&part=snippet&videoId=${data1.items[0].id.videoId}&maxResults=6&key=${aKey}`);
 
@@ -23,11 +22,10 @@ export default function VideosDestaque() {
             let comentarios = []
             for(let num = 0; num < 6;  num++ ){
                 comentarios.push({
-                    title: `${data.items[num].snippet.topLevelComment.snippet.textOrigina}`,
+                    title: `${data.items[num].snippet.topLevelComment.snippet.textOriginal}`,
                     text: `${data.items[num].snippet.topLevelComment.snippet.authorDisplayName}`
                 })
             }
-            console.log(comentarios)
 
            setPosts(comentarios);
 
@@ -41,7 +39,7 @@ export default function VideosDestaque() {
         <div className="flex flex-col">
         <div className="h-auto">
             <div className="flex justify-center items-center pt-12">
-                <span className=" text-[#3C1A6E] text-3xl lg:text-5xl font-extrabold uppercase"> Não perca as novidades</span>
+                <span className=" text-[#3C1A6E] text-center text-3xl lg:text-5xl font-extrabold uppercase"> Não perca as novidades</span>
             </div>
             <div className="flex flex-col lg:flex-row w-full h-auto gap-8 py-8 px-14 justify-center items-center">
                 <div className="w-full mx-10 max-w-2xl shadow-xl aspect-video shadow-pink-300 hover:scale-105 transition-all duration-400 rounded-xl overflow-hidden">
@@ -85,7 +83,7 @@ export default function VideosDestaque() {
                     <div className="bg-white shadow-lg max-w-lg w-full p-6 relative text-center">
                         <button className="absolute top-2 right-2 text-gray-600 hover:text-red-600 cursor-pointer"  onClick={() => setPostSelecionado(null)}>✕</button>
                         <h2 className="text-2xl font-bold text-[#3C1A6E] mb-4">{postSelecionado.title}</h2>
-                        <p className="text-gray-700">{postSelecionado.body}</p>
+                        <p className="text-gray-700">{postSelecionado.text}</p>
                     </div>
                 </div>
             )}

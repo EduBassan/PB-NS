@@ -10,8 +10,8 @@ import VideosDestaque from "./VideosDestaque";
 
 export default function Hero() {
     return (
-        <div className="grid grid-cols-2 h-580 lg:h-300 w-full">
-            <div className="row-span-1 flex col-span-2 w-full justify-center lg:w-auto lg:hidden lg:h-120 h-50 bg-[#3C1A6E]">
+        <div className="grid grid-cols-2 h-auto w-full">
+            <div className="row-span-1 flex col-span-2 w-full justify-center lg:w-auto lg:hidden bg-[#3C1A6E]">
                 <div >
                     <img src={atletasDisputa} alt="jogadoras disputando a bola" className="w-full" />
                 </div>
@@ -28,9 +28,9 @@ export default function Hero() {
                     <p className="block text-[#EE4D9A] font-bold text-[30px] lg:text-[50px] leading-none mb-3 -translate-x-[3.5px]">FEITO POR ELAS</p>
 
                     <h3 className="font-bold  mb-3  text-[13px] lg:text-[16px] w-70 lg:w-110 text-center lg:text-left">Passa a Bola conecta meninas, times e comunidades para criar campeonatos acessíveis, divertidos e profissionais.</h3>
-                    <Link to="/cadastrar" className="font-bold text-center bg-[#EE4D9A] border-2 p-3  w-50
+                    <Link to="/cadastrar" className="font-bold text-center bg-[#EE4D9A] p-3  w-50
                     hover:translate-x-7 text-white transition-all duration-400">Inscreva seu time</Link>
-                    <HashLink smooth to="/copa#copa" className="text-[12px] font-bold text-center bg-[#3C1A6E] border-2 p-3  w-50
+                    <HashLink smooth to="/copa#copa" className="text-[12px] font-bold text-center bg-[#3C1A6E] p-3  w-50
                      text-white transition-all hover:translate-x-7 duration-400">Ver programação da COPA PB </HashLink>
                 </div>
             </div>
