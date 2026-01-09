@@ -44,9 +44,9 @@ export default function TimesCopa() {
                   Cidade: {time.cidade}
                 </p>
 
-                <button className="bg-white border-2 border-white text-[#EE4D9A] text-sm py-2 px-4  mt-3 mx-auto w-[90%] uppercase font-bold hover:bg-[#EE4D9A] hover:text-white transition-all hover:duration-500 cursor-pointer">
+                <a target="_blank"href={`https://www.instagram.com/explore/tags/${(time.nome).replaceAll(" ","")}/`} className="bg-white border-2 border-white text-[#EE4D9A] text-sm py-2 px-4  mt-3 mx-auto w-[90%] uppercase font-bold hover:bg-[#EE4D9A] hover:text-white transition-all hover:duration-500 cursor-pointer">
                   Instagram
-                </button>
+                </a>
               </div>
             </div>
           ))}

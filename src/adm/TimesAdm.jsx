@@ -211,17 +211,6 @@ export default function TimesAdm() {
                             </div>
                           </div>
                           <div className="flex relative z-10 justify-end">
-
-                            {/* <div className="flex flex-col items-center w-auto text-white pr-4">
-                              <div className="font-thin italic leading-none text-[13px] pl-3">
-                                Posição
-                              </div>
-                              <div className="font-bold text-3xl leading-none pl-3">
-                                {novoTime.pos}º
-                              </div>
-
-                            </div> */}
-
                             <div className="flex flex-col items-center w-auto text-white pr-4">
                               <div className="font-thin italic leading-none text-[13px]">
                                 Pontos
