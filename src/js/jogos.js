@@ -13,7 +13,8 @@ export let jogos = [
     hora: "21:30",
     hashtag: "#ChoqueDeGigantes",
     futuro: false,
-    exibir: false
+    exibir: false,
+    votos:0
   },
   {
     id: "2",
@@ -29,7 +30,8 @@ export let jogos = [
     hora: "20:00",
     hashtag: "#DerbyPaulista",
     futuro: false,
-    exibir: true
+    exibir: true,
+    votos:0
   },
   {
     id: "3",
@@ -44,6 +46,7 @@ export let jogos = [
     hora: "18:00",
     hashtag: "#ClassicoCarioca",
     futuro: false,
-    exibir: true
+    exibir: true,
+    votos:0
   },
 ];

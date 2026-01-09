@@ -134,7 +134,7 @@ export let times = [
         email: "sp@email.com",
         telefone: "11999999999",
         numero: 18,
-        foto: "https://img.estadao.com.br/resources/jpg/1/3/1487962260931.jpg",
+        foto: "https://upload.wikimedia.org/wikipedia/commons/4/4b/S%C3%A3o_Paulo_Futebol_Clube.png",
         jogadoras: [],
         candidatas: [],
         tipo: "time",
