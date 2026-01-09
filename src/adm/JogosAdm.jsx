@@ -87,6 +87,7 @@ export default function JogosAdm() {
             estadio: "",
             hora: "",
             hashtag: "",
+            votos:0,
             futuro: false
         }
     );
@@ -108,7 +109,8 @@ export default function JogosAdm() {
                 estadio: "",
                 hora: "",
                 hashtag: "",
-                futuro: true
+                futuro: true,
+                votos:0
             }
         );
         setModal(null)
